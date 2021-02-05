@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Zoom</title>
+    <style>
+        .img {
+            display: flex;
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            width: 400px;
+            transition: all .3s linear;
+            border-radius: 10px;
+        }
+
+        img:hover {
+            transform: scale(1.2);
+            transition: all .3s linear;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="img">
+        <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=60" alt="Image" />
+    </div>
+</body>
+</html>

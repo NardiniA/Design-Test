@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/navbar-9.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+</head>
+<body>
+    <nav class="menu-wrapper">
+        <button class="menu-btn" has-ripple="true">
+            <i></i>
+            <i></i>
+            <i></i>
+            <span class="ripple"></span>
+        </button>
+        <ul class="menu">
+            <li class="menuitem-wrapper">
+                <div class="icon-holder">
+                    <a href="#" class="menu-item">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </div>
+                <svg class="circle-holder">
+                    <circle r="88" cx="50%" cy="50%" fill="none">
+                    </circle>
+                </svg>
+            </li>
+            <li class="menuitem-wrapper">
+                <div class="icon-holder">
+                    <a href="#" class="menu-item">
+                        <i class="fas fa-meh-blank"></i>
+                    </a>
+                </div>
+                <svg class="circle-holder">
+                    <circle r="88" cx="50%" cy="50%" fill="none">
+                    </circle>
+                </svg>
+            </li>
+            <li class="menuitem-wrapper">
+                <div class="icon-holder">
+                    <a href="#" class="menu-item">
+                        <i class="fab fa-android"></i>
+                    </a>
+                </div>
+                <svg class="circle-holder">
+                    <circle r="88" cx="50%" cy="50%" fill="none">
+                    </circle>
+                </svg>
+            </li>
+            <li class="menuitem-wrapper">
+                <div class="icon-holder">
+                    <a href="#" class="menu-item">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+                <svg class="circle-holder">
+                    <circle r="88" cx="50%" cy="50%" fill="none">
+                    </circle>
+                </svg>
+            </li>
+            <li class="menuitem-wrapper">
+                <div class="icon-holder">
+                    <a href="#" class="menu-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </a>
+                </div>
+                <svg class="circle-holder">
+                    <circle r="88" cx="50%" cy="50%" fill="none">
+                    </circle>
+                </svg>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $('[has-ripple="true"]').click(function () {
+                $(this).toggleClass('clicked');
+                $('.menu').toggleClass('open');
+            });
+
+            $('.menu a').each(function (index) {
+                var thismenuItem = $(this);
+
+                thismenuItem.click(function (event) {
+                    event.preventDefault();
+
+                    $('.menuitem-wrapper').eq(index).addClass('spin');
+
+                    var timer = setTimeout(function () {
+                        $('body').removeAttr('class').addClass('bg-' + index);
+                        $('.menuitem-wrapper').eq(index).removeClass('spin');
+                        $('.menu').removeClass('open');
+                        $('.menu-btn').removeClass('clicked');
+                    }, 800);
+                });
+            });
+    </script>
+</body>
+</html>

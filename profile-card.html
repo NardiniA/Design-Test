@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght~400,700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 350px;
+            cursor: pointer;
+        }
+
+        .card img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+
+        .side {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 25%;
+            height: 100%;
+            background: rgb(255,255,255);
+            transition: all 0.4s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card:hover .side {
+            transform: translateX(108%);
+        }
+
+        .side i {
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .fa-instagram {
+            color: #c32aa3;
+        }
+
+        .fa-facebook {
+            color: #1877f2;
+        }
+
+        .fa-twitter {
+            color: #1da1f2;
+        }
+
+        .fa-github {
+            color: #000000;
+        }
+
+        .fa-instagram:hover {
+            color: #c32aa2b7;
+        }
+
+        .fa-facebook:hover {
+            color: #1876f2be;
+        }
+
+        .fa-twitter:hover {
+            color: #1da0f2c0;
+        }
+
+        .fa-github:hover {
+            color: #000000be;
+        }
+
+        .name {
+            top: 5px;
+            font-size: 1.4rem;
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="img/l.jfif" alt="Image" />
+        <div class="side">
+            <p class="name">Tony <br> Stark</p>
+            <i class="fab fa-instagram fa-2x"></i>
+            <i class="fab fa-facebook fa-2x"></i>
+            <i class="fab fa-twitter fa-2x"></i>
+            <i class="fab fa-github fa-2x"></i>
+        </div>
+    </div>
+</body>
+</html>

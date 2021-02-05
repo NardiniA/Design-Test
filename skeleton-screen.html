@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/skeleton-screen.css" />
+</head>
+<body>
+
+    <div class="background"><img class="lazy loaded"
+            src="https://lh3.googleusercontent.com/-6UtNFOzr6Rk/V2pO8a32QNI/AAAAAAAAHXE/tc8SACAEqWo_IM0N85rUHlc-ThVs65LaQ/w2048-h1280/sierra-2.jpg">
+    </div>
+
+    <div class="background" data-image="WeXlGlt8u7wc40QUtIYHNRR0wrG7TZAAAAEElEQVQI12NgYGRiYGZhBQAALgAQ2bAGGQ"
+        style="background: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAMAAACqqpYoAAAAElBMVEWeXlGlt8u7wc40QUtIYHNRR0wrG7TZAAAAEElEQVQI12NgYGRiYGZhBQAALgAQ2bAGGQAAAABJRU5ErkJggg==&quot;) center center / cover no-repeat;">
+        <img class="lazy" src="http://ihdwallpapers.com/walls/2015/10/12/os_x_el_capitan_desktop-wide.jpg">
+    </div>
+    
+    <div class="background"><img class="lazy loaded"
+            src="https://www.hdwallpapers.net/wallpapers/yosemite-wallpaper-for-2880x1800-60-798.jpg"></div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script>
+        $('.background').each(function () {
+                var $b64 = $(this).data("image");
+                $(this).css("background", "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAMAAACqqpYoAAAAElBMVE" + $b64 + "AAAABJRU5ErkJggg==) center/cover no-repeat");
+            });
+
+            $('.lazy').each(function () {
+                var $object = $(this),
+                    $parent = $object.parent();
+                $object.on('load', function () {
+                    $object.addClass('loaded');
+                    $parent.removeAttr("data-image")
+                    setTimeout(function () {
+                        $parent.removeAttr("style");
+                    }, 2000);
+                });
+            });
+    </script>
+</body>
+</html>

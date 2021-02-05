@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Card</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2/?family=Open+Sans+Condensed:300,700" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans Condensed", sans-serif;
+            font-weight: 700;
+        }
+
+        html, body {
+            background: #eee5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .product-card {
+            box-shadow: 1px 5px 15px #ccc;
+            width: 300px;
+            height: 400px;
+            border-radius: 10px;
+            padding: 2em;
+            margin: 1em;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-card {
+            background: linear-gradient(
+                -45deg,
+                #ef6f6c 50%,
+                rgba(255,255,255,0.5) 50%
+            );
+        }
+
+        .product-card img {
+            max-width: 90%;
+            height: auto !important;
+            text-align: center;
+        }
+
+        .product-inner {
+            display: flex;
+            align-items: center;
+            flex-flow: column wrap;
+        }
+
+        .product-inner p {
+            color: #2b2d42'
+        }
+
+        .product-inner button {
+            border: 1px solid rgba(255,255,255,0.5);
+            color: #fff;
+            border-radius: 10px;
+            padding: 1em 3em;
+            margin: 1em 0 0 0;
+            background: none;
+            cursor: pointer;
+            transition: background ease-in.25s;
+        }
+
+        .product-inner button:hover {
+            background: #fff;
+            color: #2b2d42;
+        }
+
+        .shopping-icon {
+            font-size: 1.5em;
+            margin: 0 0.5em 0 0;
+        }
+
+        .product-inner button:hover::before {
+            color: #2b2d42;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-card">
+        <div class="product-inner">
+            <img src="img/shoe.png" alt="Shoes Product" />
+            <p>Nike Air (Women)</p>
+            <p>Size: 07</p>
+            <p>Price: $99.99</p>
+            <button><i class="fas fa-shopping-cart shopping-icon"></i> Add To Basket</button>
+        </div>
+    </div>
+</body>
+</html>

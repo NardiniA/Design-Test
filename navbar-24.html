@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/navbar-24.css">
+</head>
+<body>
+    <div class="plus-btn-pos">
+        <div class="plus-btn">
+            <div class="r1"></div>
+            <div class="r2"></div>
+        </div>
+    </div>
+    <div class="content">
+        <div>
+            <h1>
+                Fullscreen Menu
+            </h1>
+            <h2>
+                Flexbox Style
+            </h2>
+        </div>
+    </div>
+    <div class="menu-container">
+        <div class="menu-sliders"></div>
+        <div class="menu-sliders"></div>
+        <div class="menu-sliders"></div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a>Home</a>
+                </li>
+                <li>
+                    <a>About </a>
+                </li>
+                <li>
+                    <a>Work</a>
+                </li>
+                <li>
+                    <a>Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script
+        src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script id="rendered-js">
+        $('.plus-btn').click(function () {
+            $('body').toggleClass('menu-open');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/note-signup-btn.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <button class="notify" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+            <div class="notify-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 24">
+                    <path d="M12,24a3.07,3.07,0,0,0,3-3H9A3.12,3.12,0,0,0,12,24Z" transform="translate(-1.76)"
+                        fill="#ffffff"></path>
+                    <path
+                        d="M15.14,3.95a2.1,2.1,0,0,1-1-1.82h0a2.1,2.1,0,1,0-4.19,0h0a2.1,2.1,0,0,1-1,1.82C4.2,6.66,6.88,15.66,2,17.25V19H22V17.25C17.12,15.66,19.8,6.66,15.14,3.95ZM12,3a1,1,0,1,1,1-1A1,1,0,0,1,12,3Z"
+                        transform="translate(-1.76)" fill="#ffffff"></path>
+                    <line class="notify-off-line" x1="21.24" y1="2.65" x2="0.92" y2="22.97" stroke=""
+                        stroke-miterlimit="10"></line>
+                    <line class="notify-off-line" x1="20.24" y1="1.98" x2="0.53" y2="21.69" fill="none" stroke="#ffffff"
+                        stroke-miterlimit="10" stroke-width="1.5"></line>
+                </svg>
+            </div><span class="notify-label">Get Notification</span><span class="notify-off-label">Turn Off
+                Notifications</span>
+        </button>
+        <div class="form">
+            <input class="email-input" placeholder="Your email here."
+                style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, 10);">
+            <input class="name-input" placeholder="Your name here."
+                style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, 10);">
+        </div>
+        <button class="newsletter">
+            <div class="newsletter-icon">
+                <svg version="1.1" id="iconmonstr" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"
+                    style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                    <path id="paper-plane-1" style="fill:#FFFFFF;"
+                        d="M24,0l-6,22l-8.129-7.239l7.802-8.234L7.215,13.754L0,12L24,0z M9,16.669V24l3.258-4.431L9,16.669z">
+                    </path>
+                </svg>
+            </div><span class="start-label">Get Newsletter</span><span class="form-label">Add Me</span>
+        </button>
+    </div>
+    
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        let isFormActive = false;
+        let isNotificationsActive = false;
+        const duration = .2;
+        const transitionY = 10;
+        const easing = Sine.easeOut;
+
+        const notifyButton = document.querySelector('.notify');
+        const newsletterButton = document.querySelector('.newsletter');
+
+        const emailInput = document.querySelector('.email-input');
+        const nameInput = document.querySelector('.name-input');
+
+        const form = document.querySelector('.form');
+
+        //TweenLite.set(form, {opacity: 0, y: transitionY})
+        TweenLite.set(notifyButton, { opacity: 1, y: 0 });
+        TweenLite.set(emailInput, { opacity: 0, y: transitionY });
+        TweenLite.set(nameInput, { opacity: 0, y: transitionY });
+
+        newsletterButton.addEventListener("click", () => {
+            if (isFormActive) {
+                var tl = new TimelineLite();
+                tl.call(() => {
+                    document.body.classList.remove('is-form')
+                })
+                tl.to(emailInput, duration, { opacity: 0, y: transitionY, ease: easing })
+                tl.to(nameInput, duration, { opacity: 0, y: transitionY, ease: easing }, '-0.1')
+                tl.to(notifyButton, duration, { opacity: 1, y: 0, ease: easing })
+                tl.play()
+            } else {
+                var tl = new TimelineLite();
+                tl.call(() => {
+                    document.body.classList.add('is-form')
+                })
+                tl.to(notifyButton, 0.15, { opacity: 0, y: -transitionY, ease: easing })
+                tl.to(emailInput, 0.15, { opacity: 1, y: 0, ease: easing }, '+0.1')
+                tl.call(() => {
+                    emailInput.focus();
+                })
+                tl.to(nameInput, duration, { opacity: 1, y: 0, ease: easing })
+                tl.play()
+            }
+            isFormActive = !isFormActive
+        });
+
+        notifyButton.addEventListener("click", () => {
+            if (isNotificationsActive) {
+                document.body.classList.remove('is-notify')
+            } else {
+                document.body.classList.add('is-notify')
+            }
+            isNotificationsActive = !isNotificationsActive
+        });
+    </script>
+</body>
+</html>

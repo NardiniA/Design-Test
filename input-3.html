@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Input</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+        }
+
+        .field-container {
+            position: relative;
+            border-bottom: 1px solid #bcbaba;
+            height: 50px;
+            width: 320px;
+            padding-left: 12px;
+            display: flex;
+        }
+
+        .field-placeholder {
+            position: absolute;
+            top: 50%;
+            transform: translate(5px, -50%);
+            pointer-events: none;
+            transition: all .14s ease-in-out;
+            font-size: 18px;
+            color: #adadad;
+            margin-left: 35px;
+        }
+
+        .field-prepend-icon {
+            position: absolute;
+            top: 50%;
+            transform: translate(5px, -50%);
+            pointer-events: none;
+            font-size: 20px;
+        }
+
+        .check, .x {
+            position: absolute;
+            top: 50%;
+            transform: translate(5px, -50%);
+            pointer-events: none;
+            font-size: 20px;
+            right: 20px;
+        }
+
+        .check {
+            color: green;
+        }
+
+        .x {
+            color: red;
+        }
+
+        input[type="text"].field-input {
+            color: #000;
+            border: none;
+            padding: 5px;
+            padding-left: 40px;
+            padding-right: 45px;
+            margin-top: 20px;
+            font-size: 16px;
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            bottom: 0px;
+            background: transparent;
+            box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.07);
+        }
+
+
+
+        input[type="text"].field-input:focus {
+            outline: none;
+        }
+
+        input[type="text"].field-input.c-fix, input[type="text"].field-input:focus, input[type="text"].field-input:not(:placeholder-shown) {
+            border-color: transparent;
+        }
+
+        input[type="text"].field-input.c-fix ~ label, input[type="text"].field-input:focus ~ label, input[type="text"].field-input:not(:placeholder-shown) ~ label {
+            color: #646669;
+            font-size: 11px;
+            top: calc(30% - .5rem);
+            transform: translate(5px, 0%);
+        }
+        
+        input[type="text"].field-input::-webkit-input-placeholder {
+            color: transparent;
+        }
+
+        input[type="text"].field-input::-moz-placeholder {
+            color: transparent;
+        }
+
+        input[type="text"].field-input:-ms-input-placeholder {
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="field-container">
+        <input type="text" class="field-input" id="inputid" name="inputName" placeholder=" " />
+        <i class="fas fa-user field-prepend-icon"></i>
+        <label for="inputName" class="field-placeholder">Name</label>
+        <!--<i class="fas fa-times-circle x"></i>-->
+        <i class="fas fa-check-circle check"></i>
+    </div>
+</body>
+</html>

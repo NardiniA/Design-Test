@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Button</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 170px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 50px;
+            border: 2px solid black;
+            overflow: hidden;
+        }
+
+        .button {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            background: #b3c6e4;
+            border-radius: 50px;
+            font-size: 1.5em;
+            font-family: cursive;
+            display: flex;
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s;
+        }
+
+        .box:hover > .button {
+            transform: translateY(100%);
+        }
+
+        .box i {
+            cursor: pointer;
+            position: absolute;
+        }
+
+        .box i:nth-child(2) {
+            top: -35px;
+            left: 25px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            transition: all 0.3s;
+            transition-delay: 0.1s;
+        }
+
+        .box i:nth-child(3) {
+            top: -35px;
+            background: #3b5998;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            transition: all 0.3s;
+            transition-delay: 0.2s;
+        }
+
+        .box i:nth-child(4) {
+            top: -35px;
+            right: 25px;
+            transition: all 0.3s;
+            transition-delay: 0.3s;
+        }
+
+        .box:hover > i {
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <div class="button">Share</div>
+            <i class="fab fa-instagram fa-2x"></i>
+            <i class="fab fa-facebook fa-2x"></i>
+            <i class="fab fa-github fa-2x"></i>
+        </div>
+    </div>
+</body>
+</html>

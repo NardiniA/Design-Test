@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,WAAY;EAEV,KAAK,EADE,MAAM;EAEb,MAAM,EAAE,qBAAuB;EAC/B,MAAM,EAAE,SAAS;EACjB,UAAU,EAAE,sBAAsB;EAClC,oBAAQ;IACN,MAAM,EAAE,IAAI;IACZ,KAAK,EAAE,IAAI;IACX,OAAO,EAAE,CAAC;IACV,UAAU,EAAE,EAAE;IACd,2BAAS;MACP,OAAO,EAAE,CAAC",
+"sources": ["../scss/skeleton-screen.scss"],
+"names": [],
+"file": "skeleton-screen.css"
+}

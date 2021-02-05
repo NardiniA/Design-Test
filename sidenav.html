@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/sidenav.css">
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="title">Sidebar Interaction</div>
+    </div>
+    
+    
+    <div id="btn">
+        <div id='top'></div>
+        <div id='middle'></div>
+        <div id='bottom'></div>
+    </div>
+    <div id="box">
+        <div id="items">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+        </div>
+    </div>
+
+    <script>
+        const sidebarBox = document.querySelector('#box'),
+                sidebarBtn = document.querySelector('#btn'),
+                pageWrapper = document.querySelector('#page-wrapper');
+
+            sidebarBtn.addEventListener('click', event => {
+                sidebarBtn.classList.toggle('active');
+                sidebarBox.classList.toggle('active');
+            });
+
+            pageWrapper.addEventListener('click', event => {
+
+                if (sidebarBox.classList.contains('active')) {
+                    sidebarBtn.classList.remove('active');
+                    sidebarBox.classList.remove('active');
+                }
+            });
+
+            window.addEventListener('keydown', event => {
+
+                if (sidebarBox.classList.contains('active') && event.keyCode === 27) {
+                    sidebarBtn.classList.remove('active');
+                    sidebarBox.classList.remove('active');
+                }
+            });
+    </script>
+</body>
+</html>

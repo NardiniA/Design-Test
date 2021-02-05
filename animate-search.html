@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Search Box</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #274B74 0%, #8233C5 50%, #E963FD 100%);
+            font-family: "Montserrat", sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 15%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        input[type=text] {
+            position: relative;
+            padding: 15px 40px 15px 20px;
+            width: 20%;
+            color: #525252;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 100;
+            letter-spacing: 2px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(to right, #FFFFFF 0%, #464747 #F9F9F9 100%);
+            transition: width 0.4s ease;
+            outline: none;
+        }
+
+        input[type=text]:focus {
+            width: 100%;
+        }
+
+        i {
+            position: relative;
+            left: -37px;
+            color: #8233C5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" name="" id="" class="js-search" placeholder="Search..." />
+        <i class="fa fa-search"></i>
+    </div>
+</body>
+</html>

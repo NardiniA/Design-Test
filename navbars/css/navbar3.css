@@ -1,0 +1,55 @@
+/*
+    Navbar 1 styling also in use for this sample.
+*/
+.navbar-end {
+  display: flex;
+  align-items: center; }
+
+.search {
+  display: flex;
+  margin: 0px 10px; }
+
+.search-toggle {
+  outline: none;
+  order: 1;
+  font-size: 1.5rem;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  background: none; }
+  @media (min-width: 600px) {
+    .search-toggle {
+      padding-left: 10px; } }
+  @media (max-width: 599px) {
+    .search-toggle {
+      position: absolute;
+      right: 4rem;
+      top: 0.65rem; } }
+
+.search-form {
+  display: none;
+  opacity: 0; }
+  .search-form.active {
+    display: block;
+    opacity: 1; }
+  @media (max-width: 599px) {
+    .search-form {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%; }
+      .search-form input {
+        width: 100%; } }
+  .search-form input {
+    min-width: 200px;
+    appearance: none;
+    border: 0;
+    background-color: #fff;
+    border-radius: 0;
+    font-size: 16px;
+    padding: 0.5rem; }
+    @media (max-width: 599px) {
+      .search-form input {
+        border-bottom: 1px solid #979797; } }
+
+/*# sourceMappingURL=navbar3.css.map */

@@ -1,0 +1,16 @@
+.background {
+  $size: 80vmin;
+  width: $size;
+  height: calc(#{$size} / 14 * 9);
+  margin: 56px auto;
+  box-shadow: 0 10px 75px -16px #000;
+  img.lazy{
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 1s;
+    &.loaded {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+/* 
+** The Header Media Queries **
+** Tweak as per your needs **
+*/
+.brand {
+  font-weight: bold;
+  font-size: 27px; }
+
+.nav-top {
+  background-color: #ccc; }
+  .nav-top ul {
+    display: flex; }
+  .nav-top li:not(:last-child) {
+    margin-right: 1.5rem; }
+  .nav-top .nav-start {
+    display: none; }
+
+.nav-bottom {
+  position: relative;
+  background-color: #bbb; }
+  @media (max-width: 939px) {
+    .nav-bottom .nav-end {
+      order: -1; } }
+
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between; }
+
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem; }
+  @media (min-width: 940px) {
+    .navbar-wrapper {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem; } }
+  @media (min-width: 940px) {
+    .nav-top .navbar-wrapper {
+      padding-top: 1rem;
+      padding-bottom: 1rem; } }
+
+.nav {
+  margin-left: 1rem;
+  margin-right: 1rem; }
+
+@media (min-width: 940px) {
+  .nav-wrapper {
+    display: flex; } }
+@media (max-width: 939px) {
+  .nav-wrapper {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #ddd;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
+    .nav-wrapper.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0); } }
+
+.nav-item a {
+  display: block;
+  padding: 1.5rem 1.25rem; }
+.nav-item:hover {
+  background: #aaa; }
+.nav-item.active a {
+  border-left-color: #222; }
+  @media (min-width: 800px) {
+    .nav-item.active a {
+      border-bottom-color: #222; } }
+
+.nav-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 1rem; }
+  @media (min-width: 940px) {
+    .nav-toggle {
+      display: none; } }
+
+.search {
+  display: flex; }
+
+.search-toggle {
+  appearance: none;
+  order: 1;
+  font-size: 0;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  position: relative;
+  cursor: pointer;
+  background: #000; }
+  @media (max-width: 939px) {
+    .search-toggle {
+      position: absolute;
+      right: 5.5rem;
+      top: 0.65rem; } }
+  .search-toggle.active {
+    background: #222; }
+
+.search-form {
+  display: none; }
+  .search-form.active {
+    display: block; }
+  @media (max-width: 799px) {
+    .search-form {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      background-color: red; }
+      .search-form input {
+        width: 100%; } }
+  .search-form input {
+    min-width: 200px;
+    appearance: none;
+    border: 0;
+    background-color: #fff;
+    border-radius: 0;
+    font-size: 16px;
+    padding: 0.5rem; }
+    @media (max-width: 799px) {
+      .search-form input {
+        border-bottom: 1px solid #979797; } }
+
+/*# sourceMappingURL=navbar8.css.map */

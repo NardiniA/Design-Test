@@ -1,0 +1,101 @@
+$small: 600px;
+$light: #ccc;
+$light-hover: #aaa;
+$text-colour: #141414;
+$text-hover: #2b2b2b;
+
+.site-navbar {
+    width: 100%;
+    position: relative;
+    background: $light;
+}
+
+.site-wrapper {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  &.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (min-width: $small) {
+    &.top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.navbar-top {
+    background-color: $light;
+}
+
+.navbar-bottom {
+    background-color: #bbb;
+}
+
+.nav-wrapper {
+  @media (min-width: $small) {
+    display: flex;
+  }
+
+  @media (max-width: $small - 1) {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    background-color: $light;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.5s ease-out;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.nav-item {
+  @media (min-width: $small) {
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  @media (max-width: $small - 1px) {
+    a {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  a {
+    display: block;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &:hover {
+      background-color: $light-hover;
+  }
+}
+
+.nav-toggle {
+  display: none;
+
+  @media (max-width: $small - 1) {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+}

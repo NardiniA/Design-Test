@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate Email Input</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: lightgray;
+        }
+
+        .con-input {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        input {
+            padding: 11px 15px;
+            border-radius: 25px;
+            border: 0px;
+            box-shadow: 0px 8px 25px 0px rgba(0,0,0,0.05);
+            transition: all .25s ease;
+            min-width: 250px;
+            outline: none;
+        }
+
+        .check {
+            color: #3aba6f;
+            text-shadow: 0px 5px 10px rgba(50,186,111,.3);
+        }
+
+        .x {
+            color: rgb(240, 90, 92);
+            text-shadow: 0px 5px 10px rgba(240, 90, 92, 0.3);
+        }
+
+        input.valid ~ .icons .check  {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+        
+        input.invalid ~ .icons .x {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .valid {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .invalid {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        i {
+            position: absolute;
+            transition: all .25s ease;
+            font-size: 1.3rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.5);
+        }
+
+        .icons {
+            position: absolute;
+            right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            width: 20px;
+            height: 20px;
+            transition: all .25s ease;
+        }
+
+        input:focus {
+            transform: translate(0, -6px);
+            box-shadow: 0px 15px 25px 0px rgba(0,0,0,0.09);
+            padding-left: 20px;
+        }
+
+        input:focus ~ .icons {
+            transform: translate(0, -6px);
+        }
+    </style>
+</head>
+<body>
+    <div class="con-input">
+        <input oninput="handleInput(event);" type="email" placeholder="Email..." />
+        <div class="icons">
+            <i class="fas fa-check-cirlce check"></i>
+            <i class="fas fa-times-circle x"></i>
+        </div>
+    </div>
+
+    <i class="fas fa-check-cirlce check"></i>
+    <i class="fas fa-times-circle x"></i>
+
+    <script>
+        function handleInput(evt) {
+            const value = evt.target.value;
+            const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+            if (emailRegex.test(target.value.trim())) {
+                evt.target.classList.add('valid');
+                evt.target.classList.remove('invalid');
+            } else {
+                evt.target.classList.add('invalid');
+                evt.target.classList.remove('valid');
+            }
+
+            if (!value) {
+                evt.target.classList.remove('invalid');
+            }
+        }
+    </script>
+</body>
+</html>

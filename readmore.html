@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read More Button</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: black;
+        }
+
+        .container {
+            font-size: 2rem;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+
+        .container a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Lobster', cursive;
+        }
+
+        .container i {
+            margin-left: 10px;
+            font-size: 1.2rem;
+            transition: all .5s;
+        }
+
+        .container a:hover ~ i {
+            transform: translateX(10px);
+        }
+
+        .bg {
+            position: absolute;
+            bottom: 3px;
+            left: -4px;
+            border-radius: 50px;
+            width: 25%;
+            height: 25%;
+            z-index: -1;
+            background-color: #FFE53B;
+            background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+            transition: all .5s;
+        }
+
+        .container a:hover ~ .bg {
+            width: 85%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="#">Read More</a><i class="fas fa-arrow-right"></i>
+        <div class="bg"></div>
+    </div>
+</body>
+</html>
