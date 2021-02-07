@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cards {
+            position: relative;
+            list-style-type: none;
+            padding: 0;
+            max-width: 34em;
+            margin: 20% auto 0;
+        }
+    
+        .card {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background: #ccc;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 0 40px #000;
+            transform: translateY(0) rotate(4deg) translateX(25px) scale(1);
+            transform-origin: 0 0;
+            transition: transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s, background 0.4s linear;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    
+        .card :last-child {
+            margin-bottom: 0;
+        }
+    
+        .card--next {
+            z-index: 5;
+            transform: translateY(-25px) rotate(4deg) translateX(25px) scale(1);
+        }
+    
+        .card--out {
+            -webkit-animation: card-out 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+            animation: card-out 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+            transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+            z-index: 1;
+            background: #bbb;
+        }
+    
+        @-webkit-keyframes card-out {
+            0% {
+                z-index: 20;
+                transform: translateY(0px) rotate(-4deg);
+            }
+    
+            50% {
+                transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+            }
+    
+            80% {
+                z-index: 1;
+            }
+    
+            100% {
+                transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+            }
+        }
+    
+        @keyframes card-out {
+            0% {
+                z-index: 20;
+                transform: translateY(0px) rotate(-4deg);
+            }
+    
+            50% {
+                transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+            }
+    
+            80% {
+                z-index: 1;
+            }
+    
+            100% {
+                transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+            }
+        }
+    
+        .card--current {
+            cursor: auto;
+            -webkit-user-select: auto;
+            -moz-user-select: auto;
+            -ms-user-select: auto;
+            user-select: auto;
+            position: relative;
+            z-index: 10;
+            opacity: 1;
+            background: #EEE;
+            transform: rotate(-1deg) translateX(0%) scale(1);
+        }
+    
+        h1 {
+            margin: 0;
+        }
+    
+        html,
+        body {
+            height: 100%;
+        }
+    
+        body {
+            padding: 40px;
+            background: #222232;
+        }
+    </style>
+</head>
+<body>
+    <ul class="cards">
+    
+        <li class="card">
+            <h1>Comment Card 1 </h1>
+    
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum, lorem vel tincidunt imperdiet,
+                nibh elit laoreet felis, a bibendum nisl tortor non orci. Donec pretium fermentum felis, quis aliquet est
+                rutrum ut. Integer quis massa ut lacus viverra pharetra in eu lacus. Aliquam tempus odio adipiscing diam
+                pellentesque rhoncus. Curabitur a bibendum est. Mauris vehicula cursus risus id luctus. Curabitur accumsan
+                venenatis nibh, non egestas ipsum vulputate ac. Vivamus consectetur dolor sit amet enim aliquet eu
+                scelerisque ipsum hendrerit. Donec lobortis suscipit vestibulum. Nullam luctus pellentesque risus in
+                ullamcorper. Nam neque nunc, mattis vitae ornare ut, feugiat a erat. Ut tempus iaculis augue vel
+                pellentesque.</p>
+        </li>
+        <li class="card">
+            <h1>Comment Card 2 </h1>
+    
+            <p>Vestibulum nunc massa, gravida quis porta nec, feugiat id metus. Nunc ac arcu dolor, quis vestibulum leo.
+                Cras viverra mollis ipsum, non rhoncus lectus aliquam et. Morbi faucibus purus sit amet lacus aliquet
+                elementum. Donec sit amet posuere enim. Cras in eros id tortor fringilla ultricies. Mauris faucibus
+                ullamcorper velit, pulvinar varius odio eleifend eu. Quisque id odio metus. Morbi adipiscing ultricies
+                posuere. Pellentesque elementum porttitor eros in molestie. Maecenas ut leo quis nisi tempor tincidunt.</p>
+        </li>
+        <li class="card">
+            <h1>Comment Card 3</h1>
+    
+            <p>Donec nunc ligula, vulputate quis mollis eu, interdum quis libero. Donec nulla ante, facilisis sit amet
+                vulputate at, tincidunt a velit. Maecenas vestibulum, nulla sed tincidunt viverra, lorem turpis aliquam
+                urna, ut pretium orci purus consequat augue. Etiam a enim orci, vitae pulvinar odio. In elit urna, tincidunt
+                a pellentesque et, scelerisque at nibh. Sed nec est sapien. Aliquam ullamcorper eros eu quam ultrices vel
+                faucibus eros interdum. Etiam mattis eleifend sapien, eu iaculis massa feugiat sed. Aliquam erat volutpat.
+                Vivamus facilisis ultricies eros, a pretium purus mollis id. Sed dapibus elit ut neque rutrum dignissim.
+                Nulla eros nisl, venenatis quis rhoncus sit amet, molestie nec nisl. Pellentesque vel neque sapien, et
+                sagittis nulla.</p>
+    
+        </li>
+        <li class="card">
+            <h1>Comment Card 4</h1>
+    
+            <p>Donec nunc ligula, vulputate quis mollis eu, interdum quis libero. Donec nulla ante, facilisis sit amet
+                vulputate at, tincidunt a velit. Maecenas vestibulum, nulla sed tincidunt viverra, lorem turpis aliquam
+                urna, ut pretium orci purus consequat augue. Etiam a enim orci, vitae pulvinar odio. In elit urna, tincidunt
+                a pellentesque et, scelerisque at nibh. Sed nec est sapien. Aliquam ullamcorper eros eu quam ultrices vel
+                faucibus eros interdum. Etiam mattis eleifend sapien, eu iaculis massa feugiat sed. Aliquam erat volutpat.
+                Vivamus facilisis ultricies eros, a pretium purus mollis id. Sed dapibus elit ut neque rutrum dignissim.
+                Nulla eros nisl, venenatis quis rhoncus sit amet, molestie nec nisl. Pellentesque vel neque sapien, et
+                sagittis nulla.</p>
+    
+        </li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <script>
+        $.fn.commentCards = function () {
+
+            return this.each(function () {
+
+                var $this = $(this),
+                    $cards = $this.find('.card'),
+                    $current = $cards.filter('.card--current'),
+                    $next;
+
+                $cards.on('click', function () {
+                    if (!$current.is(this)) {
+                        $cards.removeClass('card--current card--out card--next');
+                        $current.addClass('card--out');
+                        $current = $(this).addClass('card--current');
+                        $next = $current.next();
+                        $next = $next.length ? $next : $cards.first();
+                        $next.addClass('card--next');
+                    }
+                });
+
+                if (!$current.length) {
+                    $current = $cards.last();
+                    $cards.first().trigger('click');
+                }
+
+                $this.addClass('cards--active');
+
+            })
+
+        };
+
+        $('.cards').commentCards();
+    </script>
+</body>
+</html>
