@@ -25,6 +25,7 @@
         perspective: 50vw;
         perspective-origin: 50% 50%;
         }
+
         .carousel__control {
         position: absolute;
         height: 160px;
@@ -137,6 +138,8 @@
         width: 200%;
         height: 100%;
         left: 0;
+        display: flex;
+        flex-direction: row;
         }
         .spinner--right .content {
         left: -100%;
@@ -149,6 +152,7 @@
         width: 50%;
         height: 100%;
         }
+
         .content__right {
         right: 0;
         left: auto;
@@ -338,6 +342,8 @@
     </div>
 
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
     <script type="text/babel">
         let activeIndex = 0
