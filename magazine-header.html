@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Flow</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            font-family: "Open Sans";
+        }
+    
+        .body-wrapper {
+            max-width: 1200px;
+            height: 100%;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 60px;
+        }
+    
+        .body-wrapper-magazine {
+            padding: 0;
+            max-width: 100%;
+        }
+    
+        .ease-out1 {
+            transition: 0.1s ease-out all;
+        }
+    
+        .ease-out2 {
+            transition: 0.2s ease-out all;
+        }
+    
+        .ease-out4 {
+            transition: 0.3s ease-out all;
+        }
+    
+        .ease-out6 {
+            transition: 0.6s ease-out all;
+        }
+    
+        .ease-out8 {
+            transition: 0.8s ease-out all;
+        }
+    
+        .ease-out10 {
+            transition: 1s ease-out all;
+        }
+    
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+    
+        header h1 {
+            display: inline-block;
+            font-size: 30px;
+            margin: 0;
+        }
+    
+        header i {
+            float: right;
+            font-size: 40px !important;
+        }
+    
+        header i:first-child {
+            float: left;
+        }
+    
+        .landing-page-wrap {
+            position: relative;
+            width: 100%;
+            top: 40%;
+            transform: translateY(-50%);
+        }
+    
+        .card {
+            width: 100%;
+            position: relative;
+        }
+    
+        .date,
+        .issue {
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            display: inline-block;
+            transform: rotate(-90deg);
+            font-size: 20px;
+            font-weight: 700;
+            font-family: "Source Serif Pro", serif;
+        }
+    
+        .issue {
+            font-size: 120px;
+            left: -240px;
+            top: 30%;
+            color: #e6e6e6;
+        }
+    
+        .logo {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 20px 60px;
+            height: 80px;
+            width: auto;
+            opacity: 0;
+        }
+    
+        .dot {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background: #fff;
+            margin: 20px;
+            border-radius: 50%;
+        }
+    
+        .dot1 {
+            top: 0;
+            left: 0;
+        }
+    
+        .dot2 {
+            top: 0;
+            right: 0;
+        }
+    
+        .dot3 {
+            bottom: 0;
+            left: 0;
+        }
+    
+        .dot4 {
+            bottom: 0;
+            right: 0;
+        }
+    
+        .card .cover {
+            position: relative;
+        }
+    
+        .card .cover .image1 {
+            position: relative;
+            height: 400px;
+            background: url(https://notbigmuzzy.github.io/codepen/newyork.jpg) center bottom no-repeat;
+            background-size: cover;
+        }
+    
+        .card .cover2 .image {
+            position: relative;
+            height: 360px;
+            background: url(https://notbigmuzzy.github.io/codepen/sanfranciso.jpg) right bottom no-repeat;
+            background-size: cover;
+            box-shadow: none;
+        }
+    
+        .card .cover3 .image {
+            position: relative;
+            height: 320px;
+            background: url(https://notbigmuzzy.github.io/codepen/tuscany.jpg) right bottom no-repeat;
+            background-size: cover;
+            box-shadow: none;
+        }
+    
+        .card .cover4 .image {
+            position: relative;
+            height: 280px;
+            background: url(https://notbigmuzzy.github.io/codepen/london.jpg) right bottom no-repeat;
+            background-size: cover;
+            box-shadow: none;
+        }
+    
+        .card .cover1 {
+            width: 70%;
+            left: 30%;
+        }
+    
+        .card .cover1 .image {
+            z-index: 9;
+        }
+    
+        .card .cover1 .number {
+            float: right;
+            margin-right: 60px;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: "Source Serif Pro", serif;
+            color: #999;
+            display: inline-block;
+            padding: 20px 0;
+        }
+    
+        .card .cover1 .number span {
+            font-size: 40px;
+        }
+    
+        .city {
+            font-size: 20px;
+            font-weight: 700;
+            font-family: "Source Serif Pro", serif;
+            color: #e6e6e6;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: inline-block;
+            transform: rotate(-90deg);
+            bottom: -87px;
+            right: -55px;
+        }
+    
+        .cover2 .city {
+            opacity: 0;
+        }
+    
+        .cover3 .city {
+            opacity: 0;
+            bottom: -57px;
+            right: -30px;
+        }
+    
+        .cover4 .city {
+            opacity: 0;
+            bottom: -57px;
+            right: -30px;
+        }
+    
+        .card .cover2,
+        .card .cover3,
+        .card .cover4 {
+            position: absolute;
+            width: 50%;
+            top: 20px;
+            left: 50%;
+            z-index: 8;
+        }
+    
+        .card .cover3 {
+            top: 40px;
+            z-index: 7;
+        }
+    
+        .card .cover4 {
+            top: 60px;
+            z-index: 6;
+        }
+    
+        .body-wrapper .fullscreen-wrap {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+    
+        .magazine-wrap {
+            display: none;
+            background: url("https://notbigmuzzy.github.io/codepen//newyork.jpg");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 100%;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+    
+        .magazine-wrap-show {
+            opacity: 1;
+            transform: scale(1);
+        }
+    
+        .magazine-wrap-reading {
+            margin-right: 50%;
+        }
+    
+        .magazine-wrap-reading .magazine-left {
+            width: 100%;
+        }
+    
+        .magazine-wrap-reading .mag-header i {
+            display: none;
+        }
+    
+        .mag-overlay {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    
+        .mag-overlay-no-overflow {
+            overflow: hidden;
+        }
+    
+        .magazine-body {
+            max-width: 1200px;
+            padding: 0 60px;
+            margin: 0 auto;
+            position: relative;
+        }
+    
+        .magazine-date {
+            position: fixed;
+            color: #fff;
+            top: 100px;
+            left: 0px;
+            height: calc(100vh - 100px);
+            width: 40px;
+            border-right: 2px solid #fff;
+        }
+    
+        .magazine-date span {
+            margin-top: 47vh;
+            margin-left: -80px;
+            width: 200px;
+            display: inline-block;
+            transform: rotate(-90deg);
+            font-size: 20px;
+            font-weight: 700;
+            font-family: "Source Serif Pro", serif;
+        }
+    
+        .mag-header {
+            width: 100%;
+            color: #fff;
+            padding: 60px 0;
+        }
+    
+        .mag-header h1 {
+            float: left;
+        }
+    
+        .mag-header span {
+            display: none;
+            line-height: 0px;
+            font-size: 30px;
+            font-weight: 400;
+            font-family: "Source Serif Pro", serif;
+            margin: 0 20px;
+            opacity: 0.9;
+        }
+    
+        .mag-header i {
+            font-size: 40px !important;
+            float: right;
+        }
+    
+        .magazine-left {
+            float: left;
+            width: 50%;
+            max-width: 540px;
+            color: #fff;
+            font-family: "Source Serif Pro", serif;
+        }
+    
+        .magazine-overview h1 {
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+    
+        .magazine-overview>span {
+            font-size: 30px;
+        }
+    
+        .magazine-overview>span:after {
+            content: "";
+            display: block;
+            background: red;
+            height: 4px;
+            width: 50px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+    
+        .magazine-overview h4 {
+            font-weight: 400;
+            font-family: "Source Serif Pro", serif;
+            margin-bottom: 20px;
+            opacity: 0.75;
+        }
+    
+        .magazine-authors {
+            list-style: none;
+        }
+    
+        .magazine-authors li {
+            margin-bottom: 20px;
+        }
+    
+        .magazine-authors li:first-child {
+            display: block !important;
+        }
+    
+        .magazine-authors li a {
+            display: block;
+        }
+    
+        .magazine-authors img {
+            width: 40px;
+            height: auto;
+            border-radius: 50%;
+            float: left;
+            margin-right: 10px;
+        }
+    
+        .magazine-authors span {
+            line-height: 40px;
+        }
+    
+        .magazine-right {
+            float: right;
+            width: 50%;
+            color: #fff;
+            font-family: "Source Serif Pro", serif;
+            text-align: center;
+            list-style: none;
+        }
+    
+        .article:after {
+            content: "";
+            display: block;
+            background: red;
+            height: 4px;
+            width: 50px;
+            margin: 0 auto;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+    
+        .article:last-child:after {
+            display: none;
+        }
+    
+        .article {
+            overflow: hidden;
+        }
+    
+        .article img {
+            width: 40px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+    
+        .article h2 {
+            width: 250px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            font-size: 26px;
+            line-height: 30px;
+        }
+    
+        .article p {
+            width: 350px;
+            margin: 0 auto;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    
+        .article a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            width: 400px;
+            margin: 0 auto;
+            border: 1px solid transparent;
+            padding-top: 5px;
+        }
+    
+        .magazine-triangle {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -200px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            text-align: center;
+            border-width: 0 0 100vh 200px;
+            border-color: transparent transparent #fff transparent;
+        }
+    
+        .magazine-triangle-active {
+            right: 0;
+        }
+    
+        .back {
+            display: none;
+            color: #999;
+            border: 1px solid #999;
+            padding: 20px;
+            position: absolute;
+            right: 2%;
+            bottom: 20px;
+            font-family: "Open Sans";
+            font-weight: 700;
+            text-decoration: none;
+            z-index: 999;
+            border-radius: 50%;
+            height: 87px;
+            line-height: 40px;
+        }
+    
+        .back:hover {
+            box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.5);
+        }
+    
+        .magazine-read {
+            display: none;
+            width: 50%;
+            height: 100%;
+            overflow: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #000;
+            padding: 0 60px;
+            text-align: center;
+            display: none;
+        }
+    
+        .magazine-read .mag-header {
+            color: #000;
+        }
+    
+        .read-body {
+            padding: 80px 0;
+        }
+    
+        .read-body img {
+            max-width: 100%;
+        }
+    
+        .read-user-pic {
+            width: 40px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    
+        .read-user-name {
+            display: block;
+            margin-bottom: 40px;
+        }
+    
+        .read-head-fix {
+            background: #fff;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            text-align: left;
+            padding: 10px 60px;
+            height: 60px;
+        }
+    
+        .read-head-fix .read-user-pic {
+            float: left;
+            margin-right: 20px;
+        }
+    
+        .read-head-fix .read-user-name {
+            line-height: 40px;
+        }
+    
+        .read-head-fix~.read-title {
+            margin-top: 100px;
+        }
+    
+        .read-title {
+            font-size: 50px;
+            margin-bottom: 40px;
+            font-family: "Source Serif Pro", serif;
+        }
+    
+        .read-share {
+            display: block;
+            margin-bottom: 40px;
+        }
+    
+        .read-share i {
+            margin-right: 5px;
+            color: red;
+        }
+    
+        .read-pic {
+            margin-bottom: 20px;
+        }
+    
+        .read-body p {
+            text-align: left;
+            font-size: 16px;
+            line-height: 20px;
+            font-family: "Source Serif Pro", serif;
+            margin-bottom: 20px;
+        }
+    
+        .read-body p.teaser-text {
+            font-size: 16px;
+            line-height: 28px;
+            margin-bottom: 40px;
+        }
+    
+        .read-body p.quote {
+            padding-left: 20px;
+            border-left: 3px solid #999;
+            font-style: italic;
+            font-size: 18px;
+            line-height: 22px;
+            color: #999;
+        }
+    
+        .bottom-bar {
+            position: fixed;
+            bottom: -60px;
+            right: 0;
+            width: 50%;
+            height: 60px;
+            background: #fff;
+        }
+    
+        .bottom-bar-pull {
+            bottom: 0px;
+        }
+    
+        .bottom-pagination {
+            line-height: 60px;
+            font-size: 40px;
+            font-family: "Source Serif Pro", serif;
+        }
+    
+        .bottom-pagination span {
+            font-size: 30px;
+        }
+    
+        .bottom-pagination:before {
+            content: "<";
+            display: inline-block;
+            color: #e6e6e6;
+            margin-right: 20px;
+        }
+    
+        .bottom-pagination:after {
+            content: ">";
+            display: inline-block;
+            color: #e6e6e6;
+            margin-left: 20px;
+        }
+    
+        .social-icons {
+            list-style: none;
+            width: 100%;
+            text-align: center;
+        }
+    
+        .social-icons li {
+            display: inline-block;
+            margin: 10px 40px;
+        }
+    
+        .social-icons li a i {
+            font-size: 40px;
+            color: #e6e6e6;
+        }
+    
+        .magazine-right li a:hover {
+            border: 1px solid #fff;
+            transform: scale(0.96);
+            box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.5);
+        }
+    
+        .magazine-right li a:hover img {
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    
+        .magazine-right li a:hover h2 {
+            text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    
+        .magazine-right li a:hover p {
+            text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    
+        .social-icons:hover i {
+            color: #ccc;
+        }
+    
+        .social-icons i:hover {
+            color: #000;
+        }
+    
+        .landing-page-wrap:hover .cover1 {
+            left: 10%;
+        }
+    
+        .landing-page-wrap:hover .date {
+            left: -80px;
+        }
+    
+        .landing-page-wrap:hover .issue {
+            left: -200px;
+        }
+    
+        .landing-page-wrap:hover .logo {
+            opacity: 1;
+        }
+    
+        .landing-page-wrap:hover .dot {
+            opacity: 0;
+        }
+    
+        .landing-page-wrap:hover .number {
+            color: #e6e6e6;
+        }
+    
+        .landing-page-wrap:hover .image1 {
+            cursor: pointer;
+            box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.3);
+        }
+    
+        .landing-page-wrap:hover .cover2 {
+            left: 62%;
+            box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.2);
+        }
+    
+        .landing-page-wrap .cover2:hover {
+            left: 65%;
+        }
+    
+        .landing-page-wrap:hover .cover3 {
+            left: 73%;
+            box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.15);
+        }
+    
+        .landing-page-wrap .cover3:hover {
+            left: 76%;
+        }
+    
+        .landing-page-wrap:hover .cover4 {
+            left: 83%;
+            box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+        }
+    
+        .landing-page-wrap .cover4:hover {
+            left: 86%;
+        }
+    
+        .landing-page-wrap:hover .city {
+            opacity: 1;
+        }
+    
+        .landing-page-wrap .image1:hover~.city {
+            color: #999;
+        }
+    
+        .landing-page-wrap .cover2:hover .city {
+            color: #999;
+        }
+    
+        .landing-page-wrap .cover3:hover .city {
+            color: #999;
+        }
+    
+        .landing-page-wrap .cover4:hover .city {
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="body-wrapper">
+        <header><i class="fa fa-th-large"> </i>
+            <h1>//V / Mag</h1><i class="fa fa-search"></i>
+        </header>
+        <div class="landing-page-wrap">
+            <div class="card"><span class="date ease-out4">2016 Jan</span>
+                <div class="cover cover1 ease-out4"><span class="issue ease-out4">Issue 2</span>
+                    <div class="image image1 ease-out4"><img class="logo ease-out4"
+                            src="https://notbigmuzzy.github.io/codepen/logo.png">
+                        <div class="dot dot1 ease-out4"></div>
+                        <div class="dot dot2 ease-out4"></div>
+                        <div class="dot dot3 ease-out4"></div>
+                        <div class="dot dot4 ease-out4"></div>
+                    </div><span class="number ease-out4"><span>1</span>/4</span><span class="city ease-out4">New York
+                        City</span>
+                    <div class="cover cover2 ease-out4">
+                        <div class="image"></div><span class="city ease-out4">San Francisco</span>
+                    </div>
+                    <div class="cover cover3 ease-out4">
+                        <div class="image"></div><span class="city ease-out4">Tuscany</span>
+                    </div>
+                    <div class="cover cover4 ease-out4">
+                        <div class="image"></div><span class="city ease-out4">London</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="magazine-wrap ease-out4"><a class="back ease-out4" href="#">BACK</a>
+            <div class="mag-overlay">
+                <div class="magazine-body">
+                    <div class="magazine-date"> <span>2016 Jan * Issue 2</span></div>
+                    <div class="mag-header">
+                        <h1>//V / Mag<span>Issue 2</span></h1><i class="fa fa-search"></i>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div class="magazine-left">
+                        <div class="magazine-overview">
+                            <h1>New York City</h1><span>The City that <br>never sleeps</span>
+                            <h4> <i>Authors</i></h4>
+                            <ul class="magazine-authors">
+                                <li> <a><img src="https://notbigmuzzy.github.io/codepen/user.jpg"><span>Seth
+                                            Gibbon</span></a></li>
+                                <li> <a><img src="https://notbigmuzzy.github.io/codepen/user.jpg"><span>Jenn
+                                            Clarkson</span></a></li>
+                                <li> <a><img src="https://notbigmuzzy.github.io/codepen/user.jpg"><span>Math
+                                            Kevin</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="magazine-details"></div>
+                        <div class="magazine-triangle ease-out4"></div>
+                    </div>
+                    <ul class="magazine-right">
+                        <li class="article"><a class="ease-out4" href="#"><img class="ease-out4"
+                                    src="https://notbigmuzzy.github.io/codepen/user.jpg">
+                                <h2 class="ease-out4">New York's Vibrant Street Art</h2>
+                                <p class="ease-out4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore.</p>
+                            </a></li>
+                        <li class="article"><a class="ease-out4" href="#"><img class="ease-out4"
+                                    src="https://notbigmuzzy.github.io/codepen/user.jpg">
+                                <h2 class="ease-out4">New York's Vibrant Street Art</h2>
+                                <p class="ease-out4">Magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                            </a></li>
+                        <li class="article"><a class="ease-out4" href="#"><img class="ease-out4"
+                                    src="https://notbigmuzzy.github.io/codepen/user.jpg">
+                                <h2 class="ease-out4">New York's Vibrant Street Art</h2>
+                                <p class="ease-out4">Magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                            </a></li>
+                    </ul>
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+        </div>
+        <div class="magazine-read">
+            <div class="read-body">
+                <div class="read-head"><img class="read-user-pic"
+                        src="https://notbigmuzzy.github.io/codepen/user.jpg"><span class="read-user-name">Seth
+                        Gibbon</span></div>
+                <h2 class="read-title">New York's Vibrant Street Art</h2><span class="read-share"> <i
+                        class="fa fa-heart"></i><b>27 likes </b>// 6 min read</span>
+                <p class="teaser-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    oident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="read-pic"><img src="https://notbigmuzzy.github.io/codepen/streetart.jpg"></div>
+                <p>Ex eros debet nostrud eos, ex reque bonorum voluptaria mei, eum ut tollit imperdiet referrentur. Ex
+                    ius nisl probatus voluptatibus. Menandri definiebas ius cu. Quo ad solum ullum, est no agam
+                    convenire dissentiet. Graece viderer iracundia ut sed, cu omnes mediocrem elaboraret pri. Ad viderer
+                    ocurreret intellegam ius, at vix voluptatum dissentias. Veniam similique signiferumque ex pri, eu
+                    alia iisque eum.</p>
+                <p>Sumo menandri senserit ea eam. Eam labitur inermis in, vim ex nobis malorum fabulas, his te iudico
+                    tacimates. Indoctum persecuti vis ex, quas regione eripuit sed ex. Usu ne indoctum definiebas
+                    necessitatibus. Sed summo iriure euripidis et, dicam quidam vel in. Habeo pericula mea at.</p>
+                <p class="quote">Vis choro tincidunt inciderint at. Doming fuisset constituam nec ne, usu exerci
+                    vivendum ea, probo legere abhorreant vix ei. Viris regione dolorum pe.</p>
+                <p>Ne eam ludus laudem, scripta deserunt et usu. Soleat insolens no pro. No unum vulputate pro, dicant
+                    antiopam volutpat quo ea, vis choro tincidunt inciderint at. Consequat suscipiantur vituperatoribus
+                    id ius, sit in mutat harum dicam.</p>
+                <p>Id probatus qualisque pro. Et laudem molestie intellegebat eos, sonet placerat petentium ius cu, id
+                    quo dissentias referrentur. Mel te tation nemore consequuntur. Nam et lobortis maiestatis
+                    constituam, his eleifend reprehendunt at, id nam animal commodo. Doming fuisset constituam nec ne,
+                    usu exerci vivendum ea, probo legere abhorreant vix ei. Viris regione dolorum per no.</p>
+            </div>
+            <div class="bottom-bar ease-out4">
+                <ul class="social-icons">
+                    <li><a href="#"><i class="ease-out4 fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="ease-out4 fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="ease-out4 fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="ease-out4 fa fa-rss"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+
+    <script id="rendered-js">
+        $(document).ready(function () {
+
+            $(".image1").click(function () {
+                $(".body-wrapper").addClass("body-wrapper-magazine");
+                $(".landing-page-wrap").hide();
+                $("header").hide();
+                $(".magazine-wrap").show();
+                window.setTimeout(function () {
+                    $(".magazine-wrap").addClass("magazine-wrap-show");
+                }, 10);
+            });
+
+            //MAGAZINE READ TOGGLE
+            $(".article a").click(function () {
+                $(".magazine-wrap").addClass("magazine-wrap-reading");
+                $(".magazine-right").hide(0);
+                $(".mag-header span").fadeIn(300);
+                $(".magazine-read").delay(300).fadeIn(400);
+                $(".back").delay(300).fadeIn(400);
+                $(".magazine-triangle").show();
+                $(".magazine-triangle").addClass("magazine-triangle-active");
+                $(".magazine-authors li").hide();
+                $(".mag-overlay").addClass('mag-overlay-no-overflow');
+            });
+
+            $(".back").click(function () {
+                $(".magazine-wrap").removeClass("magazine-wrap-reading");
+                $(".magazine-triangle").removeClass("magazine-triangle-active");
+                $(".mag-header span").fadeOut(300);
+                $(".magazine-read").hide();
+                $(".magazine-right").fadeIn(300);
+                $(".back").hide();
+                $(".magazine-triangle").hide();
+                $(".magazine-authors li").show();
+                $(".mag-overlay").removeClass('mag-overlay-no-overflow');
+            });
+
+            // BOTTOM BAR ON SCROLL LOGIC
+            $(".magazine-read").scroll(function () {
+                var posTop = $('.magazine-read').scrollTop();
+                if (posTop > 300) {
+                    $(".bottom-bar").addClass('bottom-bar-pull');
+                } else {
+                    $(".bottom-bar").removeClass('bottom-bar-pull');
+                }
+
+                if (posTop > 60) {
+                    $(".read-head").addClass("read-head-fix");
+                } else {
+                    $(".read-head").removeClass("read-head-fix");
+                }
+
+            });
+        });
+    </script>
+</body>
+</html>

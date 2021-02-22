@@ -1,0 +1,47 @@
+html,
+body {
+  height: 100%; }
+
+.navbar-default {
+  background-color: black;
+  border-bottom: none;
+  transition-duration: .4s;
+  transition-function: ease-in-out;
+  margin-bottom: 0; }
+  .navbar-default .navbar-brand {
+    color: white; }
+    .navbar-default .navbar-brand:hover {
+      color: white; }
+  .navbar-default .navbar-toggle {
+    border: none; }
+    .navbar-default .navbar-toggle .icon-bar {
+      background-color: white; }
+  .navbar-default .navbar-nav > li > a {
+    cursor: pointer;
+    color: white;
+    height: 60px;
+    line-height: 60px;
+    padding-top: 0;
+    padding-bottom: 0; }
+
+.page-landing {
+  height: 100%;
+  background-color: #e74c3c;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.section {
+  height: 100%; }
+
+.sec-bg {
+  background: transparent center center/cover no-repeat; }
+
+.sec-bg-1 {
+  background-color: #16a085; }
+
+.sec-bg-2 {
+  background-color: #2980b9; }
+
+/*# sourceMappingURL=header-scroll.css.map */

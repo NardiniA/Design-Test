@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/parallax1.css" />
+</head>
+<body>
+    <!--
+     Author: Hendry Sadrak
+    -->
+    
+    <div class="container">
+        <section>
+            <div class="image" data-type="background" data-speed="2"></div>
+            <div class="stuff" data-type="content">
+                <h1>Simple Parallax scroll</h1>
+                <h2>Reoptimized</h2>
+            </div>
+        </section>
+    
+        <section>
+            <div class="image" data-type="background" data-speed="7"></div>
+            <div class="stuff" data-type="content">
+                <h2>Made to be fast</h2>
+                <p>Lorem Deserunt maiores minima ipsa. Adipisci, corrupti, voluptatibus! Similique quidem necessitatibus
+                    provident.</p>
+            </div>
+        </section>
+    
+        <section>
+            <div class="image" data-type="background" data-speed="6"></div>
+            <div class="stuff" data-type="content">Accusamus at ex amet perferendis atque fuga, ad earum, ipsa perspiciatis,
+                dolore neque, accusantium consectetur quis voluptatibus culpa architecto animi natus facere expedita sed.
+                Voluptatem odit explicabo amet neque aut.</div>
+        </section>
+    
+        <section>
+            <div class="image" data-type="background" data-speed="5"></div>
+            <div class="stuff" data-type="content">Accusamus at ex amet perferendis atque fuga, ad earum, ipsa perspiciatis,
+                dolore neque, accusantium consectetur quis voluptatibus culpa architecto animi natus facere expedita sed.
+                Voluptatem odit explicabo amet neque aut.</div>
+        </section>
+    
+        <section>
+            <div class="image" data-type="background" data-speed="3"></div>
+            <div class="stuff" data-type="content">Accusamus at ex amet perferendis atque fuga, ad earum, ipsa perspiciatis,
+                dolore neque, accusantium consectetur quis voluptatibus culpa architecto animi natus facere expedita sed.
+                Voluptatem odit explicabo amet neque aut.</div>
+        </section>
+    
+        <section>
+            <div class="image" data-type="background" data-speed="3"></div>
+            <div class="stuff" data-type="content">Accusamus at ex amet perferendis atque fuga, ad earum, ipsa perspiciatis,
+                dolore neque, accusantium consectetur quis voluptatibus culpa architecto animi natus facere expedita sed.
+                Voluptatem odit explicabo amet neque aut.</div>
+        </section>
+    </div>
+    
+    <div class="at-twitter"><a href="//twitter.com/hendrysadrak" target="_blank">@hendrysadrak</a></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script>
+        // makes the parallax elements
+            function parallaxIt() {
+            // create letiables
+            let $fwindow = $(window);
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            let $contents = [];
+            let $backgrounds = [];
+
+            // for each of content parallax element
+            $('[data-type="content"]').each(function (index, e) {
+                let $contentObj = $(this);
+
+                $contentObj.__speed = ($contentObj.data('speed') || 1);
+                $contentObj.__fgOffset = $contentObj.offset().top;
+                $contents.push($contentObj);
+            });
+
+            // for each of background parallax element
+            $('[data-type="background"]').each(function () {
+                let $backgroundObj = $(this);
+
+                $backgroundObj.__speed = ($backgroundObj.data('speed') || 1);
+                $backgroundObj.__fgOffset = $backgroundObj.offset().top;
+                $backgrounds.push($backgroundObj);
+            });
+
+            // update positions
+            $fwindow.on('scroll resize', function () {
+                scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                $contents.forEach(function ($contentObj) {
+                    let yPos = $contentObj.__fgOffset - scrollTop / $contentObj.__speed;
+
+                    $contentObj.css('top', yPos);
+                })
+
+                $backgrounds.forEach(function ($backgroundObj) {
+                    let yPos = -((scrollTop - $backgroundObj.__fgOffset) / $backgroundObj.__speed);
+
+                    $backgroundObj.css({
+                        backgroundPosition: '50% ' + yPos + 'px'
+                    });
+                });
+            });
+
+            // triggers winodw scroll for refresh
+            $fwindow.trigger('scroll');
+        };
+
+        parallaxIt();
+    </script>
+</body>
+</html>

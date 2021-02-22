@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic'
+        rel='stylesheet' type='text/css'>
+    <style>
+        html,
+        body {
+            margin: 0 0;
+            padding: 0 0;
+            text-align: center;
+            font-size: 0;
+            background-color: #53354a;
+        }
+
+        body {
+            position: relative;
+        }
+
+        body svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .title-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            widows: 100%;
+            z-index: 100;
+        }
+
+        h1 {
+            font-size: 70px;
+            display: block;
+            color: #eeeeee;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1000px;
+            margin-left: -500px;
+            height: 100px;
+            margin-top: -50px;
+            text-align: center;
+            z-index: 100;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 100;
+            text-transform: uppercase;
+
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        h1.hidden {
+            top: 52%;
+            opacity: 0;
+
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        h2 {
+            font-size: 25px;
+            color: #eeeeee;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 100;
+            font-style: italic;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1000px;
+            margin-left: -500px;
+            height: 100px;
+            margin-top: 25px;
+            text-align: center;
+            z-index: 100;
+
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        h2.hidden {
+            top: 52%;
+            opacity: 0;
+
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        h1>span {
+            font-weight: 300;
+            color: #a23047;
+        }
+
+        svg path {
+            opacity: 0;
+            -webkit-transition: opacity 0.6s ease;
+            -moz-transition: opacity 0.6s ease;
+            -ms-transition: opacity 0.6s ease;
+            -o-transition: opacity 0.6s ease;
+            transition: opacity 0.6s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title-wrapper">
+        <h1 class="hidden">sebastien<span>rocks</span></h1>
+        <h2 class="hidden">a front end developper</h2>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.3.1/trianglify.min.js"></script>
+    <script>
+        // set up the base pattern
+        var pattern = Trianglify({
+            height: window.innerHeight,
+            width: window.innerWidth,
+            x_colors: ['#2b2e4a', '#252840', '#53354a', '#252840', '#2b2e4a'],
+            y_colors: ['#2b2e4a', '#252840', '#53354a', '#252840', '#2b2e4a'],
+            variance: 10,
+            seed: '666',
+            cell_size: 160
+        });
+
+        // // canvas
+        // document.body.appendChild(pattern.canvas())
+
+        // svg
+        document.body.appendChild(pattern.svg())
+
+
+
+        // // png
+        // var png = document.createElement('img')
+        // png.src = pattern.png()
+        // document.body.appendChild(png)
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $('.title-wrapper').css('width', window.innerWidth);
+        $('.title-wrapper').css('height', window.innerHeight);
+
+
+        var time = 10,
+            $paths = $('body').find('svg').find('path'),
+            pathCollection = $paths.get(),
+            count = $paths.length;
+
+        console.log(count);
+
+        pathCollection.sort(function () {
+            return Math.random() * 10 > 5 ? 1 : -1;
+        });
+
+        function showText() {
+            var title = $('h1'),
+                subtitle = $('h2');
+
+            title.removeClass('hidden');
+            setTimeout(function () {
+                subtitle.removeClass('hidden');
+            }, 500);
+        }
+
+        setTimeout(function () {
+            $.each(pathCollection, function (i, el) {
+                var $path = $(this);
+                setTimeout(function () {
+
+                    $path.css('opacity', '1');
+                }, time)
+                time += 10;
+
+                if (i + 1 === count) {
+                    setTimeout(function () {
+                        showText();
+                    }, 2000);
+                }
+
+            });
+        }, 2000);
+
+    </script>
+</body>
+</html>
