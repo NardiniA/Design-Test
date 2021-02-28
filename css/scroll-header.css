@@ -208,4 +208,30 @@ html {
   .custom-properties-ftw .head-small {
     margin-bottom: 0; }
 
+.btn {
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 1px solid #fff;
+  transition: 0.2s all;
+  display: block;
+  width: 250px;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #00171f;
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=scroll-header.css.map */
