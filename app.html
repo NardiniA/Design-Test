@@ -11,12 +11,59 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
     <link rel="stylesheet" href="css/testimonials-slider-3.css" />
+    <link rel="stylesheet" href="css/carousel-test.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab:300" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.min.css" />
 
     <!--====== Line Icons CSS ======-->
     <link rel="stylesheet" href="../test/smash-template-opl/smash-template-opl/assets/css/LineIcons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
+    <div class="hero-slider" data-carousel>
+        <div class="carousel-cell" style="background-image:url(img/bright.jpg);">
+            <div class="overlay"></div>
+            <div class="inner">
+                <h3 class="subtitle">Hello</h3>
+                <h2 class="title">Flickity Parallax</h2>
+                <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+            </div>
+        </div>
+        <div class="carousel-cell" style="background-image:url(img/work-tablet.jpg);">
+            <div class="overlay"></div>
+            <div class="inner">
+                <h3 class="subtitle">Design</h3>
+                <h2 class="title">Flickity Parallax</h2>
+                <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+            </div>
+        </div>
+        <div class="carousel-cell"
+            style="background-image:url(https://images.unsplash.com/photo-1505238680356-667803448bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+            <div class="overlay"></div>
+            <div class="inner">
+                <h3 class="subtitle">Develop</h3>
+                <h2 class="title">Flickity Parallax</h2>
+                <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+            </div>
+        </div>
+        <div class="carousel-cell" style="background-image:url(img/abstract2.jpg);">
+            <div class="overlay"></div>
+            <div class="inner">
+                <h3 class="subtitle">Analyse</h3>
+                <h2 class="title">Flickity Parallax</h2>
+                <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+            </div>
+        </div>
+        <div class="carousel-cell" style="background-image:url(img/model.jpg);">
+            <div class="overlay"></div>
+            <div class="inner">
+                <h3 class="subtitle">Improve</h3>
+                <h2 class="title">Flickity Parallax</h2>
+                <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+            </div>
+        </div>
+    </div>
+
     <div class="page-section">
         <div class="container">
             <div class="row justify-content-center" style="margin-bottom: 60px;">
@@ -478,6 +525,36 @@
     <script src="../test/smash-template-opl/smash-template-opl/assets/js/main.js"></script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.pkgd.min.js"></script>
+    <script>
+        var options = {
+            accessibility: true,
+            prevNextButtons: true,
+            pageDots: true,
+            setGallerySize: false,
+            arrowShape: {
+                x0: 10,
+                x1: 60,
+                y1: 50,
+                x2: 60,
+                y2: 45,
+                x3: 15
+            }
+        };
+
+        var carousel = document.querySelector('[data-carousel]');
+        var slides = document.getElementsByClassName('carousel-cell');
+        var flkty = new Flickity(carousel, options);
+
+        flkty.on('scroll', function () {
+            flkty.slides.forEach(function (slide, i) {
+                var image = slides[i];
+                var x = (slide.target + flkty.x) * -1 / slides.length;
+                image.style.backgroundPosition = x + 'px';
+            });
+        });
+    </script>
     
     <script>
         AOS.init();
