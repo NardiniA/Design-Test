@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box; }
+
+.hero {
+  margin-top: 40px;
+  height: calc(100vh - 40px);
+  background-color: #333;
+  position: relative;
+  text-align: center;
+  background-size: cover;
+  filter: grayscale(100%); }
+  .hero h1 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff; }
+
+.one-is-active .section-one {
+  width: 70%; }
+.one-is-active .section-two {
+  width: 30%; }
+
+.two-is-active .section-one {
+  width: 30%; }
+.two-is-active .section-two {
+  width: 70%; }
+
+.menu {
+  height: 40px;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  background: darkseagreen;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  color: #fff; }
+
+.container {
+  width: 100%;
+  height: calc(90vh - 40px);
+  overflow: hidden; }
+
+.section-one {
+  width: 50%;
+  float: left;
+  height: 100%;
+  background: #666;
+  position: relative;
+  transform: skew(-9deg);
+  z-index: 1;
+  transition: width 0.5s; }
+  .section-one:before {
+    content: "";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background: #666;
+    top: 0;
+    left: 0;
+    transform: skew(9deg);
+    z-index: -1; }
+
+.section-two {
+  width: 50%;
+  float: left;
+  height: 100%;
+  background: #999;
+  transform: skew(-9deg);
+  position: relative;
+  z-index: 1;
+  transition: width 0.5s; }
+  .section-two:after {
+    content: "";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background: #999;
+    top: 0;
+    right: 0;
+    transform: skew(9deg);
+    z-index: -1; }
+
+.content {
+  transform: skew(9deg);
+  padding: 20px;
+  color: #fff;
+  text-align: center; }
+
+.cta {
+  height: 10vh;
+  background: #ddd;
+  text-align: center;
+  padding: 20px; }
+
+.scroll {
+  position: absolute;
+  bottom: 20px;
+  margin: 0 auto;
+  display: inline-block;
+  left: auto;
+  right: auto;
+  transform: rotate(-180deg);
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff; }
+
+/*# sourceMappingURL=split-diagonal.css.map */

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            background: #121212;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav.navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fafafa;
+            padding: 0px 25px;
+        }
+
+        .logo {
+            font-weight: 700;
+            color: #000;
+        }
+
+        .links {
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .link-item {
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .link-item a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .button-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            border-radius: 0;
+            background: #fff;
+            border: 3px solid red;
+            color: #000;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            color: #fff;
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">Navbar</h1>
+        <div class="collapse">
+            <ul class="links">
+                <li class="link-item">
+                    <a href="#">Link</a>
+                </li>
+                <li class="link-item">
+                    <a href="#">Link</a>
+                </li>
+                <li class="link-item">
+                    <a href="#">Link</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="button-row">
+            <a href="#" class="btn">Get Started</a>
+        </div>
+    </nav>
+</body>
+</html>

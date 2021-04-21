@@ -1,0 +1,59 @@
+@import "https://fonts.googleapis.com/css?family=Lato:300";
+.hero {
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  color: white;
+  text-align: center;
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+  border-bottom: solid 5px white; }
+  .hero:before, .hero:after {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 0;
+    right: 0;
+    max-width: 600px;
+    margin: 0 auto; }
+  .hero:before {
+    content: "Good news, everyone!";
+    font-size: 46px;
+    line-height: 60px;
+    margin-top: -40px; }
+  .hero:after {
+    content: "I've taught the toaster to feel love!";
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 20px; }
+  .hero--intro:before {
+    content: "Gradient backgrounds"; }
+  .hero--intro:after {
+    content: "A curated collection"; }
+  .hero--intro {
+    background: linear-gradient(135deg, #4567b2 20%, #8ab9ff 80%); }
+  .hero--1 {
+    background: linear-gradient(135deg, #76ad39 20%, #cdff8a 80%); }
+  .hero--2 {
+    background: linear-gradient(135deg, #b24592 20%, #f15f79 80%); }
+  .hero--3 {
+    background: linear-gradient(135deg, #432b58 20%, #734b6f 80%); }
+  .hero--4 {
+    background: linear-gradient(135deg, #904e95 20%, #e96450 80%); }
+  .hero--5 {
+    background: linear-gradient(135deg, #ff5f6d 20%, #ffc371 80%); }
+  .hero--6 {
+    background: linear-gradient(135deg, #ff9068 20%, #ff4b1f 80%); }
+  .hero--7 {
+    background: linear-gradient(135deg, #ffa000 20%, #ff5000 80%); }
+  .hero--8 {
+    background: linear-gradient(135deg, #b993d8 20%, #8ca6dc 80%); }
+  .hero--9 {
+    background: linear-gradient(135deg, #3ca55f 20%, #b5ac59 80%); }
+  .hero--10 {
+    background: linear-gradient(135deg, #2a99ef 20%, #52d9e5 80%); }
+  .hero--11 {
+    background: linear-gradient(135deg, #225e9e 20%, #712c69 80%); }
+
+/*# sourceMappingURL=mutli-gradients.css.map */

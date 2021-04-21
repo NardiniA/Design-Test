@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://www.seedlogix.com/hubs/themes/clients/powerleads/enterprise/assets/css/normalize.css" />
+    <link rel="stylesheet"
+        href="https://www.seedlogix.com/hubs/themes/clients/powerleads/enterprise/assets/css/components.css" />
+    <link rel="stylesheet"
+        href="https://www.seedlogix.com/hubs/themes/clients/powerleads/enterprise/assets/css/style.css" />
+    <link rel="stylesheet" href="https://www.seedlogix.com/hubs/themes/clients/psg/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://www.seedlogix.com/hubs/themes/clients/psg/pixons/style.css" />
+    <style>
+        /*  Hero + Carousel
+        __________________________________________________*/
+
+        .container-default * {
+            display: block;
+        }
+
+        .brand-logo {
+            margin-top: 8px;
+        }
+
+        .home-nav .brand-logo img {
+            filter: grayscale(1) contrast(0) brightness(2);
+            max-height: 70px;
+            width: auto;
+        }
+
+        .header-contact-copy a {
+            font-size: inherit;
+        }
+
+        .header-contact-copy > a {
+            color: #fff;
+        }
+
+        .header-contact-copy > a:hover {
+            color: #fff;
+            opacity: 0.8;
+        }
+
+        .top-nav-content-block {
+            width: auto;
+        }
+
+        .header-contact-copy > a > img {
+            margin-right: 10px;
+        }
+
+        .top-header {
+            height: auto;
+        }
+
+        .hero-section.bussines.new {
+            height: auto;
+            padding: 0;
+        }
+
+        #full-hero-slider.slider.vr1.new {
+            position: relative;
+            height: auto;
+        }
+
+        #full-hero-slider .w-slide::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        #full-hero-slider .paragraph.big.white,
+        #full-hero-slider .hero-heading.in,
+        #full-hero-slider .button.left {
+            display: block;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+
+        #full-hero-slider .hero-heading.in {
+            font-family: "Playfair Display", serif;
+            font-size: 52px;
+            line-height: 1.2em;
+        }
+
+        #full-hero-slider .button.left {
+            float: none;
+            display: inline-block;
+            width: auto;
+        }
+
+        #full-hero-slider .w-slide {
+            height: 80vh;
+            padding: 0;
+            min-height: 700px;
+        }
+
+        #full-hero-slider .w-slider-arrow-left,
+        #full-hero-slider .w-slider-arrow-right {
+            width: 40px;
+        }
+
+        #full-hero-slider .arrow-icon,
+        #full-hero-slider .arrow-icon.right-side,
+        #full-hero-slider .arrow-icon.left-side {
+            width: auto;
+            padding: 26px 12px 24px 12px;
+            border-radius: 0;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        #full-hero-slider .arrow-icon:hover,
+        #full-hero-slider .arrow-icon.right-side:hover,
+        #full-hero-slider .arrow-icon.left-side:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        #full-hero-slider .container-full.slider {
+            padding: 0 60px;
+            width: 100%;
+            max-width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 10%;
+        }
+
+        #full-hero-slider .container-default {
+            text-align: left;
+            /*max-width:700px;*/
+        }
+
+        #full-hero-slider .slide-image {
+            text-align: center;
+        }
+
+        #full-hero-slider .slide-image img {
+            display: inline-block;
+            max-height: 250px;
+        }
+
+        @media screen and (max-width: 990px) {
+            #full-hero-slider .slide-image {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            #full-hero-slider .w-slide {
+                min-height: 72vh;
+            }
+
+            #full-hero-slider .paragraph.big.white {
+                font-size: 14px;
+                line-height: 1.6em;
+            }
+
+            .top-header {
+                display: none;
+            }
+
+            #full-hero-slider .hero-heading.in {
+                font-size: 32px;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            #full-hero-slider .hero-heading.in {
+                font-size: 25px;
+            }
+
+            #full-hero-slider .paragraph.big.white {
+                font-size: 12px;
+            }
+        }
+
+        @media only screen and (max-width: 350px) {
+            #full-hero-slider .paragraph.big.white {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Carousel -->
+    <div data-ix="slide-in-scroll-navigation-on-scroll" id="top" class="bussines hero-section new topNavSection home-nav">
+        <div data-animation="slide" data-duration="400" data-delay="7000" data-infinite="1" data-autoplay="1"
+            id="full-hero-slider" class="new slider vr1 w-slider">
+            <div class="w-slider-mask home-slider-content">
+                <div class="new-one slide1 w-slide" id="hero1"
+                    style="background-image:url(https://images.unsplash.com/photo-1423589989400-cc0270157ed0?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=a95937ce1dc3243f52c30f86d948b771);">
+                    <div class="container-full slider">
+                        <div class="container-default">
+                            <div class="w-row">
+                                <div class="w-col w-col-6 w-col-medium-12">
+                                    <h1 data-ix="fade-up-1" class="all-caps hero-heading in white">Title</h1>
+                                    <p data-ix="fade-up-5" class="big paragraph white">Description</p>
+                                    <a href="#" data-ix="fade-up-7" class="button w-button left">Button</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-one slide1 w-slide" id="hero2"
+                    style="background-image:url(https://images.unsplash.com/uploads/1413259835094dcdeb9d3/6e609595?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=7f53dc042211f55ce22beef99872e0f1);">
+                    <div class="container-full slider">
+                        <div class="container-default">
+                            <div class="w-row">
+                                <div class="w-col w-col-6 w-col-medium-12">
+                                    <h2 data-ix="fade-up-1" class="all-caps hero-heading in white">Title</h2>
+                                    <p data-ix="fade-up-5" class="big paragraph white">Description</p>
+                                    <a href="#" data-ix="fade-up-7" class="button w-button left">Button</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main slide1 w-slide" id="hero3"
+                    style="background-image:url(https://images.unsplash.com/photo-1508854780836-d1f06f450fb5?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=b3e040221e555ac7847f1529e4dc2baa);">
+                    <div class="container-full slider">
+                        <div class="container-default">
+                            <div class="w-row">
+                                <div class="w-col w-col-6 w-col-medium-12">
+                                    <h2 data-ix="fade-up-1" class="all-caps hero-heading in white">Title</h2>
+                                    <p data-ix="fade-up-5" class="big paragraph white">Description</p>
+                                    <a href="#" data-ix="fade-up-7" class="button w-button left">Button</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main slide1 w-slide" id="hero4"
+                    style="background-image:url(https://images.unsplash.com/photo-1523438097201-512ae7d59c44?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=596deb6b6a3bf3bf2af05336dbb6b955);">
+                    <div class="container-full slider">
+                        <div class="container-default">
+                            <div class="w-row">
+                                <div class="w-col w-col-6 w-col-medium-12">
+                                    <h2 data-ix="fade-up-1" class="all-caps hero-heading in white">Title</h2>
+                                    <p data-ix="fade-up-5" class="big paragraph white">Description</p>
+                                    <a href="#" data-ix="fade-up-7" class="button w-button left">Button</a>
+                                </div>
+                                <div class="w-col w-col-6 w-col-medium-12 slide-image">
+                                    <img src="http://blueridgesurveillance.alibipartners.com/users/u106/106340/camera-mockup-sm.png"
+                                        alt="Dome Camera">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-slider-arrow-left">
+                <div class="arrow-icon left-side w-icon-slider-left"></div>
+            </div>
+            <div class="w-slider-arrow-right">
+                <div class="arrow-icon right-side w-icon-slider-right"></div>
+            </div>
+            <div class="slide-nav w-round w-slider-nav">
+                <div class="w-slider-dot w-active" data-wf-ignore=""></div>
+                <div class="w-slider-dot" data-wf-ignore=""></div>
+                <div class="w-slider-dot" data-wf-ignore=""></div>
+            </div>
+        </div>
+    
+    </div>
+
+    <script src="https://seedlogix.com/hubs/themes/clients/powerleads/enterprise/assets/js/jquery.min.js"></script>
+    <script src="https://www.seedlogix.com/hubs/themes/clients/powerleads/enterprise/assets/js/averon.js"></script>
+    <script src="https://www.seedlogix.com/hubs/themes/clients/powerleads/enterprise/assets/js/webfont.js"></script>
+    <script src="https://www.seedlogix.com/hubs/themes/clients/powerleads/enterprise/assets/js/main.js"></script>
+</body>
+</html>

@@ -29,6 +29,10 @@
             text-align: center;
         }
 
+        .nav.colour {
+            background: #111;
+        }
+
         .nav div.logo {
             float: left;
             width: auto;
@@ -447,6 +451,7 @@
             $(this).toggleClass('active');
             console.log("Clicked menu");
             $("#mainListDiv").toggleClass("show_list");
+            $("nav.nav").toggleClass("colour");
             $("#mainListDiv").fadeIn();
 
         });

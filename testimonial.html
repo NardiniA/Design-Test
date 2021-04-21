@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="stylesheet" href="vendors/jquery-flipster/css/jquery.flipster.css">
+    <style>
+        .testimonial {
+        background: #a70ff6 url("../images/testimonial-bg.svg");
+        padding: 100px 0 70px 0;
+        background-size: cover;
+        }
+
+        @media (max-width: 991px) {
+        .testimonial {
+            padding: 20px 0;
+        }
+        }
+
+        .testimonial .testimonial-item {
+        width: 450px;
+        padding: 34px 34px 34px 94px;
+        background: #ffffff;
+        color: #000000;
+        border-radius: 10px;
+        position: relative;
+        box-shadow: 0 20px 70px -10px rgba(109, 121, 141, 0.15);
+        }
+
+        @media (max-width: 1024px) {
+        .testimonial .testimonial-item {
+            width: 400px;
+        }
+        }
+
+        @media (max-width: 991px) {
+        .testimonial .testimonial-item {
+            width: 280px;
+        }
+        }
+
+        .testimonial .testimonial-item .testimonial-icons {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        position: absolute;
+        top: 40px;
+        left: 28px;
+        }
+
+        .testimonial .testimonial-item .testimonial-author {
+        margin-top: 1rem;
+        margin-bottom: .5rem;
+        position: relative;
+        font-weight: 500;
+        }
+
+        .testimonial .testimonial-item .testimonial-author:before {
+        content: "\f756";
+        position: absolute;
+        left: -40px;
+        color: transparent;
+        font-size: 1.75rem;
+        background: url(img/quote.png) no-repeat;
+        }
+
+        .testimonial .testimonial-item .testimonial-destination {
+        color: #506690;
+        font-weight: normal;
+        font-size: 14px;
+        }
+
+        .testimonial .flipster__button--prev {
+        left: auto;
+        right: 0;
+        top: 86%;
+        transform: rotate(270deg);
+        }
+
+        .testimonial .flipster__button--next {
+        transform: rotate(270deg);
+        top: 78%;
+        }
+
+        .testimonial .flipster__button svg {
+        width: .75em;
+        }
+
+        .flipster--coverflow .flipster__container {
+        padding-bottom: 0;
+        }
+
+        .flipster--coverflow .flipster__item__content {
+        -webkit-transform-origin: 50% 100%;
+        -ms-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        box-reflect: below 0 -webkit-gradient(linear, left bottom, left top, color-stop(0.05, rgba(255, 255, 255, 0)), color-stop(0.2, transparent));
+        -webkit-box-reflect: below 0 -webkit-gradient(linear, left bottom, left top, color-stop(0.05, rgba(255, 255, 255, 0)), color-stop(0.2, transparent));
+        }
+
+        .flipster-custom-nav {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 2rem;
+        }
+
+        .flipster-custom-nav .flipster-custom-nav-item {
+        display: inline-block;
+        }
+
+        .flipster-custom-nav .flipster-custom-nav-item .flipster-custom-nav-link {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        border: 1px solid #f1efef;
+        margin-right: 1rem;
+        }
+
+        .flipster-custom-nav .flipster-custom-nav-item .flipster-custom-nav-link.active {
+        background: #f1efef;
+        }
+    </style>
+</head>
+<body>
+    <section class="testimonial" id="testimonial">
+        <div class="container">
+            <div class="row  mt-md-0 mt-lg-4">
+                <div class="col-sm-6 text-white aos-init aos-animate" data-aos="fade-up">
+                    <p class="font-weight-bold mb-3">Testimonials</p>
+                    <h3 class="font-weight-medium">Our customers are our <br>biggest fans</h3>
+                    <ul class="flipster-custom-nav">
+                        <li class="flipster-custom-nav-item">
+                            <a href="javascript:;" class="flipster-custom-nav-link" title="0"></a>
+                        </li>
+                        <li class="flipster-custom-nav-item">
+                            <a href="javascript:;" class="flipster-custom-nav-link" title="1"></a>
+                        </li>
+                        <li class="flipster-custom-nav-item">
+                            <a href="javascript:;" class="flipster-custom-nav-link active" title="2"></a>
+                        </li>
+                        <li class="flipster-custom-nav-item">
+                            <a href="javascript:;" class="flipster-custom-nav-link" title="3"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 aos-init aos-animate" data-aos="fade-up">
+                    <div id="testimonial-flipster"
+                        class="flipster flipster--transform flipster--coverflow flipster--click flipster--active"
+                        tabindex="0" style="">
+                        <ul class="flipster__container" style="height: 218px; transform: translateX(-7.5px);">
+                            <li class="flipster__item  flipster__item--past flipster__item--past-1"
+                                style="z-index: 3; margin-right: -405px;">
+                                <div class="flipster__item__content">
+                                    <div class="testimonial-item">
+                                        <img src="img/testimonial/testimonial1.jpg" alt="icon" class="testimonial-icons">
+                                        <p>Lorem ipsum dolor sit amet, consectetur
+                                            pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            Ut pretium
+                                        </p>
+                                        <h6 class="testimonial-author">Mark Spenser</h6>
+                                        <p class="testimonial-destination">Accounts</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flipster__item  flipster__item--current" style="z-index: 5; margin-right: -405px;">
+                                <div class="flipster__item__content">
+                                    <div class="testimonial-item">
+                                        <img src="img/testimonial/testimonial2.jpg" alt="icon" class="testimonial-icons">
+                                        <p>Lorem ipsum dolor sit amet, consectetur
+                                            pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            Ut pretium
+                                        </p>
+                                        <h6 class="testimonial-author">Tua Manuera</h6>
+                                        <p class="testimonial-destination">Director,Dj market</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flipster__item  flipster__item--future flipster__item--future-1"
+                                style="z-index: 3; margin-right: -405px;">
+                                <div class="flipster__item__content">
+                                    <div class="testimonial-item">
+                                        <img src="img/testimonial/testimonial3.jpg" alt="icon" class="testimonial-icons">
+                                        <p>Lorem ipsum dolor sit amet, consectetur
+                                            pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            Ut pretium
+                                        </p>
+                                        <h6 class="testimonial-author">Sarah Philip</h6>
+                                        <p class="testimonial-destination">Chief Accountant</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flipster__item  flipster__item--future flipster__item--future-2"
+                                style="z-index: 2; margin-right: -405px;">
+                                <div class="flipster__item__content">
+                                    <div class="testimonial-item">
+                                        <img src="img/testimonial/testimonial4.jpg" alt="icon" class="testimonial-icons">
+                                        <p>Lorem ipsum dolor sit amet, consectetur
+                                            pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            Ut pretium
+                                        </p>
+                                        <h6 class="testimonial-author">Mark Spenser</h6>
+                                        <p class="testimonial-destination">Director,Dj market</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="vendors/jquery-flipster/js/jquery.flipster.min.js"></script>
+
+    <script src="js/vendor.bundle.base.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $("#testimonial-flipster").flipster({
+            style: 'coverflow',
+            spacing: -.9,
+            nav: false,
+            loop: true,
+            buttons: false,
+        });
+
+        $('.flipster-custom-nav-link').click(function () {
+            var navlinkSelected = parseInt(this.title);
+            $('.flipster-custom-nav-link').removeClass("active");
+            $(this).addClass("active");
+            $("#testimonial-flipster").flipster('jump', navlinkSelected);
+        });
+    </script>
+</body>
+</html>

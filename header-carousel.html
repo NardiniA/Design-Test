@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,100,300italic,400italic,600,600italic" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
+    <style>
+        .dropdown:hover .dropdown-menu {
+        display: block;
+        }
+
+
+
+        ::selection {
+        background:#49c5b1;
+        color: white;
+        font-weight:bold;
+        }
+
+        html, body {
+        height: 100%;
+        min-height: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        }
+
+
+        body {
+        
+        background-color: #ffffff;
+        font-size: 16px;
+        line-height: 1.8;
+        font-family: "Open Sans", sans-serif;
+        color: #444;
+        font-weight: 400;
+        
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+        font-family: "Gibson-Semibold";
+        
+        letter-spacing: 0;
+        line-height: 1.15;
+        margin: 0 0 1.5rem 0;
+        padding: 0;
+        color: #49c5b1;
+        }
+
+        h1 {
+        font-size: 72px;
+        color:white;
+        }
+
+        p {margin-bottom:3em}
+
+        .navbar {
+        box-shadow:0 2px 2px rgba(0,0,0,0.09);
+            padding: 0rem 1rem;
+        }
+        nav a.nav-link {
+        font-family: "Gibson-Semibold";
+        line-height:1;
+        color: #254a5d !important;
+        font-size:16px;
+        text-decoration: none;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        padding:30px
+        }
+
+        .navbar-expand-md .navbar-nav .nav-link {
+            padding-right: 2rem;
+            padding-left: 2rem;
+        }
+
+        nav a.nav-link:hover {
+        color:#49c5b1 !important;
+        }
+
+        a:hover {
+        text-decoration: none;
+        color: rgba(255,255,255,0.5);
+        }
+
+
+        .sup-nav {
+        background:#f1f1f2;
+        width:100%;
+        padding:3px .5rem;
+        
+        }
+
+        .sup-nav ul {margin-bottom:0;}
+
+        .sup-nav ul li {padding-left:.5rem; padding-right:.5rem;}
+        .sup-nav ul li:last-child { padding-right: 2.5rem;}
+
+        .sup-nav ul li:last-child a {color:#49c5b1; font-weight:600}
+        .sup-nav a {
+        color:#101820;
+        font-size:12px;
+        }
+        #hero-carousel {position:relative;}
+        #hero-carousel h1 {
+        padding-left:2rem;
+        font-family:"Gibson-Semibold";
+        font-size:84px;
+        display: -ms-flexbox!important;
+        display: flex!important;
+        justify-content:start;
+        align-items:center;
+        color:#fff;
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        width:100%;
+        height:100%;
+        z-index:1;
+        background: linear-gradient(135deg, transparent 24%, #489ade 100%); 
+        
+        
+        }
+
+        .carousel-item img {filter: contrast(75%) brightness(70%) sepia(20%); min-width:100%}
+
+        .carousel-fade .carousel-item {
+        opacity: 0;
+        -webkit-transition: opacity 3s;
+        -moz-transition: opacity 3s;
+        -o-transition: opacity 3s;
+        transition: opacity 3s;
+        }
+
+
+
+
+        .carousel-controls {
+        position:absolute;
+        padding:20px;
+        bottom:0;
+        right:0;
+        color:#fff;
+        font-family:"Gibson-Semibold";
+        font-size:12px;
+        z-index:2;
+        width:100%;
+        }
+
+        .carousel-controls .left, .carousel-controls .right {padding:5px; opacity:0.5}
+
+        .carousel-controls .left:hover, .carousel-controls .right:hover {opacity:1}
+
+        .carousel-controls .item-count {padding:6px 10px 5px 5px;}
+
+        footer  {
+        background:#254a5d;
+        padding:1rem;
+        color:#fff;
+        font-size:12px;
+        }
+        footer p {margin-bottom:0}
+        footer a {
+        color:#fff;
+        }
+        /*==================================================
+        =            Bootstrap 3 Media Queries             =
+        ==================================================*/
+
+        /*==========  Mobile First Method  ==========*/
+
+        /* Large Devices, Wide Screens */
+
+        @media (max-width: 1920px) {
+        
+        }
+
+        @media (max-width: 1024px) {
+        
+        }
+
+        /* Medium Devices, Desktops */
+
+        @media (max-width: 992px) {
+        
+        }
+
+        /* Small Devices, Tablets */
+
+        @media (max-width: 767px) {
+        
+        }
+
+        /* Extra Small Devices, Phones */
+
+        @media (max-width: 480px) {
+        #hero-carousel h1 {font-size:70px;}
+
+        }
+        @media (max-height: 768px) {
+        
+        }
+
+        /* Custom, iPhone Retina */
+
+        @media (max-width: 320px) {
+            #hero-carousel h1 {font-size:60px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="sup-nav d-none d-sm-block">
+        <ul class="d-flex list-inline justify-content-end">
+            <li class="list-inline-item"><a href="#">United States</a></li>
+            <li class="list-inline-item"><a href="#">Careers</a></li>
+            <li class="list-inline-item"><a href="#">Locations</a></li>
+            <li class="list-inline-item"><a href="#">Login</a></li>
+    
+        </ul>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="#">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/143797/cj_logo_black.svg" width="200"
+                class="d-inline-block align-top" alt="" style="padding:15px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Affiliate Overview<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Advertiser</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Publisher</a>
+                </li>
+                <li class="nav-item dropdown"> <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown"
+                        href="/about-us" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+                    <div class="dropdown-menu">
+                        <a class=" dropdown-item" href="/about-us">Our Leaders</a>
+                        <a class=" dropdown-item" href="/events">Events</a>
+                        <a class=" dropdown-item" href="/careers">Careers</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Content Hub</a>
+                </li>
+    
+            </ul>
+    
+        </div>
+    </nav>
+    
+    <section id="hero-carousel" class="hero-carousel">
+        <h1>Dare to think big<br /> with CJ Affiliate</h1>
+        <div id="hero-slider" class="carousel slide carousel-fade" data-ride="carousel">
+    
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+    
+                <!-- First slide -->
+                <div class="carousel-item active">
+                    <img class="d-block " src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/143797/slider-1.jpg" />
+    
+                </div>
+                <!-- /.item -->
+                <!-- Second slide -->
+                <div class="carousel-item ">
+                    <img class="d-block " src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/143797/slider-2.jpg" />
+    
+                </div>
+                <!-- /.item -->
+                <!-- Third slide -->
+                <div class="carousel-item ">
+                    <img class="d-block " src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/143797/slider-3.jpg" />
+    
+                </div>
+                <!-- /.item -->
+                <!-- Fourth slide -->
+                <div class="carousel-item ">
+                    <img class="d-block " src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/143797/slider-4.jpg" />
+    
+                </div>
+                <!-- /.item -->
+    
+                <!-- Fifth slide -->
+                <div class="carousel-item ">
+                    <img class="d-block " src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/143797/slider-5.jpg" />
+    
+                </div>
+                <!-- /.item -->
+    
+            </div>
+            <!-- /.carousel-inner -->
+            <div class="carousel-controls d-flex">
+                <div class="item-count flex-grow-1"><span class="active-item-count"></span> / <span
+                        class="total-item-count"></span></div>
+                <a class="left carousel-control" href="#hero-slider" role="button" data-slide="prev"><img
+                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/143797/tail-left.svg" /></a>
+                <a class="right carousel-control " href="#hero-slider" role="button" data-slide="next"><img
+                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/143797/tail-right.svg" /></a>
+    
+    
+            </div>
+            <div class="carousel-timer active"></div>
+        </div>
+        <!-- /.carousel -->
+    
+        <!-- /.container -->
+    </section>
+    <section id="main" style="min-height:100%; position:relative;">
+        <div class="container">
+            <insertcontent xmlns="http:/x/www.taleo.com/templates" />
+        </div>
+    </section>
+    <footer class="d-flex align-items-center">
+        <img style="max-width:125px" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/143797/CJ_Logo_White.svg" />
+        <p class="text-right flex-grow-1">© 2018 Commission Junction, LLC. All rights reserved. <a
+                href="http://www.conversantmedia.com/legal/privacy" target="_blank">Privacy Policy</a> | <a
+                href="/legal/terms">Terms of Use</a> | <a href="/our-offices">Contact Us</a> | <a
+                href="/sitemap">Sitemap</a></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script>
+        $('.carousel').carousel({
+            interval: 4000
+        })
+
+        var slide_cnt = $(".carousel-item").length;
+        //Appends total slide count to container
+        $(".item-count .total-item-count").append(slide_cnt);
+
+        //Assigns number count to each slide
+        $(".carousel-inner .carousel-item").each(function (i, item) {
+            $(this).attr("id", i + 1);
+        });
+
+        //Assigns first slide number
+        $(".active-item-count").html("1");
+
+        //Occurs when the carousel has finished sliding from one item to another
+        $(".carousel").on('slid.bs.carousel', function () {
+            //Changes Slide Counter after slide finishes
+            if ($(".carousel-item").hasClass("active")) {
+                var getCount = $(".carousel-item.active").attr("id");
+                $(".active-item-count").html(getCount);
+            }
+
+        });
+    </script>
+</body>
+</html>

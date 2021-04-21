@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 340px;
+            height: 215px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: flex;
+            background: #fff;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 1rem;
+            color: #000;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            background: url("http://pngimg.com/uploads/world_map/world_map_PNG9.png") center/cover;
+            z-index: -1;
+            opacity: .1;
+        }
+
+        .box {
+            width: 100%;
+            height: 140px;
+            padding: 1.5em 0;
+        }
+
+        .chip {
+            position: relative;
+            width: 60px;
+            height: 40px;
+            background: linear-gradient(30deg, #ffdd00, #fbb034);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .chip::before, .chip::after {
+            content: "";
+            position: absolute;
+            top: 25%;
+            left: -5px;
+            width: 65px;
+            height: 20px;
+            border: 1px solid grey;
+        }
+
+        .chip::after {
+            top: 23%;
+            left: 11px;
+            width: 36px;
+            transform: rotate(90deg);
+            border-radius: 8px;
+            background: linear-gradient(-60deg, #ffdd00, #fbb034);
+        }
+
+        #number {
+            font-size: 1.3rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #number span {
+            margin-right: 0.8rem;
+        }
+
+        .detail {
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+        }
+
+        .logo span {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .logo span:nth-child(1) {
+            position: relative;
+            left: 20px;
+            background: #eb001b;
+            z-index: -1;
+        }
+
+        .logo span:nth-child(2) {
+            background: #ff5f00;
+            opacity: 0.7;
+        }
+
+        #name {
+            font-family: 'Poppins', sans-serif;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="chip"></div>
+            <p id="number">
+                <span>0123</span>
+                <span>4567</span>
+                <span>8910</span>
+                <span>1112</span>
+            </p>
+        </div>
+        <div class="detail">
+            <p id="name">A L Nardini</p>
+            <div class="logo">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

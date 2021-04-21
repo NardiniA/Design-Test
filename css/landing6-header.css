@@ -1,0 +1,435 @@
+/* screens */
+
+position: static;
+left: 0%;
+right: 0%;
+top: 40.72%;
+bottom: 0%;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+margin: 35px 0px;
+
+
+/* screens */
+
+position: absolute;
+width: 1552.02px;
+height: 841px;
+left: 13.49px;
+top: 682px;
+
+
+
+/* Dashboard #1 */
+
+position: absolute;
+width: 465.82px;
+height: 429.98px;
+left: calc(50% - 465.82px/2 - 131.92px);
+top: calc(50% - 429.98px/2 + 76.72px);
+
+background: url(Dashboard #1.jpg);
+transform: matrix(0.71, -0.54, 0.93, 0.71, 0, 0);
+
+
+/* Chat Bot */
+
+position: absolute;
+width: 466.53px;
+height: 451.48px;
+left: calc(50% - 466.53px/2 + 584px);
+top: calc(50% - 451.48px/2 + 76.47px);
+
+background: url(Chat Bot.jpg);
+transform: matrix(0.71, 0.54, -0.93, 0.71, 0, 0);
+
+
+/* Boards */
+
+position: absolute;
+width: 466.53px;
+height: 429.98px;
+left: calc(50% - 466.53px/2 - 146.67px);
+top: calc(50% - 429.98px/2 + 92.31px);
+
+background: url(Boards.jpg);
+transform: matrix(0.71, 0.54, -0.93, 0.71, 0, 0);
+
+
+/* Gradient */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 67.1%;
+bottom: 0%;
+
+background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0E0E0E 66.15%);
+
+
+
+/* navbar */
+
+position: static;
+width: 1097px;
+height: 119px;
+left: 241px;
+top: 0px;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 35px 0px;
+
+
+/* logo dark */
+
+/* Auto Layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 10px;
+
+position: absolute;
+width: 206px;
+height: 78px;
+left: 30px;
+top: calc(50% - 78px/2 - 0.5px);
+
+
+
+/* Rectangle 4 */
+
+position: static;
+width: 186px;
+height: 58px;
+left: 10px;
+top: 10px;
+
+background: url(logo-light.png);
+
+/* Inside Auto Layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 10px;
+
+
+/* menu */
+
+/* Auto Layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 393px;
+height: 44px;
+left: calc(50% - 393px/2 + 0.5px);
+top: calc(50% - 44px/2);
+
+
+
+/* Frame 17 */
+
+/* Auto Layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+position: static;
+width: 393px;
+height: 44px;
+left: 0px;
+top: 0px;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 10px;
+
+
+/* link */
+
+/* Auto Layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+
+position: static;
+width: 67px;
+height: 44px;
+left: 0px;
+top: 0px;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 31px;
+
+
+/* Home */
+
+position: static;
+left: 14.93%;
+right: 14.93%;
+top: 22.73%;
+bottom: 22.73%;
+
+/* Link */
+font-family: Graphik;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+text-align: center;
+letter-spacing: 0.2px;
+
+/* light text */
+color: #FFFFFF;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 10px;
+
+
+/* link */
+
+/* Auto Layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+
+position: static;
+width: 82px;
+height: 44px;
+left: 98px;
+top: 0px;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 0px 31px;
+
+
+/* Product */
+
+position: static;
+left: 12.2%;
+right: 12.2%;
+top: 22.73%;
+bottom: 22.73%;
+
+/* Link */
+font-family: Graphik;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+text-align: center;
+letter-spacing: 0.2px;
+
+/* light text */
+color: #FFFFFF;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 10px;
+
+
+/* link */
+
+/* Auto Layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+
+position: static;
+width: 68px;
+height: 44px;
+left: 211px;
+top: 0px;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+margin: 0px 31px;
+
+
+/* About */
+
+position: static;
+left: 14.71%;
+right: 14.71%;
+top: 22.73%;
+bottom: 22.73%;
+
+/* Link */
+font-family: Graphik;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+text-align: center;
+letter-spacing: 0.2px;
+
+/* light text */
+color: #FFFFFF;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 10px;
+
+
+/* link */
+
+/* Auto Layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+
+position: static;
+width: 83px;
+height: 44px;
+left: 310px;
+top: 0px;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+margin: 0px 31px;
+
+
+/* Contact */
+
+position: static;
+left: 12.05%;
+right: 12.05%;
+top: 22.73%;
+bottom: 22.73%;
+
+/* Link */
+font-family: Graphik;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+text-align: center;
+letter-spacing: 0.2px;
+
+/* light text */
+color: #FFFFFF;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 10px;
+
+
+/* button */
+
+/* Auto Layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 20px 36px;
+
+position: absolute;
+width: 139px;
+height: 52px;
+right: 39px;
+top: calc(50% - 52px/2 - 0.5px);
+
+/* light text */
+border: 1px solid #FFFFFF;
+box-sizing: border-box;
+/* shadow */
+filter: drop-shadow(0px 4px 31px rgba(0, 0, 0, 0.15));
+
+
+/* text */
+
+/* Auto Layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+
+position: static;
+width: 67px;
+height: 45px;
+left: 36px;
+top: 3.5px;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 0px;
+
+
+/* Login */
+
+position: static;
+left: 14.93%;
+right: 14.93%;
+top: 22.22%;
+bottom: 22.22%;
+
+/* Button */
+font-family: Graphik;
+font-style: normal;
+font-weight: 500;
+font-size: 17px;
+line-height: 25px;
+/* identical to box height, or 147% */
+letter-spacing: 0.2px;
+
+/* light background */
+color: #FFFFFF;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 10px;

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/simple-nav-slider.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:100" />
+</head>
+<body>
+    <!-- Hero -->
+    <section class="et-hero-tabs">
+        <h1>Magnificent</h1>
+        <h3>Incradible things gonna happends</h3>
+        <div class="split-slideshow">
+            <div class="slideshow">
+                <div class="slider">
+                    <div class="item">
+                        <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-2.jpg" />
+                    </div>
+                    <div class="item">
+                        <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-3.jpg" />
+                    </div>
+                    <div class="item">
+                        <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-4.jpg" />
+                    </div>
+                    <div class="item">
+                        <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-1.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="et-hero-tabs-container">
+            <a class="et-hero-tab" href="#tab-home">Home</a>
+            <a class="et-hero-tab" href="#tab-aboutus">About us</a>
+            <a class="et-hero-tab" href="#tab-team">Team</a>
+            <a class="et-hero-tab" href="#tab-clients">Clients</a>
+            <a class="et-hero-tab" href="#tab-contact">Contact</a>
+            <span class="et-hero-tab-slider"></span>
+        </div>
+    </section>
+    <main class="et-main">
+        <section class="et-slide" id="tab-home">
+            <h1>Home Page</h1>
+            <h3>Lorem ipsun dolor amet</h3>
+        </section>
+        <section class="et-slide" id="tab-aboutus">
+            <h1>About us</h1>
+            <h3>Lorem ipsun dolor amet</h3>
+        </section>
+        <section class="et-slide page" id="tab-team">
+            <h1>Team</h1>
+            <h3>Lorem ipsun dolor amet</h3>
+        </section>
+        <section class="et-slide" id="tab-clients">
+            <h1>Clients</h1>
+            <h3>Lorem ipsun dolor amet</h3>
+        </section>
+        <section class="et-slide" id="tab-contact">
+            <h1>Contact</h1>
+            <h3>Lorem ipsun dolor amet</h3>
+        </section>
+    </main>
+    <footer id="footer" class="footer-m">
+        <p class="copyright">
+            Magnificent - All rights reserved
+        </p>
+    </footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+
+    <script>
+        var $slider = $('.slideshow .slider'),
+            maxItems = $('.item', $slider).length,
+            dragging = false,
+            tracking,
+            rightTracking;
+
+        $sliderRight = $('.slideshow').clone().addClass('slideshow-right').appendTo($('.split-slideshow'));
+
+        rightItems = $('.item', $sliderRight).toArray();
+        reverseItems = rightItems.reverse();
+        $('.slider', $sliderRight).html('');
+        for (i = 0; i < maxItems; i++) {
+            $(reverseItems[i]).appendTo($('.slider', $sliderRight));
+        }
+
+        $slider.addClass('slideshow-left');
+        $('.slideshow-left').slick({
+            vertical: true,
+            verticalSwiping: true,
+            arrows: false,
+            infinite: true,
+            dots: false,
+            speed: 1000,
+            cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+        }).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            event.preventDefault();
+            if (currentSlide > nextSlide && nextSlide == 0 && currentSlide == maxItems - 1) {
+                $('.slideshow-right .slider').slick('slickGoTo', -1);
+                $('.slideshow-text').slick('slickGoTo', maxItems);
+            } else if (currentSlide < nextSlide && currentSlide == 0 && nextSlide == maxItems - 1) {
+                $('.slideshow-right .slider').slick('slickGoTo', maxItems);
+                $('.slideshow-text').slick('slickGoTo', -1);
+            } else {
+                $('.slideshow-right .slider').slick('slickGoTo', maxItems - 1 - nextSlide);
+                $('.slideshow-text').slick('slickGoTo', nextSlide);
+            }
+        }).on("mousewheel", function (event) {
+            event.preventDefault();
+            if (event.deltaX > 0 || event.deltaY < 0) {
+                $(this).slick('slickNext');
+            } else if (event.deltaX < 0 || event.deltaY > 0) {
+                $(this).slick('slickPrev');
+            };
+        }).on('mousedown touchstart', function () {
+            dragging = true;
+            tracking = $('.slick-track', $slider).css('transform');
+            tracking = parseInt(tracking.split(',')[5]);
+            rightTracking = $('.slideshow-right .slick-track').css('transform');
+            rightTracking = parseInt(rightTracking.split(',')[5]);
+        }).on('mousemove touchmove', function () {
+            if (dragging) {
+                newTracking = $('.slideshow-left .slick-track').css('transform');
+                newTracking = parseInt(newTracking.split(',')[5]);
+                diffTracking = newTracking - tracking;
+                $('.slideshow-right .slick-track').css({ 'transform': 'matrix(1, 0, 0, 1, 0, ' + (rightTracking - diffTracking) + ')' });
+            }
+        }).on('mouseleave touchend mouseup', function () {
+            dragging = false;
+        });
+
+        $('.slideshow-right .slider').slick({
+            swipe: false,
+            vertical: true,
+            arrows: false,
+            infinite: true,
+            speed: 950,
+            cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+            initialSlide: maxItems - 1
+        });
+        $('.slideshow-text').slick({
+            swipe: false,
+            vertical: true,
+            arrows: false,
+            infinite: true,
+            speed: 900,
+            cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+        });
+
+        class StickyNavigation {
+
+            constructor() {
+                this.currentId = null;
+                this.currentTab = null;
+                this.tabContainerHeight = 70;
+                let self = this;
+                $('.et-hero-tab').click(function () {
+                    self.onTabClick(event, $(this));
+                });
+                $(window).scroll(() => { this.onScroll(); });
+                $(window).resize(() => { this.onResize(); });
+            }
+
+            onTabClick(event, element) {
+                event.preventDefault();
+                let scrollTop = $(element.attr('href')).offset().top - this.tabContainerHeight + 1;
+                $('html, body').animate({ scrollTop: scrollTop }, 600);
+            }
+
+            onScroll() {
+                this.checkTabContainerPosition();
+                this.findCurrentTabSelector();
+            }
+
+            onResize() {
+                if (this.currentId) {
+                    this.setSliderCss();
+                }
+            }
+
+            checkTabContainerPosition() {
+                let offset = $('.et-hero-tabs').offset().top + $('.et-hero-tabs').height() - this.tabContainerHeight;
+                if ($(window).scrollTop() > offset) {
+                    $('.et-hero-tabs-container').addClass('et-hero-tabs-container--top');
+                }
+                else {
+                    $('.et-hero-tabs-container').removeClass('et-hero-tabs-container--top');
+                }
+            }
+
+            findCurrentTabSelector(element) {
+                let newCurrentId;
+                let newCurrentTab;
+                let self = this;
+                $('.et-hero-tab').each(function () {
+                    let id = $(this).attr('href');
+                    let offsetTop = $(id).offset().top - self.tabContainerHeight;
+                    let offsetBottom = $(id).offset().top + $(id).height() - self.tabContainerHeight;
+                    if ($(window).scrollTop() > offsetTop && $(window).scrollTop() < offsetBottom) {
+                        newCurrentId = id;
+                        newCurrentTab = $(this);
+                    }
+                });
+                if (this.currentId != newCurrentId || this.currentId === null) {
+                    this.currentId = newCurrentId;
+                    this.currentTab = newCurrentTab;
+                    this.setSliderCss();
+                }
+            }
+
+            setSliderCss() {
+                let width = 0;
+                let left = 0;
+                if (this.currentTab) {
+                    width = this.currentTab.css('width');
+                    left = this.currentTab.offset().left;
+                }
+                $('.et-hero-tab-slider').css('width', width);
+                $('.et-hero-tab-slider').css('left', left);
+            }
+
+        }
+
+        new StickyNavigation();
+    </script>
+</body>
+</html>

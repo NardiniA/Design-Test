@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+        .page-section {
+            padding: 125px 0 130px 0;
+        }
+
+        .gallery-card {
+            border: 1px solid #707070;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 100%;
+            position: relative;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .gallery-hover {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background:rgba(200, 200, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-hover:hover {
+            opacity: 1;
+        }
+
+        .circle-btn {
+            border-radius: 50%;
+            background: transparent;
+            height: 35px;
+            width: 40px;
+            padding: 10px;
+            border: 1px solid rgb(200, 200, 255);
+            text-decoration: none;
+        }
+
+        .circle-btn:hover {
+            background: rgba(200, 200, 255, 0.5);
+        }
+
+        .circle-btn:nth-child(0) {
+            margin-right: 5px;
+        }
+
+        .circle-btn:nth-child(1) {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="gallery-card">
+                                <img src="https://placehold.it/200/200/" alt="Image" />
+                                <div class="gallery-hover">
+                                    <h3>Item</h3>
+                                    <hr>
+                                    <div class="inline-btns">
+                                        <a href="#" class="circle-btn">V</a>
+                                        <a href="#" class="circle-btn">L</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="gallery-card">
+                                <img src="https://placehold.it/200/200/" alt="Image" />
+                                <div class="gallery-hover">
+                                    <h3>Item</h3>
+                                    <hr>
+                                    <div class="inline-btns">
+                                        <a href="#" class="circle-btn">V</a>
+                                        <a href="#" class="circle-btn">L</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="gallery-card">
+                                <img src="https://placehold.it/200/200/" alt="Image" />
+                                <div class="gallery-hover">
+                                    <h3>Item</h3>
+                                    <hr>
+                                    <div class="inline-btns">
+                                        <a href="#" class="circle-btn">V</a>
+                                        <a href="#" class="circle-btn">L</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="gallery-card">
+                                <img src="https://placehold.it/200/200/" alt="Image" />
+                                <div class="gallery-hover">
+                                    <h3>Item</h3>
+                                    <hr>
+                                    <div class="inline-btns">
+                                        <a href="#" class="circle-btn">V</a>
+                                        <a href="#" class="circle-btn">L</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="gallery-card">
+                                <img src="https://placehold.it/200/200/" alt="Image" />
+                                <div class="gallery-hover">
+                                    <h3>Item</h3>
+                                    <hr>
+                                    <div class="inline-btns">
+                                        <a href="#" class="circle-btn">V</a>
+                                        <a href="#" class="circle-btn">L</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="gallery-card">
+                                <img src="https://placehold.it/200/200/" alt="Image" />
+                                <div class="gallery-hover">
+                                    <h3>Item</h3>
+                                    <hr>
+                                    <div class="inline-btns">
+                                        <a href="#" class="circle-btn">V</a>
+                                        <a href="#" class="circle-btn">L</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="gallery-card">
+                                <img src="https://placehold.it/200/200/" alt="Image" />
+                                <div class="gallery-hover">
+                                    <h3>Item</h3>
+                                    <hr>
+                                    <div class="inline-btns">
+                                        <a href="#" class="circle-btn">V</a>
+                                        <a href="#" class="circle-btn">L</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/split-diagonal.css" />
+</head>
+<body>
+    <div class="menu">
+        Logo etc
+    </div>
+    
+    <div class="hero">
+        <h1>hero text here</h1>
+    
+        <span class="scroll">^</span>
+    </div>
+    
+    <div class="container">
+        <div class="section-one">
+            <div class="content">
+                Left section
+            </div>
+        </div>
+        <div class="section-two">
+            <div class="content">
+                Right section
+            </div>
+        </div>
+    </div>
+    <div class="cta">
+        Call to action
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script>
+        $('.section-one').hover(function () {
+            $('.container').toggleClass('one-is-active');
+        });
+
+        $('.section-two').hover(function () {
+            $('.container').toggleClass('two-is-active');
+        });
+
+        $('.scroll').click(function () {
+            $('html, body').animate({
+                scrollTop: $(".container").offset().top
+            }, 800);
+        });
+    </script>
+</body>
+</html>

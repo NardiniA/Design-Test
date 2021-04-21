@@ -1,0 +1,160 @@
+/*$red: #f9474b;
+$orange: #f7770f;
+$yellow: #f7e210;
+$green: #58e94c;
+$teal: #20e2e8;
+$blue: #1e09e8;
+$purple: #8a1be4;
+$pink: #f709e8;*/
+
+$red: #fff;
+$orange: #fff;
+$yellow: #fff;
+$green: #fff;
+$teal: #fff;
+$blue: #fff;
+$purple: #8a1be4;
+$pink: #fff;
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+.header-wrapper {
+  margin: 100px;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: "Passion One", sans-serif;
+  font-size: 40px;
+  line-height: 1;
+  display: inline-block;
+  height: 40px;
+  margin: 0 4px 0 0;
+  overflow: hidden;
+  span.wrapper {
+    display: block;
+    animation: animate-header ease-in-out 6s;
+    animation-fill-mode:forwards
+  }
+  span.word {
+    display: block;
+    margin: 0 0 10px 0;
+    &.a {
+      color: $red;
+    }
+    &.b {
+      color: $green;
+    }
+    &.c {
+      color: $yellow;
+    }
+    &.d {
+      color: $pink;
+    }
+    &.e {
+      color: $teal;
+    }
+    &.f {
+      color: $green;
+    }
+    &.g {
+      color: $orange;
+    }
+    &.h {
+      color: $yellow;
+    }
+    &.i {
+      color: $pink;
+    }
+    &.j {
+      color: $teal;
+    }
+    &.k {
+      color: $red;
+    }
+    &.l {
+      color: $orange;
+    }
+    &.m {
+      color: $green;
+    }
+    &.n {
+      color: $teal;
+    }
+    &.o {
+      color: $pink;
+    }
+    &.p {
+      color: $red;
+    }
+    &.q {
+      color: $yellow;
+    }
+    &.end {
+      color: $purple;
+    }
+  }
+}
+
+@keyframes animate-header {
+  0% {
+     margin: 0 0 0 0; 
+  }
+  20% {
+     margin: 0 0 0 0; 
+  }
+  30% {
+    margin: -50px 0 0 0; 
+  }
+  39% {
+    margin: -100px 0 0 0; 
+  }
+  47% {
+    margin: -150px 0 0 0; 
+  }
+  54% {
+    margin: -200px 0 0 0; 
+  }
+  60% {
+    margin: -250px 0 0 0; 
+  }
+  65% {
+    margin: -300px 0 0 0; 
+  }
+  69% {
+    margin: -350px 0 0 0; 
+  }
+  73% {
+    margin: -400px 0 0 0; 
+  }
+  77% {
+    margin: -450px 0 0 0; 
+  }
+  80% {
+    margin: -500px 0 0 0; 
+  }
+  83% {
+    margin: -550px 0 0 0; 
+  }
+  86% {
+    margin: -600px 0 0 0; 
+  }
+  89% {
+    margin: -650px 0 0 0; 
+  }
+  92% {
+    margin: -700px 0 0 0; 
+  }
+  95% {
+    margin: -750px 0 0 0; 
+  }
+  98% {
+    margin: -800px 0 0 0; 
+  }
+  100% {
+    margin: -850px 0 0 0; 
+  }
+}

@@ -1,0 +1,35 @@
+header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #ffaa00;
+
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-transform: capitalize;
+        font-size: 64px;
+    }
+}
+
+.page-section {
+    padding: 75px 0;
+    width: 100%;
+}
+
+.about-card {
+    background: #fff;
+    border: none;
+    padding: 25px;
+    height: 100%;
+}
+
+.page-image {
+    width: 100%;
+    height: 550px;
+    background: #ffaa00;
+    position: relative;
+}
