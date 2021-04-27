@@ -67,10 +67,6 @@ p.section-desc {
             box-sizing: border-box;
             transition: box-shadow 0.1s !important;
 
-            &:hover {
-                box-shadow: 0 0 10px rgba(10, 10, 10, 0.5);
-            }
-
             svg {
                 height: 67px;
             }
@@ -101,7 +97,7 @@ p.section-desc {
             .text {
                 text-align: center;
 
-                a.about-btn {
+                .btn-outline, .btn-solid {
                     margin: 0 auto;
                 }
 
@@ -174,7 +170,6 @@ a.btn-solid {
 }
 
 .client {
-    margin-top: 90px;
     margin-bottom: 30px;
     padding: 74px 0;
     background: $light-bg;

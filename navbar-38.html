@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/navbar-38.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" />
+</head>
+<body>
+    <section class="section-container">
+        <section class="section-wrapper">
+            <!-- Header -->
+            <header class="header">
+                <div class="container">
+                    <a href="#" class="header-icon">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <a href="#" class="header-logo">Brand</a>
+                    <nav class="menu">
+                        <ul class="menu-list">
+                            <li class="menu-item">
+                                <a href="#"><i class="material-icons">home</i>Home</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#"><i class="material-icons">person</i>About</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#"><i class="material-icons">build</i>Service</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#"><i class="material-icons">payment</i>Pricing</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#"><i class="material-icons">dashboard</i>Works</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#"><i class="material-icons">forum</i>Blog</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#"><i class="material-icons">phone</i>Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a href="#" class="header-search">
+                        <i class="material-icons">search</i>
+                    </a>
+                </div>
+            </header>
+            <!-- Main -->
+            <main class="main">
+                <div class="main-wrapper">
+                    <div class="container">
+                        <div class="article">
+                            <img src="https://source.unsplash.com/1280x720/?nature" alt="Article Image">
+                            <br>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum amet debitis iste, odio
+                                ipsum voluptatum perspiciatis nisi molestias, eum ad explicabo autem, placeat quas
+                                repudiandae. Officiis sequi dolorem officia rem eaque aperiam dolore
+                                soluta non quae ut distinctio possimus consectetur, necessitatibus et eos, totam deleniti
+                                aut commodi fuga omnis reprehenderit ex laudantium. Nihil maiores optio inventore, suscipit
+                                natus reiciendis dolor?</p>
+                        </div>
+                        <br><br>
+                        <div class="article">
+                            <img src="https://source.unsplash.com/1280x720/?mountain" alt="Article Image">
+                            <br>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum error adipisci consectetur ad
+                                rerum ducimus beatae explicabo quod dolores, voluptates, velit culpa odit, nobis quos
+                                dolorem sint id non eligendi. At fugiat expedita repellat libero
+                                dolores minima quae soluta enim perspiciatis in officia voluptate laudantium dolorem
+                                blanditiis ipsum, sequi incidunt! Doloribus facere, assumenda blanditiis voluptatibus
+                                dignissimos nemo sapiente quos consequatur?</p>
+                        </div>
+                    </div>
+                </div>
+                <span class="overlay"></span>
+            </main>
+        </section>
+    </section>
+
+    <!-- This is for demo purposes only -->
+    <script src="js/next-page-test.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            (function ($) {
+                $(".header-icon").click(function (e) {
+                    e.preventDefault();
+                    $("body").toggleClass("with-sidebar");
+                });
+
+                $(".overlay").click(function (e) {
+                    $("body").removeClass("with-sidebar");
+                });
+            })(jQuery);
+        });
+    </script>
+</body>
+</html>

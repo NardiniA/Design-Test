@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background-color: #121212;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 30px;
+            background-color: rgb(255, 255, 255, 0.08);
+            box-shadow: 0px 2px 10px rgb(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: transform 300ms ease-out;
+            z-index: 3;
+        }
+
+        header.hide{
+            transform: translateY(-102%);
+        }
+
+        .logo{
+            font-weight: 500;
+            font-size: 22px;
+            letter-spacing: 0.8px;
+            vertical-align: top;
+        }
+
+        nav a, .mobile-nav a{
+            text-decoration: none;
+            color: inherit;
+            font-size: 15px;
+            margin-right: 15px;
+        }
+
+        .mobile-nav a{
+            margin-right: 0;
+            margin-bottom: 30px;
+            position: relative;
+            font-size: 18px;
+        }
+
+        .toggler{
+            display: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .toggler span{
+            width: 25px;
+            height: 2px;
+            margin: 4px;
+            border-radius: 2px;
+            background-color: #fff;
+            display: block;
+        }
+
+        .mobile-nav, .nav-shadow{
+            display: none;
+        }
+
+
+        .image-wrapper{
+            max-width: 500px;
+            height: 400px;
+            margin: 150px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-wrapper img{
+            width: 100%;
+            height: 100%;
+        }
+        .image-wrapper .curtain{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #FF0080;
+        }
+
+        .mobile-nav a::after{
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #ff0080;
+            transform-origin: left;
+            transform: scaleX(0) skewX(-5deg);
+            transition: transform 300ms ease;
+        }
+
+        .mobile-nav a:hover::after{
+            transform: scale(1) skewX(0deg);
+        }
+
+        /* media queries */
+
+        @media screen and (max-width: 600px){
+            .toggler{
+                display: block
+            }
+            nav{
+                display: none;
+            }
+            header{
+                padding: 10px 18px;
+            }
+            .nav-shadow{
+                background-color: #FF0080;
+                z-index: 1;
+            }
+            .mobile-nav, .nav-shadow{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform: translateY(-100%);
+                display: block;
+            }
+            .mobile-nav{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                z-index: 2;
+                background-color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="logo">logo</a>
+        <nav>
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">Projects</a>
+        </nav>
+        <div class="toggler">
+            <span class="top-bar bar"></span>
+            <span class="mdl-bar bar"></span>
+            <span class="btm-bar bar"></span>
+        </div>
+    </header>
+
+    <div class="nav-shadow nav-effect"></div>
+
+    <nav class="mobile-nav nav-effect">
+        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#">Projects</a>
+    </nav>
+
+    <div style="height: 1000px"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/ScrollTrigger.min.js"></script>
+
+    <script src="js/next-page-test.js"></script>
+
+    <script>
+        let header = document.querySelector("header");
+        let toggler = document.querySelector(".toggler");
+        let bars = document.querySelectorAll(".bar");
+
+        function handleNavbarPosition() {
+            let currentOffset = 0;
+            let handle = () => {
+                if (window.pageYOffset > currentOffset) {
+                    header.classList.add("hide");
+                } else {
+                    header.classList.remove("hide");
+                }
+                currentOffset = window.pageYOffset;
+            }
+            document.addEventListener("scroll", handle);
+        }
+
+
+
+        handleNavbarPosition()
+
+        function handleTogglerClick() {
+            let tl = gsap.timeline({ paused: true, defaults: { duration: 0.2 } });
+            tl
+                .to(bars[1], { opacity: 0 })
+                .to(bars[0], { y: 6 }, "vertical")
+                .to(bars[2], { y: -6 }, "vertical")
+                .to(bars[0], { rotate: 180 }, "rotate")
+                .to(bars[2], { rotate: -180 }, "rotate")
+                .to(bars[0], { rotate: 225 }, "finish")
+                .to(bars[2], { rotate: -225 }, "finish")
+            let handler = () => {
+                if (toggler.classList.contains("menu-active")) {
+                    toggler.classList.remove("menu-active");
+                    tl.reverse();
+                    gsap.fromTo(".nav-shadow", { y: 0, skewY: 0, }, { y: "-120%", transformOrigin: "top right", skewY: -5, delay: 0.1 })
+                    gsap.fromTo(".mobile-nav", { y: 0, skewY: 0 }, { y: "-120%", transformOrigin: "top right", skewY: -5 })
+                } else {
+                    toggler.classList.add("menu-active");
+                    tl.play()
+                    gsap.fromTo(".nav-effect", { y: "-120%", transformOrigin: "top right", skewY: -10 }, { y: 0, skewY: 0, stagger: 0.1 })
+                }
+            }
+            toggler.addEventListener("click", handler);
+        }
+
+        handleTogglerClick()
+
+
+        function onLoad() {
+            let img = document.querySelector(".image-wrapper img");
+            let curtain = document.querySelector(".curtain");
+            let handle = () => {
+                let tl = gsap.timeline()
+                tl.to(".curtain", { x: "100%" })
+                    .from("img", { scale: 1.2 }, "-=0.4")
+            }
+            handle()
+        }
+
+        onLoad()
+    </script>
+</body>
+</html>

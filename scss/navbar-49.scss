@@ -1,0 +1,252 @@
+$_button-background-color: mediumslateblue;
+
+/* ------------------------------------------------------
+JUST DEFAULTS / BASES FOR GENERAL STUFF... NOT
+CRUCIAL TO ACTUAL NAVBAR
+------------------------------------------------------ */
+
+html {
+	box-sizing: border-box;
+}
+*,*:before,*:after {
+	box-sizing: inherit;
+}
+*,*::before,*::after {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale !important;
+}
+html,body {
+	height: 100%;
+	min-height: 100vh;
+	width: 100%;
+	min-width: 100vw !important;
+	max-width: 100vw !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	position: relative;
+}
+.container {
+	width: 90%;
+	max-width: 768px;
+	margin-left: auto;
+	margin-right: auto;
+	/* padding: 2em 0; */
+}
+[role="banner"],[role="main"],[role="contentinfo"] {
+	@extend .container;
+	padding: 2em 0;
+}
+body,p {
+	line-height: 1.5;
+	font-weight: 500;
+}
+[role="contentinfo"] {
+	text-align: center;
+	padding: 2em;
+	p {
+		text-align: center;
+		margin: 0 auto !important;
+		padding: 0 !important;
+	}
+}
+
+// =====================================================
+//
+//	----------- NAVIGATION BAR STARTS HERE --------------
+//
+// =====================================================
+
+//------------------------------------------------------
+// [*] Base/Default Navigation Bar Style Definitions
+//------------------------------------------------------
+%unstyled-list {
+	padding: 0;
+	margin: 0;
+	list-style: none !important;
+	li {
+		list-style: none !important;
+	}
+}
+nav {
+	background: #333333;
+	width: 100%;
+	a {
+		color: white;
+		text-decoration: none;
+		font-weight: 500;
+		transition: all 150ms;
+		&.active {
+			background: $_button-background-color;
+		}
+
+		&:hover {
+			background: shade($_button-background-color, 20%);
+			color: white;
+		}
+	}
+	text-align: right;
+	ul {
+		@extend %unstyled-list;
+	}
+}
+
+//------------------------------------------------------
+// [*] Collapsed Navigation Bar Style Definitions
+//------------------------------------------------------
+.collapsed-navbar-wrapper {
+	width: 100%;
+	//text-align : right !important;
+	//display         : flex;
+	//flex-direction  : row;
+	//align-items     : center;
+	//align-content   : center;
+	//justify-content : flex-end;
+	width: auto;
+	text-align: right !important;
+	display: inline !important;
+
+	ul {
+		@extend %unstyled-list;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+
+		li {
+			display: block;
+			width: 100%;
+			border: #444444 solid 1px;
+		}
+
+		a {
+			display: block;
+			//padding : 0.5em;
+			line-height: 1;
+			width: 100%;
+			padding: 1em;
+			text-align: center;
+		}
+
+		display: none;
+	}
+
+	#navigation-trigger {
+		background: transparent !important;
+		color: white !important;
+		display: block !important;
+		width: 64px;
+		height: 64px;
+		//padding : 0;
+		//text-align : center;
+		//margin : auto;
+		padding: 1em !important;
+		box-sizing: border-box !important;
+		//text-align     : right;
+		//margin         : auto;
+		//display : flex;
+		display: inline !important;
+
+		vertical-align: middle;
+		line-height: 0 !important;
+		transition: all 120ms;
+		user-select: none !important;
+		-webkit-tap-highlight-color: transparent !important;
+		transform: scale3d(1, 1, 1);
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		&:active {
+			opacity: 0.25;
+			transform: scale3d(0.9, 0.9, 1);
+			outline: none !important;
+		}
+
+		&:focus {
+			outline: none !important;
+			background: #111;
+		}
+
+		.navigation-icon {
+			transition: all 120ms;
+			transform: scale3d(1, 1, 1);
+			color: white;
+
+			&.hidden {
+				display: none !important;
+			}
+		}
+	}
+}
+@mixin collapsed-navbar() {
+	.collapsed-navbar-wrapper {
+		display: block;
+	}
+	.expanded-navbar-wrapper {
+		display: none;
+	}
+}
+
+//------------------------------------------------------
+// [*] Expanded Navigation Bar Style Definitions
+//------------------------------------------------------
+.expanded-navbar-wrapper {
+	ul {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		align-content: center;
+		justify-content: flex-end;
+
+		a {
+			display: block;
+			//line-height : 3;
+			padding: 1em 2em;
+			vertical-align: middle;
+		}
+	}
+}
+@mixin expanded-navbar {
+	.expanded-navbar-wrapper {
+		display: block;
+	}
+	.collapsed-navbar-wrapper {
+		display: none !important;
+	}
+}
+
+/* Set the navbar to default to collapsed mode for
+`Mobile-First` practice compliance ... */
+@include collapsed-navbar;
+
+//------------------------------------------------------
+// [*] Set the navbar modes using @media queries
+//------------------------------------------------------
+@media screen and (min-width: 600px) { @include expanded-navbar;}
+@media screen and (min-width: 600px) {#navigation-trigger { display: none !important;}}
+//@media screen and (max-width : 599px) {  }
+
+/* Just to MAKE SURE the hamburger menu is hidden 
+when it's supposed to be */
+#navigation-trigger.hidden { display: none !important;}
+#navigation-trigger {
+	appearance: none !important;
+	-webkit-font-smoothing: antialiased;
+	line-height: 0 !important;
+	text-align: center;
+	text-decoration: none;
+	transition: all 150ms;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+	border: none !important;
+	outline: none !important;
+	cursor: pointer;
+	&:active, &:focus { outline: none !important; }
+}

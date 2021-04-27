@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/navbar-47.css" />
+</head>
+<body>
+    <nav class="aa-nav">
+        <div class="aa-nav-icon-container">
+            <img class="aa-nav-icon" src="https://cdn.dribbble.com/users/2089894/screenshots/4167011/allaround.png" />
+        </div>
+        <div class="aa-nav-items">
+            <span class="aa-nav-item"><a href="#">Home</a></span>
+            <span class="aa-nav-item"><a href="#">Click me</a></span>
+            <span class="aa-nav-item"><a href="#">About</a></span>
+            <span class="aa-nav-item"><a href="#">Contact</a></span>
+            <!--     <li id="searchBtn"><a><i class="search fa fa-search"></i></a></li> -->
+            <!--     <li id="searchBtn"><a><i class="search fa fa-times hide"></i></a></li> -->
+        </div>
+    </nav>
+    
+    <div class="aa-hamburger-menu collapsed" id="hamburgerMenu" onclick="toggleMenu()">
+        <span class="aa-icon-bar"></span>
+        <span class="aa-icon-bar"></span>
+        <span class="aa-icon-bar"></span>
+    </div>
+    
+    <div class="aa-mobile-overlay">
+        <ul class="aa-mobile-nav-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Click me</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <!-- <hr></hr> -->
+            <li><a href="#">Jon Jonsson</a></li>
+            <li><a href="#">Gunnar Gunnars</a></li>
+            <li><a href="#">Hrafn Hrafns</a></li>
+            <li><a href="#">Ragnar Ragnars</a></li>
+            <li><a href="#">Siggi Sig</a></li>
+            <li><a href="#">Villi Vill</a></li>
+        </ul>
+    </div>
+    
+    <section></section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/next-page-test.js"></script>
+
+    <script>
+        function toggleMenu() {
+            $("#hamburgerMenu").toggleClass("collapsed");
+            $(".aa-mobile-overlay").animate({
+                height: "toggle",
+                opacity: "toggle"
+            }, 300);
+        }
+
+        var navHeight = 90;
+        var scrollNavHeight = 65;
+        var isExpanded = true;
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > navHeight) {
+                $('.aa-nav').addClass('aa-small-nav');
+                $('.aa-nav-icon').addClass('aa-small-nav-icon');
+                $('.aa-nav-items').addClass('aa-small-nav-items');
+                $('.aa-hamburger-menu').addClass('aa-small-hamburger-menu');
+                $('.aa-nav-item > a').css('color', 'black');
+                isExpanded = false;
+            }
+
+            if (!isExpanded && $(window).scrollTop() < navHeight) {
+                $('.aa-nav').removeClass('aa-small-nav');
+                $('.aa-nav-icon').removeClass('aa-small-nav-icon');
+                $('.aa-nav-items').removeClass('aa-small-nav-items');
+                $('.aa-hamburger-menu').removeClass('aa-small-hamburger-menu');
+                $('.aa-nav-item > a').css('color', 'white');
+                isExpanded = true;
+            }
+
+        });
+
+        // $('#searchBtn').click(function() {
+        //   $('.nav-item').toggle();
+        //   $('.search').toggleClass('hide');
+        // });
+
+        // $(document).scroll(function () {
+        //   var $nav = $(".navbar-fixed-top");
+        //   $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        // });
+
+    </script>
+</body>
+</html>

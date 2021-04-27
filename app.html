@@ -18,10 +18,62 @@
     <!--====== Line Icons CSS ======-->
     <link rel="stylesheet" href="../test/smash-template-opl/smash-template-opl/assets/css/LineIcons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/app-nav.css" />
 </head>
 <body>
+    <header id="header">
+        <nav class="nav-bar container">
+            <h3 class="brand">Logo</h3>
+            <button class="toggle-menu">
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    
+    <div id="menu" class="">
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="#">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Pricing
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="#">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    
+        <footer class="menu-footer">
+            <nav class="footer-nav">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-twitter fa-fw"></i>
+                            Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-envelope fa-fw"></i>
+                            Subscribe
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+
     <div class="hero-slider" data-carousel>
-        <div class="carousel-cell" style="background-image:url(img/bright.jpg);">
+        <div class="carousel-cell" style="background-image:url(img/work-tablet.jpg);">
             <div class="overlay"></div>
             <div class="inner">
                 <h3 class="subtitle">Hello</h3>
@@ -525,8 +577,25 @@
     <script src="../test/smash-template-opl/smash-template-opl/assets/js/main.js"></script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        AOS.init();
+
+        $('.toggle-menu').click(function () {
+            $(this).toggleClass('active');
+            $('#menu').toggleClass('open');
+        });
+
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#header");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > 50);
+            });
+        });
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.pkgd.min.js"></script>
+    
     <script>
         var options = {
             accessibility: true,
@@ -554,10 +623,6 @@
                 image.style.backgroundPosition = x + 'px';
             });
         });
-    </script>
-    
-    <script>
-        AOS.init();
     </script>
 </body>
 </html>

@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Navbar Responsive</title>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!--Main Stylesheet-->
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        /*--------------------
+        Navbar Start
+        --------------------*/
+        .navbar{
+            background: #222;
+            padding: 0 100px;
+        }
+        /*Navbar Logo*/
+        .logo{
+            width:100px;
+            height:50px;
+            line-height:50px;
+            color:#fff;
+            font-weight:700;
+            font-size:25px;
+            float:left;
+        }
+        .navbar nav{
+            float:right;
+        }
+        .clearfix{
+            clear:both;
+        }
+        .navbar nav ul{
+            margin:0;
+            padding:0;
+            display: flex;
+        }
+        .navbar nav ul li{
+            list-style:none;
+        }
+        .navbar nav ul li:first-child a{
+            background: red;
+        }
+        .navbar nav ul li a{
+            padding:0 15px;
+            height:50px;
+            line-height:50px;
+            text-decoration:none;
+            color:#fff;
+            display:block;
+        }
+        .navbar nav ul li a:hover{
+            background: red;
+            
+        }
+        .nav-togglor{
+            width:50px;
+            height:50px;
+            line-height:50px;
+            float:right;
+            background: red;
+            color:#fff;
+            text-align:center;
+            display:none;
+            cursor:pointer;
+        }
+
+
+
+        /*Responsive Navbar*/
+        @media (max-width: 960px){
+            
+            .navbar{
+                padding: 0 50px;
+            }
+            .nav-togglor{
+                display: block;
+            }
+            
+            .navbar nav{
+                display:none;
+                margin-top: 30px;
+            }
+            .navbar nav.active{
+                display:block;
+                width:100%;
+                
+            }
+            .navbar nav.active ul{
+                display:block;
+            }
+        }
+
+        /*--------------------
+        Navbar End
+        --------------------*/
+    </style>
+</head>
+
+<body>
+
+    <!------------------------------
+	Website Navigation Menu Start
+	-------------------------------->
+    <header>
+        <div class="navbar">
+            <!--Navbar Logo-->
+            <div class="logo">Logo</div>
+            <!--Navbar Toggler-->
+            <div class="nav-togglor"><i class="fas fa-bars"></i></div>
+            <!--Navbar Items-->
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <!--Clear Fix-->
+            <div class="clearfix"></div>
+        </div>
+    </header>
+    <!------------------------------
+	Website Navigation Menu Start
+	-------------------------------->
+
+
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!--App Js-->
+    <script src="js/next-page-test.js"></script>
+
+    <script>
+        //Navbar Responsive Script
+        $(document).ready(function () {
+            $('.nav-togglor').click(function () {
+                $('.nav-togglor').toggleClass('active');
+                $('nav').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

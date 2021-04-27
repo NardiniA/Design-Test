@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/navbar-39.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="flex-nav" id="flex-nav">
+    
+        <div class="search-wrap" id="search-wrap">
+            <div class="search-bar">
+                <input class="search-input" type="search" placeholder="Search" />
+                <a href="#" class="close-search toggle-search" data-target="#search-wrap">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </a>
+            </div>
+        </div>
+    
+        <div class="nav">
+    
+            <div class="nav-heading">
+                     <div class="logo">
+                    <img src="https://lh5.googleusercontent.com/vLNZiNmmC9XFrL4uXk0ixQt32h1iYATj-RjLaaZe9KXcGqfqEYLN8iPykAesaaOkJmgfHk1UtJkFpkE=w1366-h648"
+                        alt="" />
+                    <b>FlexNav</b>
+                </div>
+            </div>
+    
+            <!-- mobile right -->
+            <div class="side-nav" id="side-nav">
+                <div class="overlay"></div>
+                <nav class="navigation">
+    
+                    <div class="nav-header text-center has-image"
+                        style="background-image: url(https://source.unsplash.com/zuQDqLFavI4/600x600);">
+    
+                        <div class="image-overlay">
+                            <img class="avatar img-circle"
+                                src="https://gravatar.com/avatar/437967db6e351084032557e99bc919ff" alt="user" />
+                            <h4 class="header-title">User Name</h4>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <button class="btn btn-success">My Account</button>
+                        </div>
+    
+                    </div>
+    
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <a href="#"><i class="icon glyphicon glyphicon-user"></i> item 1</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#"><i class="icon glyphicon glyphicon-user"></i> item 2</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#"><i class="icon glyphicon glyphicon-user"></i> item 3</a>
+                        </li>
+                    </ul>
+    
+                </nav>
+            </div>
+    
+            <!-- mobile left -->
+            <div class="side-nav left" id="side-nav-left">
+                <div class="overlay"></div>
+                <nav class="navigation">
+    
+                    <div class="nav-header text-center">
+    
+                        <img class="avatar img-circle" src="https://gravatar.com/avatar/437967db6e351084032557e99bc919ff"
+                            alt="user" />
+                        <h4 class="header-title">User Name</h4>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <button class="btn btn-success">My Account</button>
+    
+                    </div>
+    
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <div class="item-divider"></div>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#"><i class="icon glyphicon glyphicon-user"></i> item 1</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#"><i class="icon glyphicon glyphicon-user"></i> item 2</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#"><i class="icon glyphicon glyphicon-user"></i> item 3</a>
+                        </li>
+                    </ul>
+    
+                </nav>
+            </div>
+    
+            <!-- tablet and desktop navigation -->
+            <nav class="navigation" id="navigation">
+                <ul class="menu">
+                    <li class="menu-item hidden-mobile"><a href="#">item 1</a></li>
+                    <li class="menu-item hidden-mobile"><a href="#">item 2</a></li>
+                    <li class="menu-item hidden-mobile"><a href="#">item 3</a></li>
+                    <li class="menu-item has-icon">
+                        <a href="#" class="toggle-search" data-target="#search-wrap"><i
+                                class="glyphicon glyphicon-search"></i></a>
+                    </li>
+                    <li class="menu-item has-icon">
+                        <a href="#" class="toggle-side-nav" data-target="#side-nav">
+                            <span class="sr-only">Toogle SideBar</span>
+                            <i class="glyphicon glyphicon-menu-hamburger"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item dropdown has-icon">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img class="img-circle user-avatar"
+                                src="https://gravatar.com/avatar/437967db6e351084032557e99bc919ff" alt="avatar" />
+                        </a>
+                        <ul class="dropdown-menu dropdown-right">
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-music"></i> Item 1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-music"></i> Item 2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-music"></i> Item 3
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+    
+        </div>
+    </div>
+    
+    <br />
+    <button class="btn btn-default toggle-class" data-target="#flex-nav" data-class="nav-fixed">Fixed Nav</button>
+    <button class="btn btn-default toggle-class" data-target="#flex-nav" data-class="nav-dark">Dark Nav</button>
+    <button class="btn btn-default toggle-class" data-target="#flex-nav" data-class="nav-transparent">Transparent
+        Nav</button>
+    <button class="btn btn-default toggle-class" data-target="#flex-nav" data-class="nav-text-light">Light Text</button>
+    <button class="btn btn-default toggle-side-nav" data-target="#side-nav-left">Sidenav Left</button>
+    <button class="btn btn-default toggle-side-nav" data-target="#side-nav">Sidenav Right</button>
+
+    <!-- This is for demo purposes only -->
+    <script src="js/next-page-test.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        $('.toggle-class').on('click', function () {
+            var targetId = $(this).data('target');
+            var className = $(this).data('class');
+
+            if (targetId && className) {
+                $(targetId).toggleClass(className);
+            }
+
+        });
+
+        $('.toggle-side-nav').on('click', function () {
+            var targetId = $(this).data('target');
+            var $sidenav;
+            var $overlay;
+
+            if (targetId) {
+                $sidenav = $(targetId);
+                $sidenav.addClass('open');
+
+                $sidenav.find('.overlay').on('click', function () {
+                    $sidenav.removeClass('open');
+                    $(this).off('click');
+                });
+            }
+        });
+
+        $('.toggle-search').on('click', function () {
+            var targetId = $(this).data('target');
+            var $searchBar;
+            if (targetId) {
+                $searchBar = $(targetId);
+                $searchBar.toggleClass('open');
+            }
+        });
+    </script>
+</body>
+</html>

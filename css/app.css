@@ -47,8 +47,6 @@ p.section-desc {
       padding: 20px 10px;
       box-sizing: border-box;
       transition: box-shadow 0.1s !important; }
-      .page-section .services .item:hover {
-        box-shadow: 0 0 10px rgba(10, 10, 10, 0.5); }
       .page-section .services .item svg {
         height: 67px; }
       .page-section .services .item h4 {
@@ -66,7 +64,7 @@ p.section-desc {
       margin-bottom: 60px; }
     .page-section .content .text {
       text-align: center; }
-      .page-section .content .text a.about-btn {
+      .page-section .content .text .btn-outline, .page-section .content .text .btn-solid {
         margin: 0 auto; }
       .page-section .content .text p {
         color: #8a8fa3; } }
@@ -120,7 +118,6 @@ a.btn-solid {
     color: #fff; }
 
 .client {
-  margin-top: 90px;
   margin-bottom: 30px;
   padding: 74px 0;
   background: #f4f6f7; }

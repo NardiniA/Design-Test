@@ -1,0 +1,90 @@
+* {
+  transition: all 0.2s ease-in-out; }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: gainsboro;
+  color: dimgray; }
+
+.nav-underlay {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0;
+  visibility: hidden; }
+  .nav-underlay.open {
+    opacity: 0.5;
+    visibility: visible; }
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%; }
+
+.main-nav {
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  padding: 10px;
+  background: linear-gradient(to right, slateblue, orchid);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); }
+  .main-nav .nav-toggle {
+    position: relative;
+    margin-right: 10px;
+    left: 0; }
+  .main-nav .brand {
+    height: 100%;
+    margin-right: 10px; }
+  .main-nav .primary-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 70px;
+    left: -200px;
+    bottom: 0;
+    width: 200px;
+    background: whitesmoke;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.5); }
+    .main-nav .primary-links.open {
+      left: 0; }
+    .main-nav .primary-links a {
+      width: 100%;
+      padding: 15px 20px;
+      margin-right: 10px;
+      color: slateblue; }
+  .main-nav .secondary-links {
+    flex-grow: 1;
+    text-align: right; }
+  @media screen and (min-width: 992px) {
+    .main-nav .nav-toggle {
+      display: none;
+      left: 100px; }
+    .main-nav .primary-links {
+      flex-direction: row;
+      position: relative;
+      top: auto;
+      left: auto;
+      bottom: auto;
+      background: transparent;
+      box-shadow: none; }
+      .main-nav .primary-links a {
+        color: white; } }
+
+main {
+  position: relative;
+  top: 100px; }
+
+/*# sourceMappingURL=navbar-45.css.map */

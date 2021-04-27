@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900');
+
+        body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', san-serif;
+        }
+
+        header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 100px;
+        background: #262626;
+        width: 100%;
+        box-sizing: border-box;
+        }
+
+        header .logo {
+        color: #fff;
+        height: 50%;
+        line-height: 50px;
+        float: left;
+        font-weight: bold;
+        font-size: 24px;
+        }
+
+        header nav {
+        float: right;
+        }
+
+        header nav ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        }
+
+        header nav ul li {
+        list-style: none;
+        }
+
+        header nav ul li a {
+        height: 50px;
+        line-height: 50px;
+        padding: 0 20px;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        }
+
+        header nav ul li a:hover,
+        header nav ul li a.active {
+        color: #fff;
+        background: #fff000;
+        color: black;
+        transition: 0.5s;
+        }
+
+        .menu-toggle {
+        color: #fff;
+        float: right;
+        line-height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        display: none;
+        }
+
+        @media (max-width: 991px) {
+        header {
+            padding: 0 20px;
+        }
+        
+        .menu-toggle {
+            display: block;
+        }
+        
+        header nav {
+            position: absolute;
+            width: 100%;
+            height: calc(100vh - 50px);
+            background: #333;
+            top: 50px;
+            left: -100%;
+            transition: 0.5s;
+        }
+        
+        header nav.active {
+            left: 0;
+        }
+        
+        header nav ul {
+            display: block;
+            text-align: center;
+        }
+        
+        header nav ul li a {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">LOGO</div>
+        <nav id="menu">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div onclick="menuToggle()" class="menu-toggle"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <!-- This is for demo purposes only -->
+    <script src="js/next-page-test.js"></script>
+
+    <script>
+        function menuToggle() {
+            var d = document.getElementById('menu')
+            d.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>

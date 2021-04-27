@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Github Topbar</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        }
+
+        .container {
+        background: #24292e;
+        width: 100%;
+        height: 80px;
+        position: relative;
+        }
+
+        .inner-container {
+        max-width: 76%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        padding-bottom: 16px;
+        padding-top: 16px;
+        }
+
+        .left {
+        float: left;
+        }
+
+        .right {
+        float: right;
+        }
+
+        .desktop-li {
+        display: inline-block;
+        padding: 14px;
+        }
+
+        .logo {
+        margin: 0;
+        padding: 0;
+        }
+
+        .logo img {
+        position: relative;
+        top: 0px;
+        height: 42px;
+        }
+
+        .or {
+        color: #586069;
+        }
+
+        .search {
+        background-color: hsla(0, 0%, 100%, 0.125);
+        height: 32px;
+        border-radius: 3px;
+        border: none;
+        width: 340px;
+        position: relative;
+        top: -4px;
+        color: #fff;
+        padding-left: 8px;
+        outline: none;
+        font-size: 1rem;
+        }
+
+        .search-outer {
+        position: relative;
+        }
+
+        .search-hint {
+        position: absolute;
+        right: 9px;
+        top: 0px;
+        height: 23px;
+        }
+
+        .search:focus {
+        background: #fff;
+        color: black;
+        }
+
+        a {
+        text-decoration: none;
+        color: aliceblue;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+            Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 1.1rem;
+        }
+
+        .bold {
+        font-weight: 500;
+        }
+
+        /* mobile style */
+        .mobile-logo img {
+        height: 45px;
+        float: left;
+        }
+
+        .svg-button {
+        float: right;
+        background: none;
+        border: none;
+        fill: #fff;
+        padding-top: 8px;
+        outline: none;
+        }
+
+        .drop-down-mobile {
+        height: 0;
+        background: #24292e;
+        overflow: hidden;
+        transition: height 1s;
+        }
+
+        .mobile-li {
+        display: block;
+        padding: 15px;
+        border-top: 1px solid #444d56;
+        }
+
+        .mobile-ul {
+        padding: 0 40px;
+        }
+
+        .search-mobile {
+        width: 100%;
+        }
+
+        .search-outer-mobile {
+        margin-top: 6px;
+        }
+
+        @media (max-width: 1446px) {
+        .inner-container {
+            max-width: 92%;
+        }
+        .desktop-li {
+            padding: 8px;
+        }
+        }
+
+        @media (min-width: 1100px) {
+        .mobile {
+            visibility: hidden;
+        }
+        .drop-down-mobile {
+            display: none;
+        }
+        }
+
+        @media (max-width: 1100px) {
+        .desktop {
+            display: none;
+        }
+        .search-hint {
+            right: -1px;
+        }
+        }
+
+        @media (max-width: 450px) {
+        .mobile-ul {
+            padding: 0 6px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- desktop version -->
+        <div class="inner-container desktop">
+            <span class="logo left"><a href="http://github.com"><img
+                        src="https://comunit.github.io/github-topbar/logo.jpg" alt="" /></a></span>
+            <ul class="left">
+                <li class="desktop-li"><a href="#">Features</a></li>
+                <li class="desktop-li"><a href="#">Business</a></li>
+                <li class="desktop-li"><a href="#">Explore</a></li>
+                <li class="desktop-li"><a href="#">Marketplace</a></li>
+                <li class="desktop-li"><a href="#">Pricing</a></li>
+            </ul>
+
+            <ul class="right">
+                <li class="search-outer desktop-li">
+                    <div class="search-outer">
+                        <input type="text" class="search" placeholder="Search GitHub" />
+                        <img src="https://assets-cdn.github.com/images/search-shortcut-hint.svg" class="search-hint"
+                            alt="" />
+                    </div>
+                </li>
+                <li class="desktop-li">
+                    <a class="bold" href="#">Sign In</a> <span class="or"> or </span>
+                    <a class="bold" href="#">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- mobile version -->
+        <div class="inner-container mobile">
+            <div class="mobile-logo"><img src="https://comunit.github.io/github-topbar/logo.jpg" /></div>
+            <button class="svg-button">
+                <svg height="28" class="octicon octicon-three-bars text-white" viewBox="0 0 12 16" version="1.1"
+                    width="30" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="drop-down-mobile">
+        <ul class="mobile-ul">
+            <li class="mobile-li"><a href="#">Features</a></li>
+            <li class="mobile-li"><a href="#">Business</a></li>
+            <li class="mobile-li"><a href="#">Explore</a></li>
+            <li class="mobile-li"><a href="#">Marketplace</a></li>
+            <li class="mobile-li"><a href="#">Pricing</a></li>
+            <li class="search-outer mobile-li">
+                <div class="search-outer search-outer-mobile">
+                    <input type="text" class="search search-mobile" placeholder="Search GitHub" />
+                    <img src="https://assets-cdn.github.com/images/search-shortcut-hint.svg" class="search-hint"
+                        alt="" />
+                </div>
+            </li>
+            <li class="mobile-li">
+                <a class="bold" href="#">Sign In</a> <span class="or"> or </span>
+                <a class="bold" href="#">Sign Up</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- This is for demo purposes only -->
+    <script src="js/next-page-test.js"></script>
+    
+    <script>
+        let input = document.getElementsByClassName("search");
+        let searchhint = document.getElementsByClassName("search-hint");
+        let button = document.getElementsByClassName("svg-button");
+        let mobile = document.getElementsByClassName("drop-down-mobile");
+        let isOpen = false;
+
+        // show hide search hint
+        for (let i = 0; i < input.length; i++) {
+            for (let i = 0; i < searchhint.length; i++) {
+                input[i].addEventListener("focus", () => {
+                    searchhint[i].style.display = "none";
+                });
+
+                input[i].addEventListener("focusout", () => {
+                    searchhint[i].style.display = "block";
+                });
+            }
+        }
+
+        // show hide mobile drop down
+        button[0].addEventListener("click", () => {
+            if (isOpen === false) {
+                // mobile[0].classList.remove("hide-lg");
+                mobile[0].style.height = "400px";
+                isOpen = true;
+            } else {
+                // mobile[0].classList.add("hide-lg");
+                mobile[0].style.height = "0";
+                isOpen = false;
+            }
+        });
+    </script>
+</body>
+</html>

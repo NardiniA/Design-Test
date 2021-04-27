@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/navbar-45.css" />
+</head>
+<body>
+    <nav class="main-nav">
+        <button class="nav-toggle btn btn-secondary">=</button>
+        <img class="brand" src="http://placehold.it/250/100/fff">
+        <div class="primary-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+        </div>
+        <div class="secondary-links">
+            <a href="#" class="btn btn-secondary">Contact</a>
+        </div>
+    </nav>
+    
+    <aside class="nav-underlay"></aside>
+    
+    <main>
+        <div class="container">
+            <h1>Responsive Navbar</h1>
+            <p class="lead">
+                A Responsive navbar that goes from the top of the screen on desktop, to the side on tablet/mobile.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac aliquet magna, sit amet tempor mi. Fusce
+                pretium lobortis erat, non feugiat urna condimentum aliquam. Nulla odio est, tempus a ante non, pellentesque
+                rutrum turpis. Vestibulum hendrerit posuere porta. Etiam in cursus eros. Mauris non turpis viverra, egestas
+                nunc vel, porta augue. Donec eget neque et mi pellentesque egestas et porta urna. Morbi nisl mauris
+            </p>
+            <p>
+                Pellentesque egestas et porta urna. Morbi nisl mauris, convallis nec neque ac, pretium euismod lectus. In
+                fringilla orci a accumsan porta. Proin a interdum sapien, eget cursus purus. Nam auctor faucibus erat. Nunc
+                vel sollicitudin tortor.
+            </p>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/next-page-test.js"></script>
+
+    <script>
+        $(".nav-toggle,.nav-underlay").on("click", function () {
+            $(".primary-links,.nav-underlay").toggleClass("open");
+        });
+
+        $(window).resize(function () {
+            if (window.matchMedia("(min-width: 992px)").matches) {
+                $(".primary-links,.nav-underlay").removeClass("open");
+            }
+        });
+    </script>
+</body>
+</html>

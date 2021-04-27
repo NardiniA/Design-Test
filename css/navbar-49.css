@@ -1,0 +1,173 @@
+/* ------------------------------------------------------
+JUST DEFAULTS / BASES FOR GENERAL STUFF... NOT
+CRUCIAL TO ACTUAL NAVBAR
+------------------------------------------------------ */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+*, *::before, *::after {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important; }
+
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  min-width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative; }
+
+.container, [role="banner"], [role="main"], [role="contentinfo"] {
+  width: 90%;
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding: 2em 0; */ }
+
+[role="banner"], [role="main"], [role="contentinfo"] {
+  padding: 2em 0; }
+
+body, p {
+  line-height: 1.5;
+  font-weight: 500; }
+
+[role="contentinfo"] {
+  text-align: center;
+  padding: 2em; }
+  [role="contentinfo"] p {
+    text-align: center;
+    margin: 0 auto !important;
+    padding: 0 !important; }
+
+nav ul, .collapsed-navbar-wrapper ul {
+  padding: 0;
+  margin: 0;
+  list-style: none !important; }
+  nav ul li, .collapsed-navbar-wrapper ul li {
+    list-style: none !important; }
+
+nav {
+  background: #333333;
+  width: 100%;
+  text-align: right; }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 150ms; }
+    nav a.active {
+      background: mediumslateblue; }
+    nav a:hover {
+      background: shade(mediumslateblue, 20%);
+      color: white; }
+
+.collapsed-navbar-wrapper {
+  width: 100%;
+  width: auto;
+  text-align: right !important;
+  display: inline !important; }
+  .collapsed-navbar-wrapper ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    display: none; }
+    .collapsed-navbar-wrapper ul li {
+      display: block;
+      width: 100%;
+      border: #444444 solid 1px; }
+    .collapsed-navbar-wrapper ul a {
+      display: block;
+      line-height: 1;
+      width: 100%;
+      padding: 1em;
+      text-align: center; }
+  .collapsed-navbar-wrapper #navigation-trigger {
+    background: transparent !important;
+    color: white !important;
+    display: block !important;
+    width: 64px;
+    height: 64px;
+    padding: 1em !important;
+    box-sizing: border-box !important;
+    display: inline !important;
+    vertical-align: middle;
+    line-height: 0 !important;
+    transition: all 120ms;
+    user-select: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    transform: scale3d(1, 1, 1); }
+    .collapsed-navbar-wrapper #navigation-trigger:hover {
+      opacity: 0.8; }
+    .collapsed-navbar-wrapper #navigation-trigger:active {
+      opacity: 0.25;
+      transform: scale3d(0.9, 0.9, 1);
+      outline: none !important; }
+    .collapsed-navbar-wrapper #navigation-trigger:focus {
+      outline: none !important;
+      background: #111; }
+    .collapsed-navbar-wrapper #navigation-trigger .navigation-icon {
+      transition: all 120ms;
+      transform: scale3d(1, 1, 1);
+      color: white; }
+      .collapsed-navbar-wrapper #navigation-trigger .navigation-icon.hidden {
+        display: none !important; }
+
+.expanded-navbar-wrapper ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end; }
+  .expanded-navbar-wrapper ul a {
+    display: block;
+    padding: 1em 2em;
+    vertical-align: middle; }
+
+/* Set the navbar to default to collapsed mode for
+`Mobile-First` practice compliance ... */
+.collapsed-navbar-wrapper {
+  display: block; }
+
+.expanded-navbar-wrapper {
+  display: none; }
+
+@media screen and (min-width: 600px) {
+  .expanded-navbar-wrapper {
+    display: block; }
+
+  .collapsed-navbar-wrapper {
+    display: none !important; } }
+@media screen and (min-width: 600px) {
+  #navigation-trigger {
+    display: none !important; } }
+/* Just to MAKE SURE the hamburger menu is hidden 
+when it's supposed to be */
+#navigation-trigger.hidden {
+  display: none !important; }
+
+#navigation-trigger {
+  appearance: none !important;
+  -webkit-font-smoothing: antialiased;
+  line-height: 0 !important;
+  text-align: center;
+  text-decoration: none;
+  transition: all 150ms;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: none !important;
+  outline: none !important;
+  cursor: pointer; }
+  #navigation-trigger:active, #navigation-trigger:focus {
+    outline: none !important; }
+
+/*# sourceMappingURL=navbar-49.css.map */
