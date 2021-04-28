@@ -134,7 +134,7 @@
             </div>
             
             <div class="services">
-                <div class="item" data-aos="fade-up">
+                <div class="item" data-aos="fade-up" data-aos-duration="1800">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 68" fill="none" role="img"
                         aria-labelledby="ad4nnl4a4b4izewdpznj9x90ff3cd4si">
                         <desc id="ad4nnl4a4b4izewdpznj9x90ff3cd4si">Shapes Icon</desc>
@@ -154,7 +154,7 @@
                     <h4>Service 1</h4>
                     <div>Lorem ipsum dolor sit amet, consecitectur adipsicing.</div>
                 </div>
-                <div class="item">
+                <div class="item" data-aos="fade-up" data-aos-duration="1800">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 68" fill="none" role="img"
                         aria-labelledby="ad4nnl4a4b4izewdpznj9x90ff3cd4si">
                         <desc id="ad4nnl4a4b4izewdpznj9x90ff3cd4si">Shapes Icon</desc>
@@ -173,7 +173,7 @@
                     <h4>Service 2</h4>
                     <div>Lorem ipsum dolor sit amet, consecitectur adipsicing.</div>
                 </div>
-                <div class="item">
+                <div class="item" data-aos="fade-up" data-aos-duration="1800">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 68" fill="none" role="img"
                         aria-labelledby="ad4nnl4a4b4izewdpznj9x90ff3cd4si">
                         <desc id="ad4nnl4a4b4izewdpznj9x90ff3cd4si">Shapes Icon</desc>
@@ -192,7 +192,7 @@
                     <h4>Service 3</h4>
                     <div>Lorem ipsum dolor sit amet, consecitectur adipsicing.</div>
                 </div>
-                <div class="item">
+                <div class="item" data-aos="fade-up" data-aos-duration="1800">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 68" fill="none" role="img"
                         aria-labelledby="ad4nnl4a4b4izewdpznj9x90ff3cd4si">
                         <desc id="ad4nnl4a4b4izewdpznj9x90ff3cd4si">Shapes Icon</desc>
@@ -592,11 +592,14 @@
             $('#menu').toggleClass('open');
         });
 
-        $(function () {
-            $(document).scroll(function () {
-                var $nav = $("#header");
-                $nav.toggleClass('scrolled', $(this).scrollTop() > 50);
-            });
+        $(window).scroll(function (event) {
+            let yOffset = window.pageYOffset;
+            let breakpoint = 50;
+            if (yOffset > breakpoint) {
+                $("#header").addClass('scrolled');
+            } else {
+                $("#header").removeClass('scrolled');
+            }
         });
     </script>
     

@@ -7,8 +7,10 @@
   z-index: 1110;
   width: 100%; }
   #header.scrolled {
-    background: #0a0a0a !important;
-    transition: all 0.3s ease; }
+    background: rgba(10, 10, 10, 0.925) !important;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    transition: .5s; }
   #header h3.brand {
     font-weight: 300 !important;
     width: fit-content;

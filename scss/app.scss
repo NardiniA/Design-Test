@@ -65,7 +65,12 @@ p.section-desc {
             text-align: center;
             padding: 20px 10px;
             box-sizing: border-box;
-            transition: box-shadow 0.1s !important;
+
+            &:hover {
+                box-shadow: 0 0 14px rgba(25, 25, 25, 0.5);
+                transition-property: box-shadow;
+                transition-duration: 0.5s;
+            }
 
             svg {
                 height: 67px;

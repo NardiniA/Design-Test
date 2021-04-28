@@ -46,10 +46,6 @@ p.section-desc {
       text-align: center;
       padding: 20px 10px;
       box-sizing: border-box; }
-      .page-section .services .item:hover {
-        box-shadow: 0 0 14px rgba(25, 25, 25, 0.5);
-        transition-property: box-shadow;
-        transition-duration: 0.5s; }
       .page-section .services .item svg {
         height: 67px; }
       .page-section .services .item h4 {
@@ -848,4 +844,4 @@ a {
     margin-right: 0;
     font-weight: 600; } }
 
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=app.scss.map */
