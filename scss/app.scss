@@ -141,6 +141,7 @@ a.btn-outline {
     font-size: 0.8rem;
     letter-spacing: 3px;
     width: fit-content;
+    width: -moz-fit-content;
     color: $main;
     text-decoration: none;
     transition: all .2s ease;
