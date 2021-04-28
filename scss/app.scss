@@ -3,12 +3,12 @@ $light: #8a8fa3;
 $light-bg: #f4f6f7;
 $black: #14080E;
 
-$darker: rgb(90, 70, 255);
-$darkest: rgb(65, 65, 255);
+$darker: #8967F9;
+$darkest: #5321F7;
 
 $main: rgb(117, 78, 249);
-$secondary: #0067f4;
-$accent: rgb(190, 120, 255);
+$secondary: #4E98F9;
+$third: #E84EF9;
 
 *, *::after, *::before {
     margin: 0;
@@ -164,7 +164,7 @@ a.btn-solid {
     transition: all .2s ease;
 
     &:hover {
-        background: $secondary;
+        background: $darker;
         color: $white;
     }
 }
