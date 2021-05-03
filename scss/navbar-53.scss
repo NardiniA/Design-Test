@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap");
+
+$font: "Ubuntu", sans-serif;
+
+$m-01: #8e419c;
+$m-02: #d30773;
+$m-03: #ee5623;
+$m-04: #fc9e00;
+$m-05: #90bc0d;
+$m-06: #67c4d3;
+
+$cubic: cubic-bezier(0.5, 0.43, 0.15, 0.98);
+$cubicMenu: cubic-bezier(0, 0.35, 0.08, 1.33);
+
+body {
+   margin: 0;
+   height: 150vh;
+   background: linear-gradient(325deg, #ccc, #f6f6f6);
+}
+
+.mainNav_sidebar {
+   position: fixed;
+   right: 0;
+   display: flex;
+   flex-direction: column;
+
+   // Menu Icon Hamburguer
+   .sidebar_menuIcon {
+      transform: translateX(72px);
+      height: 72px;
+      background-color: rgba(#f6f6f6, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.4s $cubic;
+
+      &:before {
+         content: "";
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         background-color: white;
+         transition: all 0.4s ease;
+      }
+
+      .menuIcon_content {
+         width: 20px;
+         height: 20px;
+         position: relative;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         transition: all 0.3s ease;
+         
+
+         // Lines that form the icon
+         .icon_line {
+            width: 100%;
+            height: 2px;
+            background-color: #646464;
+            display: flex;
+            position: absolute;
+            transition: all 0.4s ease, transform 0.4s cubic-bezier(0.39, 0.29, 0, 4);
+            left: 0;
+
+            &:nth-child(1) {
+               transform: translateY(-5px);
+            }
+            &:nth-child(2) {
+               width: 18px;
+            }
+            &:nth-child(3) {
+               width: 14px;
+               transform: translateY(5px);
+            }
+         }
+      }
+
+      &:hover {
+         
+         &:before {
+            width: 60px;
+            height: 60px;
+         }
+
+         .menuIcon_content {
+            width: 24px;
+         height: 24px;
+            .icon_line {
+               width: 100%;
+               transition: all 0.4s ease, transform 0.4s cubic-bezier(0.39, 0.29, 0, 4);
+              
+
+               &:nth-child(1) {
+                  transform: translateY(-7px);
+               }
+               &:nth-child(2) {
+               }
+               &:nth-child(3) {
+                  transform: translateY(7px);
+               }
+            }
+         }
+      }
+   }
+
+   // Container all icons
+   .icons_container {
+      transform: translateY(-72px);
+      transition: all 0.4s 0.2s $cubic;
+
+      // Container individual icons
+      .side_icons {
+         width: 72px;
+         height: 72px;
+         right: 0;
+         position: relative;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         cursor: pointer;
+
+         // Icon wrapper
+         .icon_wrapper {
+            position: absolute;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: rgba(#f6f6f6, 0.5);
+            transition: all 0.3s $cubic;
+            transform: translateX(0%);
+
+            // Colored line
+            &:before {
+               content: "";
+               position: absolute;
+               height: 100%;
+               width: 0px;
+               left: 0;
+               background-color: red;
+               transition: all 0.2s ease;
+            }
+
+            // SVG Icon
+            .icon {
+               fill: #646464;
+               width: 24px;
+               height: 24px;
+               object-fit: cover;
+               padding: 24px;
+               font-weight: 500;
+               font-size: 5em;
+               transition: all 0.4s ease;
+            }
+
+            // Icon Name
+            .iconName {
+               top: 0;
+               padding-right: 35px;
+               white-space: nowrap;
+               transition: all 0.2s 0.2s ease;
+               transform: translateX(20px);
+               font-family: $font;
+               text-transform: uppercase;
+               letter-spacing: 1.8px;
+               line-height: 1.7;
+               font-size: 12px;
+               font-weight: 400;
+            }
+         }
+
+         // Icons Variations Themes
+         &.icon_search {
+            color: $m-06;
+            .icon_wrapper {
+               &:before {
+                  background-color: $m-06;
+               }
+            }
+         }
+         &.icon_private {
+            color: $m-01;
+            .icon_wrapper {
+               &:before {
+                  background-color: $m-01;
+               }
+            }
+         }
+         &.icon_contacts {
+            color: $m-02;
+            .icon_wrapper {
+               &:before {
+                  background-color: $m-02;
+               }
+            }
+         }
+         &.icon_mediadores {
+            color: $m-03;
+            .icon_wrapper {
+               &:before {
+                  background-color: $m-03;
+               }
+            }
+         }
+         &.icon_simuladores {
+            color: $m-04;
+            .icon_wrapper {
+               &:before {
+                  background-color: $m-04;
+               }
+            }
+         }
+
+         // Icon Hover
+         &:hover {
+            .icon_wrapper {
+               transform: translateX(calc(-100% + 72px));
+               background-color: rgba(white, 1);
+               .iconName {
+                  transform: translateX(0px);
+               }
+
+               &:before {
+                  width: 3px;
+                  animation: line 0.5s 0.1s cubic-bezier(0.71, 0.03, 0, 1)
+                     forwards;
+                  @keyframes line {
+                     0% {
+                        left: 0px;
+                        width: 3px;
+                     }
+
+                     20% {
+                        width: 8px;
+                        left: -8px;
+                     }
+
+                     100% {
+                        width: 3px;
+                        left: 0;
+                     }
+                  }
+               }
+            }
+
+            // Icons change to Main Colors
+            &.icon_search {
+               .icon_wrapper {
+                  .icon {
+                     fill: $m-06;
+                  }
+               }
+            }
+            &.icon_private {
+               .icon_wrapper {
+                  .icon {
+                     fill: $m-01;
+                  }
+               }
+            }
+            &.icon_contacts {
+               .icon_wrapper {
+                  .icon {
+                     fill: $m-02;
+                  }
+               }
+            }
+            &.icon_mediadores {
+               .icon_wrapper {
+                  .icon {
+                     fill: $m-03;
+                  }
+               }
+            }
+            &.icon_simuladores {
+               .icon_wrapper {
+                  .icon {
+                     fill: $m-04;
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   // Menu Hamburguer appears after scroll
+   &.appear {
+      // The menu Icon appears from right
+      .sidebar_menuIcon {
+         transition: all 0.4s 0.2s $cubic;
+         transform: translateX(0px);
+      }
+      // The icons container gets down
+      .icons_container {
+         transform: translateY(0px);
+      }
+   }
+}

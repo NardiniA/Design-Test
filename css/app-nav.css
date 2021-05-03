@@ -7,10 +7,11 @@
   z-index: 1110;
   width: 100%; }
   #header.scrolled {
-    background: rgba(10, 10, 10, 0.925) !important;
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    transition: .5s; }
+    background: rgba(25, 25, 25, 0.4) !important;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    padding: 0 0.5rem; }
   #header h3.brand {
     font-weight: 300 !important;
     width: fit-content;
@@ -68,6 +69,8 @@
     transition: opacity 0.3s ease-in-out; }
     #menu ul a:hover {
       opacity: 1; }
+  #menu ul a.disabled {
+    opacity: 0.5; }
   #menu .main-nav {
     position: relative;
     top: 50%;

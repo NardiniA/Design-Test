@@ -1,0 +1,192 @@
+.about {
+  position: fixed;
+  z-index: 10;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  transition: all 0.2s ease; }
+  .about .bg_links {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+    backdrop-filter: blur(5px);
+    position: absolute; }
+  .about .logo {
+    width: 40px;
+    height: 40px;
+    z-index: 9;
+    background-image: url(https://rafaelalucas91.github.io/assets/codepen/logo_white.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 7px;
+    opacity: 0.9;
+    transition: all 1s 0.2s ease;
+    bottom: 0;
+    right: 0; }
+  .about .social {
+    opacity: 0;
+    right: 0;
+    bottom: 0; }
+    .about .social .icon {
+      width: 100%;
+      height: 100%;
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: transparent;
+      display: flex;
+      transition: all 0.2s ease, background-color 0.4s ease;
+      opacity: 0;
+      border-radius: 100%; }
+    .about .social.portfolio {
+      transition: all 0.8s ease; }
+      .about .social.portfolio .icon {
+        background-image: url(https://rafaelalucas91.github.io/assets/codepen/link.svg); }
+    .about .social.dribbble {
+      transition: all 0.3s ease; }
+      .about .social.dribbble .icon {
+        background-image: url(https://rafaelalucas91.github.io/assets/codepen/dribbble.svg); }
+    .about .social.linkedin {
+      transition: all 0.8s ease; }
+      .about .social.linkedin .icon {
+        background-image: url(https://rafaelalucas91.github.io/assets/codepen/linkedin.svg); }
+  .about:hover {
+    width: 105px;
+    height: 105px;
+    transition: all 0.6s cubic-bezier(0.64, 0.01, 0.07, 1.65); }
+    .about:hover .logo {
+      opacity: 1;
+      transition: all 0.6s ease; }
+    .about:hover .social {
+      opacity: 1; }
+      .about:hover .social .icon {
+        opacity: 0.9; }
+      .about:hover .social:hover {
+        background-size: 28px; }
+        .about:hover .social:hover .icon {
+          background-size: 65%;
+          opacity: 1; }
+      .about:hover .social.portfolio {
+        right: 0;
+        bottom: calc(100% - 40px);
+        transition: all 0.3s 0s cubic-bezier(0.64, 0.01, 0.07, 1.65); }
+        .about:hover .social.portfolio .icon:hover {
+          background-color: #698fb7; }
+      .about:hover .social.dribbble {
+        bottom: 45%;
+        right: 45%;
+        transition: all 0.3s 0.15s cubic-bezier(0.64, 0.01, 0.07, 1.65); }
+        .about:hover .social.dribbble .icon:hover {
+          background-color: #ea4c89; }
+      .about:hover .social.linkedin {
+        bottom: 0;
+        right: calc(100% - 40px);
+        transition: all 0.3s 0.25s cubic-bezier(0.64, 0.01, 0.07, 1.65); }
+        .about:hover .social.linkedin .icon:hover {
+          background-color: #0077b5; }
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%; }
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  top: 20px;
+  left: 20px; }
+  .buttons button {
+    width: 150px;
+    height: 50px;
+    background-color: transparent;
+    margin: 20px;
+    color: #5d5d5a;
+    position: relative;
+    overflow: hidden;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 0; }
+    .buttons button:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #ffa45c;
+      transition: all 0.3s 0.2s ease;
+      left: 0;
+      top: 0; }
+    .buttons button:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #ffa45c;
+      transition: all 0.3s ease;
+      right: 0;
+      bottom: 0; }
+    .buttons button p {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      z-index: 1; }
+      .buttons button p:before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 0;
+        background-color: #ffa45c;
+        transition: all 0.3s 0.4s ease;
+        right: 0;
+        top: 0; }
+      .buttons button p:after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 0;
+        background-color: #ffa45c;
+        transition: all 0.3s ease;
+        left: 0;
+        bottom: 0; }
+    .buttons button:hover {
+      color: #ffa45c;
+      letter-spacing: 2px; }
+      .buttons button:hover:before, .buttons button:hover:after {
+        width: 100%; }
+      .buttons button:hover p {
+        z-index: 1; }
+        .buttons button:hover p:before, .buttons button:hover p:after {
+          height: 100%; }
+      .buttons button:hover span {
+        height: 100%;
+        top: 0; }
+  .buttons button:active {
+    outline: none;
+    border: none; }
+  .buttons button:focus {
+    outline: 0; }
+
+/*# sourceMappingURL=minimal-btns.css.map */

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/overlay.css" />
+</head>
+<body>
+    <!-- about -->
+    <div class="about">
+        <a class="bg_links social portfolio" href="https://www.rafaelalucas.com" target="_blank">
+            <span class="icon"></span>
+        </a>
+        <a class="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
+            <span class="icon"></span>
+        </a>
+        <a class="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
+            <span class="icon"></span>
+        </a>
+        <a class="bg_links logo"></a>
+    </div>
+    <!-- end about -->
+    
+    <div class="wrapper">
+        <div class="videos">
+    
+            <h1 class="videos__title"><span>VID</span><span>EOS</span>
+            </h1>
+            <span class="videos__line"></span>
+    
+            <h2 class="videos__subtitle">showcase</h2>
+    
+            <div class="videos__content"></div>
+        </div>
+    </div>
+    
+    <div class="modal">
+    
+        <div class="modal__container">
+            <i class="modal__icon">
+                <img src="https://www.rafaelalucas.com/dailyui/16/assets/cross.svg" alt="">
+            </i>
+    
+            <div class="modal__video">
+                <iframe src="" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen"
+                    allowfullscreen></iframe>
+    
+    
+            </div>
+    
+        </div>
+    
+    </div>
+
+    <script>
+        window.addEventListener("load", event => {
+
+            const videos = [{
+                name: "Showreel",
+                img: "https://www.rafaelalucas.com/dailyui/16/assets/img_reel.jpg",
+                video: "https://player.vimeo.com/video/389042215"
+
+            },
+            {
+                name: "10 — Animated Layers",
+                img: "https://www.rafaelalucas.com/dailyui/16/assets/img_10.jpg",
+                video: "https://player.vimeo.com/video/276869996"
+            }, {
+                name: "Chalk Illustration",
+                img: "https://www.rafaelalucas.com/dailyui/16/assets/img_chalk.jpg",
+                video: "https://player.vimeo.com/video/277650563"
+            }
+            ];
+
+            const videosContent = document.querySelector('.videos__content');
+
+            videos.forEach(function (el) {
+                const template = `
+        <div class="videos__item" data-video="${el.video}">
+        <p class="videos__name">${el.name}</p> 
+        <i class="videos__play"> <img src="https://www.rafaelalucas.com/dailyui/16/assets/play.svg" alt = "" ></i>
+        <img class="videos__image" src="${el.img}" alt = "" >
+        </div>`;
+                videosContent.insertAdjacentHTML('beforeend', template);
+
+            });
+
+
+            const videoItem = document.querySelectorAll('.videos__item'),
+                modalVideo = document.querySelector('.modal'),
+                iconCloseVideo = document.querySelector('.modal__icon'),
+                videoFrame = document.querySelector('.modal__video iframe'),
+                body = document.querySelector('body');;
+
+            videoItem.forEach(function (el) {
+                el.addEventListener("click", openVideo);
+            })
+
+            iconCloseVideo.addEventListener("click", closeVideo);
+
+
+            function openVideo(e) {
+                const videoSrc = e.currentTarget.dataset.video;
+
+                videoFrame.src = videoSrc;
+
+                setTimeout(() => {
+                    modalVideo.classList.add('open');
+
+                }, 300);
+
+                body.style.overflow = "hidden";
+
+
+            }
+
+            function closeVideo() {
+
+                modalVideo.classList.remove('open');
+                videoFrame.src = "";
+
+            }
+
+            if (window.innerWidth > 799) {
+                document.querySelector('.wrapper').style.height = window.innerHeight + "px";
+
+            }
+            document.querySelector('.modal').style.height = window.innerHeight + "px";
+
+        });
+    </script>
+</body>
+</html>

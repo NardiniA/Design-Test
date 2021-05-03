@@ -1,0 +1,674 @@
+.about {
+   $cubic: cubic-bezier(0.64, 0.01, 0.07, 1.65);
+   $transition: 0.6s $cubic;
+   $size: 40px;
+   position: fixed;
+   z-index: 10;
+   bottom: 10px;
+   right: 10px;
+   width: $size;
+   height: $size;
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+   transition: all 0.2s ease;
+
+   .bg_links {
+      width: $size;
+      height: $size;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(#000000, 0.2);
+      border-radius: 100%;
+      backdrop-filter: blur(5px);
+      position: absolute;
+   }
+
+   .logo {
+      width: $size;
+      height: $size;
+      z-index: 9;
+      background-image: url(https://rafaelavlucas.github.io/assets/codepen/logo_white.svg);
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: 10px 7px;
+      opacity: 0.9;
+      transition: all 1s 0.2s ease;
+      bottom: 0;
+      right: 0;
+   }
+
+   .social {
+      opacity: 0;
+      right: 0;
+      bottom: 0;
+
+      .icon {
+         width: 100%;
+         height: 100%;
+         background-size: 20px;
+         background-repeat: no-repeat;
+         background-position: center;
+         background-color: transparent;
+         display: flex;
+         transition: all 0.2s ease, background-color 0.4s ease;
+         opacity: 0;
+         border-radius: 100%;
+      }
+
+      &.portfolio {
+         transition: all 0.8s ease;
+
+         .icon {
+            background-image: url(https://rafaelavlucas.github.io/assets/codepen/link.svg);
+         }
+      }
+
+      &.dribbble {
+         transition: all 0.3s ease;
+         .icon {
+            background-image: url(https://rafaelavlucas.github.io/assets/codepen/dribbble.svg);
+         }
+      }
+
+      &.linkedin {
+         transition: all 0.8s ease;
+         .icon {
+            background-image: url(https://rafaelavlucas.github.io/assets/codepen/linkedin.svg);
+         }
+      }
+   }
+
+   &:hover {
+      width: 105px;
+      height: 105px;
+      transition: all $transition;
+
+      .logo {
+         opacity: 1;
+         transition: all 0.6s ease;
+      }
+
+      .social {
+         opacity: 1;
+
+         .icon {
+            opacity: 0.9;
+         }
+
+         &:hover {
+            background-size: 28px;
+            .icon {
+               background-size: 65%;
+               opacity: 1;
+            }
+         }
+
+         &.portfolio {
+            right: 0;
+            bottom: calc(100% - 40px);
+            transition: all 0.3s 0s $cubic;
+            .icon {
+               &:hover {
+                  background-color: #698fb7;
+               }
+            }
+         }
+
+         &.dribbble {
+            bottom: 45%;
+            right: 45%;
+            transition: all 0.3s 0.15s $cubic;
+            .icon {
+               &:hover {
+                  background-color: #ea4c89;
+               }
+            }
+         }
+
+         &.linkedin {
+            bottom: 0;
+            right: calc(100% - 40px);
+            transition: all 0.3s 0.25s $cubic;
+            .icon {
+               &:hover {
+                  background-color: #0077b5;
+               }
+            }
+         }
+      }
+   }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+
+$font-01: "Barlow", sans-serif;
+$font-02: "Barlow Condensed", sans-serif;
+
+$m-01: #233a59;
+
+$g-01: linear-gradient(90deg, #14b5d9 0%, #5b86e5 100%);
+$g-02: linear-gradient(90deg, #72eeff 0%, #a7c2ff 100%);
+
+$cubic: cubic-bezier(0.51, -0.12, 0.25, 1.15);
+
+@mixin md {
+   @media screen and (max-width: 1023px) {
+      @content;
+   }
+}
+
+@mixin sm {
+   @media screen and (max-width: 799px) {
+      @content;
+   }
+}
+
+@mixin xs {
+   @media screen and (max-width: 512px) {
+      @content;
+   }
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   border: 0;
+   -webkit-tap-highlight-color: transparent;
+   text-decoration: none;
+   color: inherit;
+   box-sizing: border-box;
+
+   &:focus {
+      outline: 0;
+   }
+}
+
+body {
+   //background-color: black;
+}
+
+.logo {
+   position: fixed;
+   z-index: 5;
+   bottom: 10px;
+   right: 10px;
+   width: 40px;
+   height: 40px;
+   border-radius: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: rgba(0, 0, 0, 0.1);
+   border-radius: 100%;
+   backdrop-filter: blur(5px);
+
+   img {
+      width: 55%;
+      height: 55%;
+      transform: translateY(-1px);
+      opacity: 0.8;
+   }
+
+   @include sm {
+      display: none;
+   }
+}
+
+.wrapper {
+   display: grid;
+   grid-template-columns: 1fr;
+   width: 100%;
+   height: 100vh;
+   align-items: center;
+   justify-content: center;
+   color: white;
+   font-family: $font-01;
+   user-select: none;
+   letter-spacing: 0.8px;
+   padding: 60px 5%;
+   max-width: 1440px;
+   margin: 0 auto;
+
+   @include md {
+      padding: 60px 20px;
+   }
+
+   .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 60px;
+
+      @include sm {
+         max-width: 500px;
+         flex-direction: column;
+      }
+
+      .card {
+         max-width: 400px;
+         width: 100%;
+         height: 500px;
+         position: relative;
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-end;
+         align-items: center;
+         color: white;
+         cursor: pointer;
+         transition: all 0.4s ease;
+         margin-right: 20px;
+         border-radius: 8px;
+         box-shadow: 0px 20px 60px -20px rgba(38, 73, 119, 0.8);
+
+         &:hover {
+            transform: translateY(8px);
+            box-shadow: 0px 15px 40px -20px rgba(38, 73, 119, 0.8);
+
+            @include sm {
+               box-shadow: 0px 20px 40px -10px rgba(38, 73, 119, 0.8);
+               transform: translateY(0px);
+            }
+         }
+
+         &:last-child {
+            margin-right: 0;
+         }
+
+         @include md {
+            height: 400px;
+         }
+
+         @include sm {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            margin-right: 0;
+            margin-bottom: 30px;
+            box-shadow: 0px 20px 40px -10px rgba(38, 73, 119, 0.8);
+
+            &:last-child {
+               margin-bottom: 0;
+            }
+         }
+
+         @include xs {
+            height: 300px;
+         }
+
+         &__imageBg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            z-index: -1;
+            border-radius: 8px;
+            overflow: hidden;
+
+            img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+            }
+         }
+
+         &__text {
+            color: white;
+            width: 100%;
+            min-height: 185px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s 0.4s ease;
+            background: rgba($m-01, 0.6);
+            backdrop-filter: blur(5px);
+            border-radius: 0px 0px 8px 8px;
+            padding: 30px 20px 70px 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+
+            @include xs {
+               padding: 20px 20px 50px 20px;
+               min-height: 160px;
+            }
+         }
+
+         &__label {
+            max-width: 300px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: 0.08em;
+            background: $g-02;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+         }
+
+         &__title {
+            max-width: 300px;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            margin-top: 20px;
+
+            @include xs {
+               font-size: 16px;
+               line-height: 20px;
+            }
+         }
+
+         &__share {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            position: absolute;
+            transform: translateY(20px);
+            transition: all 0.4s 0.5s ease, height 0.4s 0.3s ease,
+               width 0.4s 0.4s ease, border-radius 0.4s 0.4s ease;
+            border-radius: 50%;
+            overflow: hidden;
+
+            &:before {
+               position: absolute;
+               content: "";
+               left: 0;
+               top: 0;
+               width: 100%;
+               height: 100%;
+               background: $g-01;
+               transition: all 0.4s 0.4s ease;
+            }
+
+            &:hover {
+               &:after {
+                  opacity: 1;
+               }
+            }
+         }
+
+         &__icon {
+            width: 48px;
+            height: 48px;
+            bottom: 0px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            cursor: pointer;
+            border-radius: 100%;
+            transition: all 0.4s ease, transform 0.3s 0.5s ease;
+
+            &:before {
+               position: absolute;
+               content: "";
+               width: 24px;
+               height: 24px;
+               background-image: url(https://www.rafaelalucas.com/dailyui/10/assets/share.svg);
+               background-size: cover;
+               transition: all 0.15s linear, background-image 0.3s 0.5s ease;
+               z-index: 3;
+            }
+
+            &:hover {
+               &:before {
+                  width: 28px;
+                  height: 28px;
+
+                  @include xs {
+                     width: 24px;
+                     height: 24px;
+                  }
+               }
+            }
+         }
+
+         &__shareBox {
+            opacity: 0;
+            transition: all 0.3s ease;
+            bottom: 60px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            transform: translateY(-40px);
+            width: 100%;
+            padding: 0 20px;
+         }
+
+         &__titleShare {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: 0.08em;
+
+            &--done {
+               font-weight: 400;
+               display: none;
+               position: absolute;
+               bottom: 15px;
+               transition: all 0.4s ease;
+            }
+         }
+
+         &__shareIcons {
+            margin-top: 20px;
+            display: flex;
+            width: 100%;
+            max-width: 300px;
+            justify-content: space-between;
+         }
+
+         &__socialIcon {
+            transition: all 0.4s ease;
+            width: 48px;
+            height: 48px;
+            opacity: 0;
+            background-color: transparent;
+            transform: translateY(40px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 100%;
+
+            &:before {
+               position: absolute;
+               content: "";
+               width: 40px;
+               height: 40px;
+               border-radius: 100%;
+               border: solid 1px white;
+               transition: all 0.2s ease;
+            }
+
+            img {
+               width: 24px;
+               height: 24px;
+               transition: all 0.2s ease;
+            }
+
+            &:hover {
+               background-color: rgba(white, 0.2);
+
+               @include xs {
+                  background-color: transparent;
+               }
+
+               &:before {
+                  width: 48px;
+                  height: 48px;
+
+                  @include xs {
+                     width: 40px;
+                     height: 40px;
+                  }
+               }
+
+               img {
+                  width: 32px;
+                  height: 32px;
+
+                  @include xs {
+                     width: 24px;
+                     height: 24px;
+                  }
+               }
+            }
+
+            &.active {
+               background-color: rgba(white, 0.2);
+            }
+         }
+      }
+
+      .show {
+         .card {
+            &__text {
+               min-height: calc(100% - 185px);
+               transform: translateY(-185px);
+               transition: all 0.4s 0.3s ease;
+               border-radius: 8px 8px 0px 0px;
+               padding: 20px;
+
+               @include sm {
+                  transform: translateY(-160px);
+                  min-height: calc(100% - 160px);
+               }
+            }
+
+            &__share {
+               width: 100%;
+               height: 185px;
+               transform: translateY(0px);
+               border-radius: 0px 0px 8px 8px;
+               transition: all 0.4s ease, width 0.4s 0.1s ease,
+                  height 0.4s 0.3s ease, border-radius 0.4s 0.1s ease;
+
+               &:before {
+                  opacity: 0.9;
+               }
+
+               @include sm {
+                  height: 160px;
+               }
+            }
+
+            &__icon {
+               transform: rotate(180deg);
+               transition: all 0.4s ease;
+
+               &:before {
+                  background: url(https://www.rafaelalucas.com/dailyui/10/assets/close.svg);
+                  background-size: cover;
+                  transition: all 0.1s linear, background-image 0.3s ease;
+               }
+
+               &:hover {
+                  &:before {
+                     width: 30px;
+                     height: 30px;
+
+                     @include xs {
+                        width: 24px;
+                        height: 24px;
+                     }
+                  }
+               }
+            }
+
+            &__shareBox {
+               transform: translateY(0px);
+               opacity: 1;
+               transition: all 0.4s 0.4s ease;
+            }
+
+            &__socialIcon {
+               transition: all 0.4s ease, transform 0.4s 0.6s ease,
+                  opacity 0.4s 0.6s ease;
+               opacity: 1;
+               transform: translateY(0px);
+
+               &:nth-child(2) {
+                  transition: all 0.4s ease, transform 0.4s 0.7s ease,
+                     opacity 0.4s 0.7s ease;
+               }
+
+               &:nth-child(3) {
+                  transition: all 0.4s ease, transform 0.4s 0.8s ease,
+                     opacity 0.4s 0.8s ease;
+               }
+
+               &:nth-child(4) {
+                  transition: all 0.4s ease, transform 0.4s 0.9s ease,
+                     opacity 0.4s 0.9s ease;
+               }
+            }
+         }
+      }
+
+      .complete {
+         .card {
+            &__shareIcons {
+               animation: shareDone 1.5s 0.5s ease backwards;
+
+               @keyframes shareDone {
+                  20% {
+                     opacity: 0;
+                     transform: translateY(-40px);
+                  }
+
+                  80% {
+                     opacity: 0;
+                     transform: translateY(-40px);
+                  }
+
+                  100% {
+                  }
+               }
+            }
+
+            &__titleShare {
+               &--done {
+                  display: flex;
+                  animation: textDone 1.5s 0.5s ease both;
+
+                  @keyframes textDone {
+                     0% {
+                        opacity: 0;
+                        transform: translateY(20px);
+                     }
+
+                     25% {
+                        opacity: 1;
+                        transform: translateY(0px);
+                     }
+
+                     75% {
+                        opacity: 1;
+                        transform: translateY(0px);
+                     }
+
+                     100% {
+                        opacity: 0;
+                        transform: translateY(20px);
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

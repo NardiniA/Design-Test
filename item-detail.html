@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css" />
+    <link rel="stylesheet" href="css/item-detail.css" />
+</head>
+<body>
+    <!-- about -->
+    <div class="about">
+        <a class="bg_links social portfolio" href="https://www.rafaelalucas.com/dailyui" target="_blank">
+            <span class="icon"></span>
+        </a>
+        <a class="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
+            <span class="icon"></span>
+        </a>
+        <a class="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
+            <span class="icon"></span>
+        </a>
+        <a class="bg_links logo"></a>
+    </div>
+    <!-- end about -->
+    
+    <div class="wrapper">
+        <nav>
+            <div class="mainLogo">Logo</div>
+            <div class="menu">
+                <div class="menuLinks">
+                    <a href="" class="menuLink">About</a>
+                    <a href="" class="menuLink">Store</a>
+                    <a href="" class="menuLink">Contacts</a>
+                </div>
+    
+                <div class="shoppingCart">
+                    <div class="shoppingIcon">
+                        <img src="https://rafaelalucas.com/dailyui/12/assets/shopping-cart.svg" alt="">
+                        <span class="itemNumber">0</span>
+                    </div>
+                    <div class="shoppingMenu">
+                        <p class="shoppingTitle">Your Shopping Cart</p>
+                        <div class="productResume">
+                            <img src="https://rafaelalucas.com/dailyui/12/assets/img01.png" alt="" class="shoppingThumb">
+                            <article>
+                                <p class="shoppingProduct">Nike Air Max 200</p>
+                                <p class="shoppingQuantity">0</p>
+                                <p class="shoppingTotal"></p>
+                            </article>
+                        </div>
+                        <div class="shoppingBtn">
+                            <a class="link emptyCart"> <img src="https://rafaelalucas.com/dailyui/12/assets/trash.svg"
+                                    alt=""> Empty Shopping Cart</a>
+                            <button class="btn">Finish Shopping</button>
+                        </div>
+    
+                    </div>
+                </div>
+    
+                <i class="iconMenu">
+                    <img src="https://rafaelalucas.com/dailyui/12/assets/menu.svg" alt="">
+                </i>
+            </div>
+        </nav>
+    
+        <div class="content">
+    
+            <section class="left">
+                <div class="swiper-container galleryMain ">
+                    <div class="swiper-wrapper">
+                    </div>
+    
+                </div>
+                <!-- Add Arrows -->
+                <div class="sliderNavigation">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+    
+            <section class="right">
+                <div class="rightContent">
+                    <div class="model">
+                        <p class="modelTitle">Nike Air Max 200</p>
+                        <p class="modelDesc">AQ2568-005</p>
+                    </div>
+    
+    
+                    <div class="price">
+                        <p class="priceFinal"></p>
+                        <p class="priceOriginal"></p>
+                    </div>
+    
+                    <div class="specs">
+                        <div class="size">
+                            <h3 class="subtitle">Size</h3>
+                            <div class="dropdown">
+                                <div class="form dropContent">
+                                    <p class="sizeNumber">40</p>
+                                    <i class="icon arrowDrop">
+                                        <img src="https://rafaelalucas.com/dailyui/12/assets/arrow-down.svg" alt="">
+                                    </i>
+                                </div>
+                                <div class="dropOpen">
+                                    <ul class="dropItems">
+                                        <li class="dropItem">38</li>
+                                        <li class="dropItem">39</li>
+                                        <li class="dropItem">40</li>
+                                        <li class="dropItem">41</li>
+                                        <li class="dropItem">42</li>
+                                        <li class="dropItem">43</li>
+                                        <li class="dropItem">44</li>
+                                        <li class="dropItem">45</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="quantity">
+                            <h3 class="subtitle">Quantity</h3>
+                            <div class="form quantityCounter">
+                                <input class="inputQuantity" onKeyDown="return false" type="number" value="1" />
+    
+                                <i class="icon btnQuantity minus">
+                                    <img src="https://rafaelalucas.com/dailyui/12/assets/minus.svg" alt="">
+                                </i>
+                                <i class="icon btnQuantity plus">
+                                    <img src="https://rafaelalucas.com/dailyui/12/assets/plus.svg" alt="">
+                                </i>
+                            </div>
+    
+                            <p class="error">We only have 5 items in stock.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-container galleryThumbs">
+                        <div class="swiper-wrapper">
+                        </div>
+                    </div>
+                    <div class="btnContainer">
+                        <button class="btn add">
+                            <img src="https://rafaelalucas.com/dailyui/12/assets/shopping-cart-w.svg" alt="">
+                            add to cart</button>
+                    </div>
+    
+                </div>
+            </section>
+            <!-- Swiper -->
+    
+        </div>
+    
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script>
+        window.addEventListener("load", event => {
+
+            function productHeading() {
+                ////////////////
+                // Variables
+                ////////////////
+
+                const product = {
+
+                    value: 125,
+                    images: [{
+                        img: 'https://rafaelalucas.com/dailyui/12/assets/img01.png'
+                    },
+                    {
+                        img: 'https://rafaelalucas.com/dailyui/12/assets/img02.png'
+                    },
+                    {
+                        img: 'https://rafaelalucas.com/dailyui/12/assets/img03.png'
+                    },
+                    {
+                        img: 'https://rafaelalucas.com/dailyui/12/assets/img04.png'
+                    },
+                    {
+                        img: 'https://rafaelalucas.com/dailyui/12/assets/img05.png'
+                    },
+                    {
+                        img: 'https://rafaelalucas.com/dailyui/12/assets/img06.png'
+                    }
+                    ]
+                }
+
+                const btnAdd = document.querySelector('.btn.add'),
+                    btnContainer = document.querySelector('.btnContainer'),
+                    wrapper = document.querySelector('.wrapper'),
+                    itemNumber = document.querySelector('.itemNumber'),
+                    shoppingQuantity = document.querySelector('.shoppingQuantity'),
+                    inputQuantity = document.querySelector('.inputQuantity'),
+                    plus = document.querySelector('.plus'),
+                    minus = document.querySelector('.minus'),
+                    arrowDrop = document.querySelector('.arrowDrop'),
+                    dropdown = document.querySelector('.dropdown'),
+                    nav = document.querySelector('nav'),
+                    error = document.querySelector('.error'),
+                    shoppingIcon = document.querySelector('.shoppingIcon'),
+                    shoppingMenu = document.querySelector('.shoppingMenu'),
+                    emptyCart = document.querySelector('.emptyCart');
+
+                let = priceFinal = document.querySelector('.priceFinal'),
+                    priceOriginal = document.querySelector('.priceOriginal'),
+                    discount = null,
+                    sizeNumber = document.querySelector('.sizeNumber'),
+                    dropItem = document.querySelectorAll('.dropItem'),
+                    maxQuantity = 5,
+                    newMaxQuantity = maxQuantity;
+
+                ////////////////
+                // Events
+                ////////////////
+
+                btnAdd.addEventListener('click', addItem);
+                plus.addEventListener("click", plusQuantity);
+                minus.addEventListener("click", minusQuantity);
+                arrowDrop.addEventListener("click", openDrop);
+                shoppingIcon.addEventListener("click", openShoppingCart);
+
+                emptyCart.addEventListener("click", cleanCart);
+
+                dropItem.forEach(function (el) {
+                    el.addEventListener("click", getSize);
+                })
+
+                window.addEventListener("resize", resize);
+
+
+                ////////////////
+                // Functions
+                //////////////// 
+
+                // Fixed Nav 
+
+                window.onscroll = function () {
+                    if (window.pageYOffset >= 60) {
+                        nav.classList.add("fixed");
+                    } else {
+                        nav.classList.remove("fixed");
+                    }
+                };
+
+                // Change button position on mobile
+
+                function resize() {
+                    //Button
+                    if (window.innerHeight > wrapper.offsetHeight) {
+                        btnContainer.classList.remove('fixedBtn');
+                    } else {
+                        btnContainer.classList.add('fixedBtn');
+                    }
+                    parallax();
+                }
+
+                // Parallax
+
+                function parallax() {
+                    if (window.innerWidth > 800) {
+                        var scene = document.querySelectorAll('.scene');
+                        scene.forEach(pic => {
+                            var parallax = new Parallax(pic);
+                        })
+                    }
+                }
+
+                // Calculate the Discount
+
+                function getDisccount() {
+                    priceOriginal.innerText = product.value + "€";
+                    discount = product.value - (product.value * (30 / 100));
+                    priceFinal.innerText = discount + "€";
+                }
+
+                // Calculate the the Prices with discounts
+
+                function getPrice() {
+
+                    priceFinal.innerText = discount * inputQuantity.value + "€";
+                    priceOriginal.innerText = product.value * inputQuantity.value + "€";
+
+                    setTimeout(() => {
+                        priceFinal.classList.remove('anime');
+                    }, 400);
+                }
+
+                // Update the prices with the quantity counter
+
+                function plusQuantity() {
+                    if (inputQuantity.value < maxQuantity) {
+                        inputQuantity.value == inputQuantity.value++;
+                        priceFinal.classList.add('anime');
+                    }
+                    getPrice();
+                }
+
+                function minusQuantity() {
+                    if (inputQuantity.value > 1) {
+                        inputQuantity.value == inputQuantity.value--;
+                        priceFinal.classList.add('anime');
+                    }
+                    getPrice();
+                }
+
+                // Add items to shopping cart
+
+                function addItem() {
+
+                    let cenas = parseInt(itemNumber.innerText) + parseInt(inputQuantity.value);
+
+                    if (cenas <= newMaxQuantity) {
+                        itemNumber.style.display = "flex";
+                        itemNumber.innerText = cenas;
+                        shoppingQuantity.innerText = "x" + cenas;
+                        itemNumber.classList.add("addItem");
+                        error.style.display = "none";
+                    } else {
+                        error.style.display = "flex";
+                    }
+
+                    setTimeout(() => {
+                        itemNumber.classList.remove("addItem");
+                    }, 700);
+                }
+
+                // Open Drop
+
+                function openDrop() {
+                    if (dropdown.classList.contains('open')) {
+                        dropdown.classList.remove('open');
+                    } else {
+                        dropdown.classList.add('open');
+                    }
+                }
+
+                //get Drop Size Number Value 
+
+                function getSize(e) {
+                    sizeNumber.innerText = e.currentTarget.innerText;
+                    openDrop();
+                }
+
+                // Open Shopphing cart
+
+                function openShoppingCart() {
+                    if (itemNumber.innerText != "0") {
+                        if (shoppingMenu.classList.contains('openShopping')) {
+                            shoppingMenu.classList.remove('openShopping');
+                        } else {
+                            shoppingMenu.classList.add('openShopping');
+                        }
+                    }
+                }
+
+                //Clean Shopping Cart
+
+                function cleanCart() {
+                    shoppingMenu.classList.remove('openShopping');
+                    itemNumber.style.display = "none";
+                    itemNumber.classList.remove('addItem');
+                    itemNumber.innerText = "0";
+                }
+
+                // Populate the images for Swiper
+
+                product.images.forEach(function (el) {
+
+                    let template = `
+            <div class="swiper-slide">
+                <div class="scene" data-hover-only="false"> 
+                    <img src="${el.img}" data-depth="0.5">
+                    <img src="${el.img}" data-depth="1" class="shadow">
+                </div>
+            </div>`;
+
+                    let template2 = `
+            <div class="swiper-slide">
+                <img src="${el.img}">
+            </div>`;
+
+                    document.querySelector('.galleryMain .swiper-wrapper').insertAdjacentHTML('beforeend', template);
+                    document.querySelector('.galleryThumbs .swiper-wrapper').insertAdjacentHTML('beforeend', template2);
+                });
+
+
+                // Make the slider function
+
+                var galleryThumbs = new Swiper('.galleryThumbs', {
+                    spaceBetween: 0,
+                    slidesPerView: 'auto',
+                    loop: false,
+                    allowTouchMove: false,
+                    allowSlidePrev: false,
+                    allowSlideNext: false,
+
+                });
+
+                var galleryMain = new Swiper('.galleryMain', {
+                    spaceBetween: 300,
+                    speed: 500,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                    effect: "coverflow",
+                    coverflowEffect: {
+                        rotate: 50,
+                        slideShadows: false,
+                        depth: 200,
+                        stretch: 50,
+
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+
+                    },
+                    thumbs: {
+                        swiper: galleryThumbs,
+                    },
+                });
+
+                // Call functions 
+                getDisccount();
+                parallax();
+                resize();
+            }
+
+            productHeading();
+        });
+    </script>
+</body>
+</html>

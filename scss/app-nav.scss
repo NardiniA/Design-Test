@@ -11,10 +11,11 @@ $menu-bg: rgba(10,10,10,0.925);
   width: 100%;
 
   &.scrolled {
-    background: $menu-bg !important;
-    -webkit-transition:.5s;
-    -moz-transition:.5s;
-    transition:.5s;
+    background: rgba(25,25,25,0.4) !important;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    padding: 0 0.5rem;
   }
 
   h3.brand {
@@ -90,6 +91,10 @@ $hamburger-zindex: $menu-zindex + 10;
       &:hover {
         opacity: 1;
       }
+    }
+
+    a.disabled {
+      opacity: 0.5;
     }
   }
 

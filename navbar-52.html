@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/navbar-52.css" />
+</head>
+<body>
+    <!-- about -->
+    <div class="about">
+        <a class="bg_links social portfolio" href="https://www.rafaelalucas.com/dailyui" target="_blank">
+            <span class="icon"></span>
+        </a>
+        <a class="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
+            <span class="icon"></span>
+        </a>
+        <a class="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
+            <span class="icon"></span>
+        </a>
+        <a class="bg_links logo"></a>
+    </div>
+    <!-- end about -->
+    <article class="txt">
+        <h2>Full-Page Hamburguer Navigation</h2>
+        <small>#cpc-full-page-nav #codepenchallenge</small>
+    </article>
+    
+    <nav class="mainNav">
+        <div class="mainNav__iconMenu">
+            <span></span>
+        </div>
+        <div class="mainNav__menuBg">
+    
+        </div>
+        <div class="mainNav__menuContent">
+            <ul class="mainNav__menuLinks">
+                <li class="mainNav__menuItem"><a>Home</a></li>
+                <li class="mainNav__menuItem"><a>About</a></li>
+                <li class="mainNav__menuItem"><a>Projects</a></li>
+                <li class="mainNav__menuItem"><a>Contacts</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        const iconMenu = document.querySelector(".mainNav__iconMenu"),
+            menu = document.querySelector(".mainNav"),
+            menuItem = document.querySelectorAll(".mainNav__menuItem"),
+            body = document.querySelector("body");
+
+        iconMenu.addEventListener("click", openMenu);
+
+        menuItem.forEach(function (el) {
+            el.addEventListener("mouseover", opacityIn);
+            el.addEventListener("mouseleave", opacityOut);
+        });
+
+        function openMenu() {
+            if (menu.classList.contains("menuOpen")) {
+                menu.classList.add("menuClose");
+                body.style.overflow = "initial";
+
+                setTimeout(function () {
+                    menu.classList.remove("menuClose");
+                    menu.classList.remove("menuOpen");
+                }, 1200);
+            } else {
+                body.style.overflow = "hidden";
+                menu.classList.add("menuOpen");
+            }
+        }
+
+        function opacityIn(e) {
+            menuItem.forEach(function (el) {
+                el.classList.add("disable");
+            });
+            e.currentTarget.classList.remove("disable");
+        }
+
+        function opacityOut() {
+            menuItem.forEach(function (el) {
+                el.classList.remove("disable");
+            });
+        }
+    </script>
+</body>
+</html>

@@ -26,6 +26,20 @@
                 display: none;
             }
         }
+
+        @media (min-width: 1400px) {
+            .next.slick-arrow {
+                left: -692px !important;
+            }
+
+            .prev.slick-arrow {
+                left: -725px !important;
+            }
+        }
+
+        #menu {
+            opacity: 0;
+        }
     </style>
 </head>
 <body>
@@ -42,7 +56,7 @@
         <nav class="main-nav">
             <ul>
                 <li>
-                    <a href="#" disabled="disabled" aria-disabled="true">
+                    <a href="#" disabled="disabled" aria-disabled="true" class="disabled">
                         Home
                     </a>
                 </li>
