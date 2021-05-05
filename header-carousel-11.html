@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.7/css/swiper.min.css" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Josefin+Sans:400,600,700,400italic,600italic);
+
+        body{
+            font-family: 'josefin sans';
+            font-size: 16px;
+        }
+        h1, h2, h3, h4, h5, h6{
+            font-family: montserrat;
+        }
+        .title{
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: .3em;
+        }
+        .with-separator{
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .with-separator:after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            margin-left: -25px;
+            width: 50px;
+            height: 1px;
+            background-color: #333;
+            bottom: -15px;
+            display: block;
+        }
+
+        .vCenter{
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .p10{ padding: 10px }
+        .p30{ padding: 30px }
+        .p50{ padding: 50px }
+
+        .button{
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            font-family: montserrat;	
+            font-size: 13px;
+            border: 2px solid #000;
+            color: #000;
+            padding: 6px 20px;
+            transition: all .3s ease;
+        }
+        .button:hover{
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .swiper-container{
+            width: 100%;
+            height: 100vh;
+        }
+        .swiper-slide{
+            background-size: cover;
+            background-position: center;
+        }
+        .fullheight{
+            height: 100%;
+            background-color: rgba(255, 255, 255, .7);
+        }
+    </style>
+</head>
+<body>
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"
+                style="background-image: url('https://drscdn.500px.org/photo/38796802/m%3D2048/2f8f2c6eac27ccd711ab1bb6d6aa0607')">
+                <div class="col-md-6 col-md-offset-6 fullheight" data-swiper-parallax="40%">
+                    <div class="vCenter text-center">
+                        <h2 class="title with-separator">mountains</h2>
+                        <p class="p30">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quibusdam quo
+                            quisquam quos ipsa eius corporis?</p>
+                        <a href="#" class="button">discover</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide"
+                style="background-image: url('https://drscdn.500px.org/photo/55637054/m%3D2048/18e519449bd019955102407e8db88171')">
+                <div class="col-md-6 col-md-offset-6 fullheight" data-swiper-parallax="40%">
+    
+                </div>
+            </div>
+            <div class="swiper-slide"
+                style="background-image: url('https://drscdn.500px.org/photo/69230653/m%3D2048_k%3D1/8e91f60d342b772bb5f44da324558f64')">
+                <div class="col-md-6 col-md-offset-6 fullheight" data-swiper-parallax="40%">
+    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.7/js/swiper.min.js"></script>
+
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            loop: true,
+            parallax: true,
+            speed: 1000,
+            mousewheelControl: false
+        });
+    </script>
+</body>
+</html>

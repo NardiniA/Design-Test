@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://seedlogix.com/hubs/themes/infinite/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://seedlogix.com/hubs/themes/infinite/css/stack-interface.css" />
+    <link rel="stylesheet" href="https://seedlogix.com/hubs/themes/infinite/css/socicon.css" />
+    <link rel="stylesheet" href="https://seedlogix.com/hubs/themes/infinite/css/lightbox.min.css" />
+    <link rel="stylesheet" href="https://seedlogix.com/hubs/themes/infinite/css/flickity.css" />
+    <link rel="stylesheet" href="https://seedlogix.com/hubs/themes/infinite/css/iconsmind.css" />
+    <link rel="stylesheet" href="https://seedlogix.com/hubs/themes/infinite/css/jquery.steps.css" />
+    <link rel="stylesheet" href="https://seedlogix.com/hubs/themes/infinite/css/theme.css" />
+    <link rel="stylesheet" href="https://seedlogix.com/hubs/themes/infinite/css/font-roboto.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <style>
+        h2 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #d52018;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.8em;
+        }
+
+        .flickity-prev-next-button {
+            display: block;
+        }
+
+        .slide {
+            overflow: hidden;
+        }
+
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            max-width: 300px;
+            max-height: 280px;
+            min-height: 250px;
+            background: black;
+            margin: auto;
+            transform: translateX(200px);
+            transition: all ease 0.8s;
+            z-index: 10;
+            background: url(https://images.unsplash.com/photo-1516575334481-f85287c2c82d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=07922ede6fd858c73b30fe38b8a34f7c&auto=format&fit=crop&w=634&q=80);
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 10px 18px -5px rgba(0, 0, 0, 0.4);
+            border-radius: 5px;
+        }
+
+        .slide.is-selected .slide-image {
+            transform: translateX(0);
+        }
+
+        .flickity-prev-next-button:before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f105";
+        }
+
+        .flickity-prev-next-button.previous:before {
+            content: "\f104";
+        }
+
+        .slider {
+            padding: 0 60px;
+        }
+
+        .slide .row > div:nth-of-type(1) {
+            z-index: 10;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .slide .row > div:nth-of-type(2) {
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .flickity-prev-next-button.next {
+            right: -60px;
+        }
+
+        .flickity-prev-next-button.previous {
+            left: -60px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .slide-image {
+                transform: none;
+            }
+
+            .slide * {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <section class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="slider" data-paging="true" data-autoplay="false" data-arrows="true">
+                            <ul class="slides">
+    
+                                <!-- Slide 1 -->
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="slide-image slide-image-1"></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h2>Parallax Slider Effect</h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta nisl ut
+                                                leo ullamcorper tincidunt. Sed non erat a dolor lobortis consectetur. Nulla
+                                                sed malesuada tortor.</p>
+                                        </div>
+                                    </div>
+                                </li>
+    
+                                <!-- Slide 2 -->
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="slide-image slide-image-1"></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h2>Free Stock Photo from Unsplash</h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta nisl ut
+                                                leo ullamcorper tincidunt. Sed non erat a dolor lobortis consectetur. Nulla
+                                                sed malesuada tortor.</p>
+                                        </div>
+                                    </div>
+                                </li>
+    
+                                <!-- Slide 3 -->
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="slide-image slide-image-1"></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h2>CSS Transform Transition</h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta nisl ut
+                                                leo ullamcorper tincidunt. Sed non erat a dolor lobortis consectetur. Nulla
+                                                sed malesuada tortor.</p>
+                                        </div>
+                                    </div>
+                                </li>
+    
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/jquery-3.1.1.min.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/flickity.min.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/easypiechart.min.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/parallax.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/typed.min.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/datepicker.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/ytplayer.min.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/isotope.min.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/lightbox.min.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/granim.min.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/jquery.steps.min.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/countdown.min.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/twitterfetcher.min.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/spectragram.min.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/smooth-scroll.min.js"></script>
+    <script src="https://seedlogix.com/hubs/themes/infinite/js/scripts.js"></script>
+</body>
+</html>

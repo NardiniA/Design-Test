@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.min.css" />
+    <link rel="stylesheet" href="css/header-carousel-19.css" />
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+        }
+
+        @media (max-width: 500px) {
+            .flickity-prev-next-button {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-slider" data-carousel>
+        <div class="carousel-cell"
+            style="background-image:url(https://78.media.tumblr.com/469798be38e86cc01ea4ba08563af785/tumblr_p38kazKBIX1snegd3o1_1280.jpg);">
+            <div class="overlay"></div>
+            <div class="slide-content">
+                <div class="mask">
+                    <h2 class="title">Slide 1</h2>
+                </div>
+                <div class="divider"></div>
+                <div class="mask">
+                    <p class="caption">Flickity is fun to use.</p>
+                    <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-cell"
+            style="background-image:url(https://78.media.tumblr.com/f3577e640674f66119dad5ce61b4582c/tumblr_ozf8vw9LYN1snegd3o1_1280.jpg);">
+            <div class="overlay"></div>
+            <div class="slide-content">
+                <div class="mask">
+                    <h2 class="title">Slide 2</h2>
+                </div>
+                <div class="divider"></div>
+                <div class="mask">
+                    <p class="caption">Flickity is flexible.</p>
+                    <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-cell"
+            style="background-image:url(https://78.media.tumblr.com/895918f98ebb3644e885f663bf63ba61/tumblr_pa4fmzV4kV1snegd3o1_1280.jpg);">
+            <div class="overlay"></div>
+            <div class="slide-content">
+                <div class="mask">
+                    <h2 class="title">Slide 3</h2>
+                </div>
+                <div class="divider"></div>
+                <div class="mask">
+                    <p class="caption">Flickity is awesome.</p>
+                    <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.1.0/flickity.pkgd.min.js"></script>
+
+    <script>
+        var options = {
+            accessibility: true,
+            prevNextButtons: true,
+            pageDots: true,
+            setGallerySize: false,
+            arrowShape: {
+                x0: 10,
+                x1: 60,
+                y1: 50,
+                x2: 60,
+                y2: 45,
+                x3: 15
+            }
+        };
+
+        var $carousel = $('[data-carousel]').flickity(options);
+        var $slideContent = $('.slide-content');
+        var flkty = $carousel.data('flickity');
+        var selectedSlide = flkty.selectedElement;
+
+        flkty.on('settle', function (index) {
+            selectedSlide = flkty.selectedElement;
+        });
+
+        flkty.on('change', function (index) {
+            $slideContent.eq(index).removeClass('mask');
+
+            setTimeout(function () {
+                $slideContent.addClass('mask');
+            }, 500);
+        });
+
+        flkty.on('dragStart', function (event) {
+            var index = 0;
+            selectedSlide = flkty.selectedElement;
+
+            if (event.layerX > 0) { // direction right
+                index = $(selectedSlide).index() + 1;
+            } else { // direction left
+                index = $(selectedSlide).index() - 1;
+            }
+
+            $slideContent.eq(index).removeClass('mask');
+        });
+
+        setTimeout(function () {
+            $slideContent.addClass('mask');
+        }, 500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" />
+    <style>
+        html {
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+        margin: 0;
+        min-height: 100vh;
+        position: relative;
+        }
+
+        .offscreen {
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+        }
+
+        .font-300 {
+        font-weight: 300;
+        }
+
+        .font-400 {
+        font-weight: 400;
+        }
+
+        .font-700 {
+        font-weight: 700;
+        }
+
+        .no-transition {
+        -webkit-transition: none !important;
+        transition: none !important;
+        }
+
+        .container {
+        margin: 0 auto;
+        max-width: 1200px;
+        overflow: auto;
+        padding: 0 25px;
+        }
+
+        .text-center {
+        text-align: center;
+        }
+
+        .button {
+        background-color: #fff;
+        border: 1px solid #b3c9e2;
+        border-radius: 2px;
+        color: #7786ad;
+        cursor: pointer;
+        font-size: 16px;
+        min-width: 90px;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        }
+
+        .button-small {
+        border: 1px solid #eee;
+        font-size: 14px;
+        padding: 5px;
+        }
+
+        .button-light-blue {
+        background-color: #f3f7fb;
+        }
+
+        .button-dark-blue {
+        background-color: #0069fe;
+        color: #fff;
+        }
+
+        .button img {
+        margin-right: 3px;
+        vertical-align: text-bottom;
+        }
+
+        .hide-content {
+        opacity: 0;
+        transition: opacity 500ms ease-in-out;
+        }
+
+        .show-content {
+        opacity: 1;
+        }
+
+        .header-position {
+        display: flex;
+        justify-content: space-between;
+        padding: 25px 0;
+        }
+
+        .header-position a {
+        height: 0%;
+        }
+
+        .main-logo {
+        padding-top: 5px;
+        }
+
+        .main-logo-text {
+        color: #0572fe;
+        float: right;
+        line-height: 30px;
+        margin-left: 15px;
+        }
+
+        .main-heading {
+        font-size: 56px;
+        font-weight: 300;
+        margin: 50px 0 75px;
+        text-align: center;
+        }
+
+        @media screen and (min-width:480px) {
+        .main-heading {
+            margin-top: 100px;
+        }
+        }
+
+        .slim-container {
+        margin: 0 auto 25px;
+        max-width: 400px;
+        }
+
+        .slim-container-bottom {
+        display: flex;
+        justify-content: space-between;
+        margin: 100px 0 0;
+        }
+
+        .slim-container-bottom a {
+        color: #444;
+        text-decoration: none;
+        }
+
+        .line-form {
+        text-align: center;
+        }
+
+        .line-form input[type="text"],
+        .line-form input[type="password"] {
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-bottom: 1px solid #999;
+        border-radius: 0;
+        color: #555;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 25px;
+        padding: 7px 0;
+        width: 100%;
+        }
+
+        .line-form input[type="submit"] {
+        margin: 25px auto 0;
+        min-width: 160px;
+        -webkit-appearance: none;
+        }
+
+        .line-form ::placeholder {
+        color: #767676;
+        }
+
+        .extra-actions > * {
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+        }
+
+        .scene-position {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        min-height: 100vh;
+        width: 100%;
+        z-index: -1;
+        }
+
+        #scene {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        height: 100%;
+        overflow: hidden;
+        }
+
+        .layer {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        }
+
+        .bg-img {
+        z-index: -1;
+        }
+
+        .bg-img-0 {
+        left: -25px;
+        bottom: -25px;
+        position: absolute;
+        width: 100%;
+        transition: all 1s ease-in-out;
+        
+        -webkit-transform: scale(1.1) translateX(20px);
+        transform: scale(1.1) translateX(20px);
+        }
+
+        .bg-img-1 {
+        right: -50px;
+        bottom: -25px;
+        position: absolute;
+        transition: all 1s ease-in-out;
+        
+        -webkit-transform: scale(1.1) translateX(20px) translateY(0);
+        transform: scale(1.1) translateX(20px) translateY(0);
+        }
+
+
+        @media screen and (max-width:479px) {
+        .bg-img-1 {
+            right: -40%;
+            bottom: -25%;
+        }
+        }
+
+        .bg-img-2 {
+        right: -50px;
+        bottom: -10px;
+        position: absolute;
+        
+        -webkit-animation: animateEffect 20s infinite;
+            animation: animateEffect 20s infinite;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+        }
+
+        .bg-img-3 {
+        right: -300px;
+        bottom: 300px;
+        position: absolute;
+        
+        -webkit-animation: animateEffect 15s infinite;
+            animation: animateEffect 15s infinite;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+        }
+
+        .is-leaving {
+        -webkit-transform: translateY(-100px);
+        transform: translateY(-100px);
+        }
+
+        .pan-out {
+        -webkit-transform: scale(1) translateY(30px) translateX(-10px);
+        transform: scale(1) translateY(30px) translateX(-10px);
+        }
+
+        @-webkit-keyframes animateEffect {
+        0% {
+            -webkit-transform: translateX(20%);
+                    transform: translateX(20%);
+        }
+        100% {
+            -webkit-transform: translateX(-20%);
+                    transform: translateX(-20%);
+        }
+        }
+
+        @keyframes animateEffect {
+        0% {
+            -webkit-transform: translateX(20%);
+                    transform: translateX(20%);
+        }
+        100% {
+            -webkit-transform: translateX(-20%);
+                    transform: translateX(-20%);
+        }
+        }
+
+        input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header hide-content">
+        <div class="container">
+            <div class="header-position">
+                <span class="main-logo">
+                    <img src="https://s25.postimg.cc/5otd9ungv/cloud-icon.png" alt="">
+                    <span class="main-logo-text"><span class="font-700">Cloud</span><span
+                            class="font-300">Mountain</span></span>
+                </span>
+                <a href="#/" class="main-nav-cta button button-light-blue">Sign Up</a>
+            </div>
+        </div>
+    </header>
+    <main class="hide-content">
+        <div class="container">
+            <h1 class="main-heading">Your Social Cloud Folder</h1>
+            <div class="slim-container">
+                <form class="line-form">
+                    <label for="sign-in-email" class="offscreen">Email</label>
+                    <input type="text" id="sign-in-email" class="input input-email" placeholder="Email">
+                    <label for="sign-in-password" class="offscreen">Password</label>
+                    <input type="password" class="input input-password" placeholder="Password">
+                    <input type="submit" value="Sign In" id="line-form-submit" class="button button-dark-blue"
+                        onClick="return false;">
+                </form>
+                <div class="extra-actions">
+                    <span>or</span>
+                    <button class="button button-white">
+                        <img src="https://s25.postimg.cc/xg92vlsvj/facebook.png" alt="">
+                        Sign In with Facebook
+                    </button>
+                </div>
+                <div class="slim-container-bottom">
+                    <a href="#/" class="button button-small">Forgot Password</a>
+                    <a href="#/" class="button button-small">Terms and Conditions</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="scene-position">
+        <ul id="scene">
+            <li class="layer" data-depth="0.1">
+                <img src="https://s25.postimg.cc/56y7u2q73/mountain-edit.png" alt="" class="bg-img bg-img-0">
+            </li>
+            <li class="layer" data-depth="0.2">
+                <img src="https://s25.postimg.cc/s709sbbe7/landscape.png" alt="" class="bg-img bg-img-1">
+            </li>
+            <li class="layer" data-depth="0.6">
+                <img src="https://s25.postimg.cc/hqor3pem7/big-clouds.png" alt="" class="bg-img bg-img-2">
+            </li>
+            <li class="layer" data-depth=".8">
+                <img src="https://s25.postimg.cc/hqor3pem7/big-clouds.png" alt="" class="bg-img bg-img-3">
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+    <script>
+        var scene = document.getElementById('scene');
+        var parallaxInstance = new Parallax(scene);
+
+        var showContent = function () {
+            $('.hide-content').addClass('show-content');
+        }
+
+        var hideContent = function () {
+            $('.hide-content').removeClass('show-content');
+        }
+
+        var triggerIntro = function () {
+            window.setTimeout(function () { $('.layer img').addClass('pan-out'); }, 1);
+            window.setTimeout(function () { showContent(); }, 1200);
+        }
+
+        triggerIntro();
+    </script>
+</body>
+</html>

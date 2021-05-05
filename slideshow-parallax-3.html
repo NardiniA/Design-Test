@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+    <style>
+        /* external css: flickity.css */
+
+        * { box-sizing: border-box; }
+
+        body { font-family: sans-serif; }
+
+        /* parallax */
+
+        .parallax {
+        position: relative;
+        overflow-x: hidden;
+        height: 360px;
+        }
+
+        .parallax__layer {
+        position: absolute;
+        left: 0;
+        top: 0;
+        }
+
+        .parallax__layer--bg {
+        top: 70px;
+        width: 80%;
+        height: 160px;
+        }
+
+        .parallax__layer--fg {
+        pointer-events: none;
+        width: 125%;
+        height: 300px;
+        }
+
+        .parallax__layer__cell {
+        position: absolute;
+        width: 50%;
+        margin: 0 5%;
+        height: 100%;
+        }
+
+        .parallax__layer__cell:nth-child(1) { left: 0%; }
+        .parallax__layer__cell:nth-child(2) { left: 60%; }
+        .parallax__layer__cell:nth-child(3) { left: 120%; }
+        .parallax__layer__cell:nth-child(4) { left: 180%; }
+        .parallax__layer__cell:nth-child(5) { left: 240%; }
+
+        .parallax__layer__cell--bg {
+        background: hsla(210, 100%, 50%, 0.4);
+        }
+
+        .parallax__layer__cell--fg {
+        background: hsla(60, 100%, 50%, 0.4);
+        }
+
+        /* carousel */
+
+
+        .carousel-cell {
+        height: 220px;
+        width: 50%;
+        margin: 40px 5%; /* total width = 50% + 5% + 5% = 60% */
+        background: #8C8;
+        opacity: 0.6;
+        border-radius: 5px;
+        counter-increment: carousel-cell;
+        }
+
+        /* cell number */
+        .carousel-cell:before {
+        display: block;
+        text-align: center;
+        content: counter(carousel-cell);
+        line-height: 200px;
+        font-size: 80px;
+        color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flickity - layered parallax, vanilla JS</h1>
+    
+    <div class="parallax">
+        <!-- background parallax layer -->
+        <div class="parallax__layer parallax__layer--bg">
+            <div class="parallax__layer__cell parallax__layer__cell--bg"></div>
+            <div class="parallax__layer__cell parallax__layer__cell--bg"></div>
+            <div class="parallax__layer__cell parallax__layer__cell--bg"></div>
+            <div class="parallax__layer__cell parallax__layer__cell--bg"></div>
+            <div class="parallax__layer__cell parallax__layer__cell--bg"></div>
+        </div>
+        <!-- carousel: midground parallax layer -->
+        <div class="carousel">
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+        </div>
+        <!-- foreground parallax layer -->
+        <div class="parallax__layer parallax__layer--fg">
+            <div class="parallax__layer__cell parallax__layer__cell--fg"></div>
+            <div class="parallax__layer__cell parallax__layer__cell--fg"></div>
+            <div class="parallax__layer__cell parallax__layer__cell--fg"></div>
+            <div class="parallax__layer__cell parallax__layer__cell--fg"></div>
+            <div class="parallax__layer__cell parallax__layer__cell--fg"></div>
+        </div>
+    </div>
+
+    <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+
+    <script>
+        // external js: flickity.pkgd.js
+
+        var flkty = new Flickity('.carousel');
+
+        var cellRatio = 0.6;
+        var bgRatio = 0.8;
+        var fgRatio = 1.25;
+        var count = flkty.slides.length - 1;
+
+        var background = document.querySelector('.parallax__layer--bg');
+        var foreground = document.querySelector('.parallax__layer--fg');
+
+        flkty.on('scroll', function (progress) {
+            moveParallaxLayer(background, bgRatio, progress);
+            moveParallaxLayer(foreground, fgRatio, progress);
+        });
+        // trigger initial scroll
+        flkty.reposition();
+
+        function moveParallaxLayer(layer, layerRatio, progress) {
+            layer.style.left = (0.5 - (0.5 + progress * count) * cellRatio * layerRatio) * 100 + '%';
+        }
+    </script>
+</body>
+</html>

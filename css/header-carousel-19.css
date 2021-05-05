@@ -1,0 +1,173 @@
+body {
+  background-color: #000; }
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(14, 29, 51, 0.8), rgba(14, 29, 51, 0.2)); }
+
+.hero-slider {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; }
+  .hero-slider .carousel-cell {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+    .hero-slider .carousel-cell .slide-content {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center; }
+      .hero-slider .carousel-cell .slide-content .title {
+        position: relative;
+        font-family: "Fjalla One", sans-serif;
+        font-size: 3.2rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #ffffff; }
+      .hero-slider .carousel-cell .slide-content .caption {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 2.2rem;
+        color: #ffffff;
+        margin-bottom: 30px; }
+      .hero-slider .carousel-cell .slide-content .btn {
+        display: inline-block;
+        border: 1px solid #fff;
+        padding: 14px 18px;
+        text-transform: uppercase;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        color: #fff;
+        text-decoration: none; }
+        .hero-slider .carousel-cell .slide-content .btn:hover {
+          background: #fff;
+          color: #000;
+          transition: all .2s ease; }
+  .hero-slider .flickity-prev-next-button {
+    width: 80px;
+    height: 80px;
+    background: transparent; }
+    .hero-slider .flickity-prev-next-button:hover {
+      background: transparent; }
+    .hero-slider .flickity-prev-next-button .arrow {
+      fill: white; }
+  .hero-slider .flickity-page-dots {
+    bottom: 30px; }
+    .hero-slider .flickity-page-dots .dot {
+      width: 30px;
+      height: 4px;
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.5);
+      border: 0 solid white;
+      border-radius: 0; }
+      .hero-slider .flickity-page-dots .dot.is-selected {
+        background: #ff0000;
+        border: 0 solid #ff0000; }
+
+/* --------------------------------
+Masking
+-------------------------------- */
+.slide-content .title,
+.slide-content .caption,
+.slide-content .btn {
+  position: relative;
+  opacity: 0;
+  animation-fill-mode: forwards; }
+
+.slide-content.mask .mask {
+  position: relative;
+  overflow: hidden; }
+.slide-content.mask .title {
+  animation-duration: 0.4s;
+  animation-delay: 0.7s;
+  animation-name: slide-up;
+  animation-fill-mode: backwards;
+  opacity: 1; }
+.slide-content.mask .divider {
+  display: inline-block;
+  position: relative;
+  margin: 5px auto;
+  height: 2px;
+  width: 60%;
+  background-color: #ffffff;
+  animation: divider-mask 1s 0.3s both; }
+.slide-content.mask .caption,
+.slide-content.mask .btn {
+  animation-duration: 0.4s;
+  animation-delay: 0.7s;
+  animation-name: slide-down; }
+
+@-webkit-keyframes slide-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+@-moz-keyframes slide-up {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(100%); }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+@-webkit-keyframes slide-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+@-moz-keyframes slide-down {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-100%); }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+@-webkit-keyframes divider-mask {
+  0%,
+  100% {
+    transform: scaleX(0); }
+  40%,
+  60% {
+    -webkit-transform: scaleX(1); } }
+@-moz-keyframes divider-mask {
+  0%,
+  100% {
+    transform: scaleX(0); }
+  40%,
+  60% {
+    -moz-transform: scaleX(1); } }
+@keyframes divider-mask {
+  0%,
+  100% {
+    transform: scaleX(0); }
+  40%,
+  60% {
+    transform: scaleX(1); } }
+
+/*# sourceMappingURL=header-carousel-19.css.map */
