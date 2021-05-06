@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
     <link rel="stylesheet" href="css/testimonials-slider-3.css" />
-    <link rel="stylesheet" href="css/carousel-test.css" />
+    <!-- <link rel="stylesheet" href="css/carousel-test.css" /> Convert scss to css then uncomment -->
+    <link rel="stylesheet" href="css/header-carousel-19.css" /> <!-- Replace with carousel-test.css after scss to css -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab:300" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.min.css" />
 
@@ -23,7 +24,7 @@
     <style>
         @media (max-width: 500px) {
             .flickity-prev-next-button {
-                display: none;
+                display: none !important;
             }
         }
 
@@ -39,6 +40,10 @@
 
         #menu {
             opacity: 0;
+        }
+
+        body {
+            background: #fff !important;
         }
     </style>
 </head>
@@ -99,49 +104,50 @@
     </div>
 
     <div class="hero-slider" data-carousel>
-        <div class="carousel-cell" style="background-image:url(img/abstract.jpg);">
+        <div class="carousel-cell"
+            style="background-image:url(img/abstract2.jpg);">
             <div class="overlay"></div>
-            <div class="inner">
-                <h3 class="subtitle">Hello</h3>
-                <h2 class="title">Flickity Parallax</h2>
-                <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
-            </div>
-        </div>
-        <div class="carousel-cell" style="background-image:url(img/work-tablet.jpg);">
-            <div class="overlay"></div>
-            <div class="inner">
-                <h3 class="subtitle">Design</h3>
-                <h2 class="title">Flickity Parallax</h2>
-                <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+            <div class="slide-content">
+                <div class="mask">
+                    <h2 class="title">Slide 1</h2>
+                </div>
+                <div class="divider"></div>
+                <div class="mask">
+                    <p class="caption">Flickity is fun to use.</p>
+                    <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+                </div>
             </div>
         </div>
         <div class="carousel-cell"
             style="background-image:url(https://images.unsplash.com/photo-1505238680356-667803448bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
             <div class="overlay"></div>
-            <div class="inner">
-                <h3 class="subtitle">Develop</h3>
-                <h2 class="title">Flickity Parallax</h2>
-                <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+            <div class="slide-content">
+                <div class="mask">
+                    <h2 class="title">Slide 2</h2>
+                </div>
+                <div class="divider"></div>
+                <div class="mask">
+                    <p class="caption">Flickity is flexible.</p>
+                    <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+                </div>
             </div>
         </div>
-        <div class="carousel-cell" style="background-image:url(img/abstract2.jpg);">
+        <div class="carousel-cell"
+            style="background-image:url(img/work-tablet.jpg);">
             <div class="overlay"></div>
-            <div class="inner">
-                <h3 class="subtitle">Analyse</h3>
-                <h2 class="title">Flickity Parallax</h2>
-                <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
-            </div>
-        </div>
-        <div class="carousel-cell" style="background-image:url(img/model.jpg);">
-            <div class="overlay"></div>
-            <div class="inner">
-                <h3 class="subtitle">Improve</h3>
-                <h2 class="title">Flickity Parallax</h2>
-                <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+            <div class="slide-content">
+                <div class="mask">
+                    <h2 class="title">Slide 3</h2>
+                </div>
+                <div class="divider"></div>
+                <div class="mask">
+                    <p class="caption">Flickity is awesome.</p>
+                    <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Tell me more</a>
+                </div>
             </div>
         </div>
     </div>
-
+    
     <div class="page-section">
         <div class="container">
             <div class="row justify-content-center" style="margin-bottom: 60px;">
@@ -582,8 +588,8 @@
     <script src="app-dependencies/js/vendor/modernizr-3.7.1.min.js"></script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.pkgd.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.1.0/flickity.pkgd.min.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
@@ -620,7 +626,7 @@
             }
         });
     </script>
-    
+
     <script>
         var options = {
             accessibility: true,
@@ -637,17 +643,39 @@
             }
         };
 
-        var carousel = document.querySelector('[data-carousel]');
-        var slides = document.getElementsByClassName('carousel-cell');
-        var flkty = new Flickity(carousel, options);
+        var $carousel = $('[data-carousel]').flickity(options);
+        var $slideContent = $('.slide-content');
+        var flkty = $carousel.data('flickity');
+        var selectedSlide = flkty.selectedElement;
 
-        flkty.on('scroll', function () {
-            flkty.slides.forEach(function (slide, i) {
-                var image = slides[i];
-                var x = (slide.target + flkty.x) * -1 / slides.length;
-                image.style.backgroundPosition = x + 'px';
-            });
+        flkty.on('settle', function (index) {
+            selectedSlide = flkty.selectedElement;
         });
+
+        flkty.on('change', function (index) {
+            $slideContent.eq(index).removeClass('mask');
+
+            setTimeout(function () {
+                $slideContent.addClass('mask');
+            }, 500);
+        });
+
+        flkty.on('dragStart', function (event) {
+            var index = 0;
+            selectedSlide = flkty.selectedElement;
+
+            if (event.layerX > 0) { // direction right
+                index = $(selectedSlide).index() + 1;
+            } else { // direction left
+                index = $(selectedSlide).index() - 1;
+            }
+
+            $slideContent.eq(index).removeClass('mask');
+        });
+
+        setTimeout(function () {
+            $slideContent.addClass('mask');
+        }, 500);
     </script>
 </body>
 </html>
