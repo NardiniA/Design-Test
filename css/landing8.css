@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Poppins&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+body, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Roboto", sans-serif; }
+
+.page-section {
+  padding-top: 130px;
+  padding-bottom: 120px; }
+  .page-section h2.section-title {
+    font-size: 44px;
+    font-weight: 500;
+    margin-bottom: 18px; }
+  .page-section h3.section-desc {
+    font-size: 18px;
+    color: #7A7A7A;
+    font-weight: 500; }
+  .page-section h3.sub-header {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 15px; }
+  .page-section p.sub-text {
+    font-size: 16px;
+    margin-bottom: 35px;
+    color: #7A7A7A; }
+  .page-section .btn-solid {
+    padding: 14px 40px;
+    text-transform: uppercase;
+    white-space: normal;
+    transition: all 0.3s linear;
+    margin: 0 5px 10px 5px;
+    border-radius: 50px;
+    background: #349F9A;
+    color: #FFFFFF;
+    text-decoration: none; }
+    .page-section .btn-solid:hover {
+      background: #44c2bc; }
+  .page-section img {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    max-height: 550px;
+    border-radius: 4px;
+    box-shadow: 0 0 14px #252627; }
+  .page-section .col1 {
+    margin-top: 100px;
+    padding-bottom: 15px; }
+    .page-section .col1 .col-lg-4 {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      align-content: flex-start; }
+      @media (max-width: 1199px) {
+        .page-section .col1 .col-lg-4 {
+          justify-content: flex-start; } }
+      @media (max-width: 991px) {
+        .page-section .col1 .col-lg-4 {
+          margin-bottom: 50px; } }
+  .page-section .col2 {
+    margin-top: -50px; }
+    @media (max-width: 991px) {
+      .page-section .col2 {
+        margin: 50px 0;
+        flex-direction: column-reverse; } }
+    .page-section .col2 .col-lg-4 {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      align-content: flex-start; }
+      @media (max-width: 991px) {
+        .page-section .col2 .col-lg-4 {
+          margin-bottom: 50px; } }
+  .page-section .full-width-img {
+    background-color: #252627;
+    background-image: url(https://www.herefordgolf.co.uk/wp-content/uploads/2021/03/IMG_7057-Swing-Analysis-scaled.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll; }
+
+/*# sourceMappingURL=landing8.css.map */
