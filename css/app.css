@@ -118,7 +118,7 @@ a.btn-solid {
   text-decoration: none;
   transition: all .2s ease; }
   a.btn-solid:hover {
-    background: #8967F9;
+    background: #6235f8;
     color: #fff; }
 
 .client {
@@ -153,6 +153,11 @@ a.btn-solid {
       @media (min-width: 992px) {
         .client .brand-logos .brand {
           flex-basis: 25%; } }
+  @media (max-width: 991px) {
+    .client .col-lg-3.col-md-6 {
+      margin-bottom: 30px; } }
+  .client img {
+    filter: grayscale(100%); }
 
 .bg-white {
   background: #fff !important;
@@ -847,5 +852,13 @@ a {
     display: block;
     margin-right: 0;
     font-weight: 600; } }
+.testimonial-line li {
+  background-color: #754ef9 !important; }
+
+.testimonial-left-content .sub-title {
+  color: #754ef9 !important; }
+
+.quota i {
+  color: #754ef9 !important; }
 
 /*# sourceMappingURL=app.css.map */

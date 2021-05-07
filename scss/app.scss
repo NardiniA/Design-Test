@@ -1,10 +1,9 @@
 $white: #fff;
 $light: #8a8fa3;
 $light-bg: #f4f6f7;
-$black: #14080E;
 
-$darker: #8967F9;
-$darkest: #5321F7;
+$black: #14080E;
+$black-bg: rgb(25, 25, 25);
 
 $main: rgb(117, 78, 249);
 $secondary: #4E98F9;
@@ -67,7 +66,7 @@ p.section-desc {
             box-sizing: border-box;
 
             &:hover {
-                box-shadow: 0 0 14px rgba(25, 25, 25, 0.5);
+                box-shadow: 0 0 14px rgba($black-bg, 0.5);
                 transition-property: box-shadow;
                 transition-duration: 0.5s;
             }
@@ -170,7 +169,7 @@ a.btn-solid {
     transition: all .2s ease;
 
     &:hover {
-        background: $darker;
+        background: darken($color: $main, $amount: 5%);
         color: $white;
     }
 }
@@ -211,6 +210,16 @@ a.btn-solid {
                 flex-basis: 25%;
             }
         }
+    }
+
+    .col-lg-3.col-md-6 {
+        @media (max-width: 991px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    img {
+        filter: grayscale(100%);
     }
 }
 
@@ -261,7 +270,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(117, 78, 249, 0.8);
+    background-color: rgba($main, 0.8);
     opacity: 0;
     visibility: hidden;
     -webkit-transition: all 0.3s ease-out 0s;
@@ -348,7 +357,7 @@ ul {
 }
 .single-work .work-overlay .work-content ul li a:hover {
     background-color: #fff;
-    color: #754ef9;
+    color: $main;
 }
 .single-work .work-overlay .work-content ul li:nth-of-type(1) {
     -webkit-transform: translateX(-100%);
@@ -990,3 +999,15 @@ a {
 //     font-size: 67px;
 //     color: $main;
 // }
+
+.testimonial-line li {
+    background-color: $main !important;
+}
+
+.testimonial-left-content .sub-title {
+    color: $main !important;
+}
+
+.quota i {
+    color: $main !important;
+}
