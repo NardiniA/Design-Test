@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.littlesnippets.net/css/codepen-result.css" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Lato);
+        @import url(https://fonts.googleapis.com/css?family=Oswald);
+        @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+        .snip1579 {
+        font-family: 'Lato', Arial, sans-serif;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        margin: 10px;
+        min-width: 250px;
+        max-width: 310px;
+        width: 100%;
+        background-color: #000000;
+        color: #ffffff;
+        text-align: left;
+        font-size: 16px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        }
+        .snip1579 * {
+        -webkit-transition: all 0.35s;
+        transition: all 0.35s;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+        .snip1579 img {
+        max-width: 100%;
+        vertical-align: top;
+        }
+        .snip1579 figcaption {
+        position: absolute;
+        height: 75px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        overflow: hidden;
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.75);
+        }
+        .snip1579 h3 {
+        font-family: 'Oswald';
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        margin: 3px 0;
+        }
+        .snip1579 h5 {
+        font-weight: 400;
+        margin: 0;
+        text-transform: uppercase;
+        color: #bbb;
+        letter-spacing: 1px;
+        }
+        .snip1579 blockquote {
+        padding: 0;
+        margin: 0;
+        font-style: italic;
+        font-size: 1em;
+        }
+        .snip1579 a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        }
+        .snip1579:hover figcaption,
+        .snip1579.hover figcaption {
+        height: calc(85%);
+        }
+    </style>
+</head>
+<body>
+    <figure class="snip1579"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample74.jpg"
+            alt="profile-sample2" />
+        <figcaption>
+            <h3>Sue Shei</h3>
+            <h5>Founder</h5>
+            <blockquote>
+                <p>'Which is worse, that everyone has his price, or that the price is always so low.'</p>
+            </blockquote>
+        </figcaption><a href="#"></a>
+    </figure>
+    <figure class="snip1579 hover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample77.jpg"
+            alt="profile-sample7" />
+        <figcaption>
+            <h3>Indigo Violet</h3>
+            <h5>Web Designer</h5>
+            <blockquote>
+                <p>'I'm killing time while I wait for life to shower me with meaning and happiness.'</p>
+            </blockquote>
+        </figcaption><a href="#"></a>
+    </figure>
+    <figure class="snip1579"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample96.jpg"
+            alt="profile-sample6" />
+        <figcaption>
+            <h3>Will Barrow</h3>
+            <h5>Public Relations</h5>
+            <blockquote>
+                <p>'The only skills I have the patience to learn are those that have no real application in life.'</p>
+            </blockquote>
+        </figcaption><a href="#"></a>
+    </figure>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script>
+        $(".hover").mouseleave(
+            function () {
+                $(this).removeClass("hover");
+            }
+        );
+    </script>
+</body>
+</html>
