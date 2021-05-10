@@ -115,13 +115,13 @@
             border-bottom: 2px solid #f0f0f0;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            align-items: center;
         }
 
         .part-1 svg {
             margin-right: 25px;
-            max-width: 100px;
-            max-height: 100px;
+            width: 100px;
+            height: 100px;
         }
 
         .part-1 .title {
@@ -204,6 +204,18 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+        }
+
+        @media (max-width: 501px) {
+            .part-1 {
+                justify-content: flex-start;
+                flex-direction: column;
+            }
+
+            .part-1 svg {
+                margin-left: 0;
+                margin-bottom: 35px;
+            }
         }
     </style>
 </head>
