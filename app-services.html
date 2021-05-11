@@ -172,9 +172,10 @@
             width: 100%;
             height: 100%;
             -o-object-fit: cover;
-            object-fit: cover;
             border-radius: 8px;
+            object-fit: cover;
             display: block;
+            box-shadow: 0 10px 22px 10px rgba(27, 38, 49, .25) !important;
         }
 
         @media (max-width: 992px) {
@@ -235,6 +236,40 @@
         .btn-test:hover {
             background-position: right center;
         }
+
+        .hero {
+            background-image: url(img/macbook2.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0,0,0,0.5);
+            height: 500px;
+            width: 100%;
+            color: #fff;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 0;
+        }
+
+        .hero h1, .hero p {
+            color: #fff;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -293,8 +328,14 @@
         </footer>
     </div>
 
-    <div style="height: 500px; width: 100%;
-    background: #707070;"></div>
+    <!-- <div style="height: 500px; width: 100%;
+    background: #707070;"></div> -->
+
+    <div class="hero">
+        <div class="overlay"></div>
+        <h1>Hello</h1>
+        <p>This is a subtitle.</p>
+    </div>
 
     <div class="page-section" style="background: #fff;">
         <div class="container">
@@ -314,13 +355,13 @@
                     <a href="#" class="btn-solid services">Read More</a>
                 </div>
                 <div class="col-lg-8">
-                    <img src="img/code.jpg" alt="" />
+                    <img src="img/business-code.jpg" alt="" />
                 </div>
             </div>
     
             <div class="row justify-content-center col2">
                 <div class="col-lg-8">
-                    <img src="img/work-tablet.jpg" alt="">
+                    <img src="img/laptop-work.jpg" alt="">
                 </div>
                 <div class="col-lg-4">
                     <h3 class="sub-header">Another Subheader</h3>
@@ -1036,8 +1077,8 @@
         <div class="container">
             <div class="row justify-content-center content">
                 <div class="col-lg-7">
-                    <img src="img/sunset.jpg"
-                        alt="An Image" class="about-img" data-aos="fade" data-aos-duration="1800" />
+                    <img src="img/help-out.jpg"
+                        alt="An Image" data-aos="fade" data-aos-duration="1800" style="border-radius: 0; box-shadow: none;" />
                 </div>
                 <div class="col-lg-4 offset-lg-1 text">
                     <h2 class="section-title">Other Services</h2>
