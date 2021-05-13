@@ -5,67 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        input[aria-valid="true"], input:valid {
-            border: 1px solid green;
-        }
-        
-        input[aria-valid="false"], input:invalid {
-            border: 1px solid red;
-        }
-    </style>
 </head>
 <body>
     <form id="form">
-        <input type="text" id="txtInput" required="required" />
+        <input type="text" id="txt" required="required" />
+
+        <input type="password" id="pass" required="required" />
+
+        <input type="checkbox" id="check" required="required" />
+
+        <input type="email" id="email" required="required" />
         <button type="submit">Submit</button>
     </form>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+
     <script>
-        function txtValidation(input) {
-            if (input.value == null || input.value == "") {
-                alert("Input Field is empty");
-                input.setAttribute("aria-valid", "false");
-                return false;
+        $('#form').validate({
+            submitHandler: function(form) {
+                alert("Form Successfully Submitted!");
+                event.preventDefault();
             }
-            input.setAttribute("aria-valid", "true");
-            return true;
-        }
-
-        /* Post code regex
-        var postalRGEX = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
-
-        decimal (1 point)
-        /^[0-9]+\.?[0-9]*$/
-
-        url 
-        https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)
-
-        alphanumeric
-        /^[a-zA-Z0-9]*$/
-
-        date (mm/dd/yyyy)
-        /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/
-
-        date (2 digit, 2 digit, 4 digit)
-        /^\d{2}\/\d{2}\/\d{4}$/
-
-
-        */
-
-        window.addEventListener('DOMContentLoaded', (e) => {
-            // Text Input validation
-            let form = document.querySelector('#form');
-            let txt = document.querySelector('#txtInput');
-            form.addEventListener('submit', (e) => {
-                if(txtValidation(txt)) {
-                    // Continue
-                    alert("Valid Input");
-                } else {
-                    alert("Invalid Input");
-                    e.preventDefault();
-                }
-            });
         });
     </script>
 </body>
