@@ -5,125 +5,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/portfolio-gallery-2.css" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Sarala:400,700);
+
+        .wrapper{font-size:0;}/*for inline block spacing*/
+        body{font-family:Sarala; background:#444;}
+
+        a{
+        display:inline-block;
+        width:25%;
+        height:50vh;
+        position:relative;
+        }
+
+        a img {
+        height:100%; 
+        width:100%;
+        object-fit:cover;}
+        a:before, a:after{
+        width:100%;
+        position:absolute;
+        opacity:0;
+        transition:opacity 0.3s ease;
+
+        }
+
+        a:before{
+        content:'';
+        height:100%;
+        background:rgba(122,157,83,0.8);
+        }
+
+        a:after{
+        content:attr(data-title);
+        font-size:24px;
+        top:calc(50% - 0.5em);
+        left:0;
+        text-align:center;
+        color:#fff;
+        text-transform:uppercase;
+        }
+
+        a:hover:before, a:hover:after{
+        opacity:1;
+        }
+
+
+
+        @media (max-width:650px){
+        a{
+        width:50%;
+        height:100vh;
+        }
+        }
+
+        @media (max-width:480px){
+        a{
+        width:100%;
+        }
+        }
+    </style>
 </head>
 <body>
-    <section class="gallery">
-        <div class="row">
-            <ul>
-                <a href="#" class="close"></a>
-                <li>
-                    <a href="#item02">
-                        <img src="https://cdn.dribbble.com/users/545884/screenshots/3981307/lorena2.png" alt="">
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="#item02">
-                        <img src="https://cdn.dribbble.com/users/545884/screenshots/3892302/contact.png" alt="">
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="#item02">
-                        <img src="https://cdn.dribbble.com/users/545884/screenshots/4154721/dive--001.png" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a class="image" href="#item01">
-                        <img src="https://cdn.dribbble.com/users/545884/screenshots/4356121/darko--dr.jpg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a class="image" href="#item02">
-                        <img src="https://cdn.dribbble.com/users/545884/screenshots/3695553/news.png" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a class="image" href="#item01">
-                        <img src="https://cdn.dribbble.com/users/545884/screenshots/4360101/liberosis_--_12.png" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a class="image" href="#item01">
-                        <img src="https://cdn.dribbble.com/users/545884/screenshots/3148799/technical-book.jpg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a class="image" href="#item01">
-                        <img src="https://cdn.dribbble.com/users/545884/screenshots/2883479/cover.jpg" alt="">
-                    </a>
-                </li>
-            </ul>
-        </div> <!-- / row -->
-    
-        <!-- Item 01 -->
-        <div id="item01" class="port">
-    
-            <div class="row justify-content-between">
-                <div class="col-lg-6">
-                    <div class="description">
-                        <h1>Item 01</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis libero erat. Integer ac purus
-                            est. Proin erat mi, pulvinar ut magna eget, consectetur auctor turpis.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://cdn.dribbble.com/users/545884/screenshots/3981307/lorena2.png" alt="">
-                </div>
-            </div>
-        </div> <!-- / row -->
-    
-        </div> <!-- / Item 02 -->
-    
-        <!-- Item 02 -->
-        <div id="item02" class="port">
-    
-            <div class="row justify-content-between">
-                <div class="col-lg-6">
-                    <div class="description">
-                        <h1>Item 02</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis libero erat. Integer ac purus
-                            est. Proin erat mi, pulvinar ut magna eget, consectetur auctor turpis.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://cdn.dribbble.com/users/545884/screenshots/2883479/cover.jpg" alt="">
-                </div>
-            </div> <!-- / row -->
-    
-        </div> <!-- / Item 02 -->
-    
-    </section> <!-- / projects -->
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    <script>
-        // portfolio
-        $('.gallery ul li a').click(function () {
-            var itemID = $(this).attr('href');
-            $('.gallery ul').addClass('item_open');
-            $(itemID).addClass('item_open');
-            return false;
-        });
-        $('.close').click(function () {
-            $('.port, .gallery ul').removeClass('item_open');
-            return false;
-        });
-
-        $(".gallery ul li a").click(function () {
-            $('html, body').animate({
-                scrollTop: parseInt($("#top").offset().top)
-            }, 400);
-        });
-    </script>
-    
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script> -->
+    <div class="wrapper">
+        <a href="#" data-title="Project 1">
+            <img src="https://unsplash.imgix.net/photo-1430598825529-927d770c194f?fit=crop&fm=jpg&h=700&q=75&w=1050" />
+        </a>
+        <a href="#" data-title="Project 2">
+            <img src="https://unsplash.imgix.net/photo-1429966163023-c132bc887fdd?fit=crop&fm=jpg&h=600&q=75&w=1050" />
+        </a>
+        <a href="#" data-title="Project 3">
+            <img src="https://unsplash.imgix.net/photo-1429198739803-7db875882052?fit=crop&fm=jpg&h=1575&q=75&w=1050" />
+        </a>
+        <a href="#" data-title="Project 4">
+            <img src="https://ununsplash.imgix.net/photo-1429277096327-11ee3b761c93?fit=crop&fm=jpg&h=700&q=75&w=1050" />
+        </a>
+        <a href="#" data-title="Project 5">
+            <img src="https://unsplash.imgix.net/photo-1429042007245-890c9e2603af?fit=crop&fm=jpg&h=700&q=75&w=1050" />
+        </a>
+        <a href="#" data-title="Project 6">
+            <img src="https://ununsplash.imgix.net/photo-1428954376791-d9ae785dfb2d?fit=crop&fm=jpg&h=700&q=75&w=1050" />
+        </a>
+        <a href="#" data-title="Project 7">
+            <img src="https://unsplash.imgix.net/photo-1428263197823-ce6a8620d1e1?fit=crop&fm=jpg&h=700&q=75&w=1050" />
+        </a>
+        <a href="#" data-title="Project 8">
+            <img src="https://unsplash.imgix.net/photo-1424746219973-8fe3bd07d8e3?fit=crop&fm=jpg&h=725&q=75&w=1050" />
+        </a>
+    </div>
 </body>
 </html>

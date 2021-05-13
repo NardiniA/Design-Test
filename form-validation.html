@@ -8,11 +8,11 @@
 </head>
 <body>
     <form id="form">
-        <input type="text" id="txt" required="required" />
+        <input type="text" id="txt" name="txt" required="required" />
 
-        <input type="password" id="pass" required="required" />
+        <input type="password" id="pass" name="pass" required="required" />
 
-        <input type="checkbox" id="check" required="required" />
+        <input type="checkbox" id="check" name="check" required="required" />
 
         <input type="email" id="email" required="required" />
         <button type="submit">Submit</button>
@@ -21,10 +21,21 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
 
     <script>
+        jQuery.validator.setDefaults({
+            debug: true,
+            success: "valid"
+        });
         $('#form').validate({
-            submitHandler: function(form) {
-                alert("Form Successfully Submitted!");
-                event.preventDefault();
+            rules: {
+                text: {
+                    required: true
+                },
+                password: {
+                    required: true
+                },
+                check: {
+                    required: true
+                }
             }
         });
     </script>
