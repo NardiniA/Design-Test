@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins);
 
 $main: #754ef9;
+$light: #eee;
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -38,6 +39,7 @@ body {
         .intro-card {
             border-radius: 8px;
             padding: 20px;
+            padding-bottom: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -53,7 +55,7 @@ body {
             }
 
             i {
-                margin-bottom: 15px;
+                margin-bottom: 20px;
                 font-size: 32px;
             }
 
@@ -84,9 +86,9 @@ body {
         }
 
         input, textarea {
-            border: 2px solid #e2e2e2;
+            border: 2px solid $light;
             border-radius: 8px;
-            background: #e2e2e2;
+            background: $light;
             color: #888;
             width: 100%;
             padding: 10px;
@@ -102,6 +104,12 @@ body {
 
             &:hover {
                 background: #fff;
+            }
+
+            &.filled {
+                background: #fff;
+                border-color: $main;
+                color: $main;
             }
         }
 
@@ -141,9 +149,9 @@ body {
                 border-radius: 8px;
                 border: 2px solid;
                 margin-bottom: 10px;
-                border-color: #e2e2e2;
-                background: #e2e2e2;
-                color: #000;
+                border-color: $light;
+                background: $light;
+                color: #222;
                 font-weight: 500;
                 position: relative;
                 cursor: pointer;

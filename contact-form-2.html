@@ -20,19 +20,19 @@
             <div class="row justify-content-center" style="margin-bottom: 30px;">
                 <div class="col-md-4">
                     <div class="intro-card">
-                        <i class="fas fa-marker"></i>
+                        <i class="fas fa-map-marker-alt"></i>
                         <p>Lorem ipsum dolor sit amet</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="intro-card">
-                        <i class="fas fa-marker"></i>
+                        <i class="fas fa-phone-alt"></i>
                         <p>Lorem ipsum dolor sit amet</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="intro-card">
-                        <i class="fas fa-marker"></i>
+                        <i class="fas fa-envelope"></i>
                         <p>Lorem ipsum dolor sit amet</p>
                     </div>
                 </div>
@@ -102,6 +102,16 @@
                 $('.services').removeClass('selected');
                 $(this).addClass('selected');
                 $('#service').val($(this).data("service"));
+            });
+        });
+
+        $('input[type=text]').each(function(index) {
+            $(this).on('keyup', function() {
+                if (!$(this).val()) {
+                    $(this).removeClass("filled");
+                } else {
+                    $(this).addClass("filled");
+                }
             });
         });
     </script>
