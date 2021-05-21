@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato" />
     <style>
         *, *:before, *:after {
             -webkit-box-sizing: inherit;
@@ -84,31 +85,30 @@
             position: fixed;
             overflow-y: scroll;
             overflow-x: hidden;
-            top: 0;
-            bottom: 0;
+            top: -100%;
             left: 0;
-            right: 0;
             width: 100%;
             height: 100%;
             z-index: 10;
             visibility: hidden;
+            padding-top: 50px;
+            opacity: 0;
+            background: #fff;
+            display: none;
             -webkit-transition: all 0.5s ease-in-out;
             -moz-transition: all 0.5s ease-in-out;
             transition: all 0.5s ease-in-out;
-            padding-top: 50px;
-            opacity: 0;
-            background: #fff !important;
-            display: none;
         }
 
         .item.open {
             visibility: visible;
-            -webkit-transition: all 0.4s ease-in-out;
-            -moz-transition: all 0.4s ease-in-out;
-            transition: all 0.4s ease-in-out;
             opacity: 1;
             background: #fff;
             display: block;
+            top: 0px;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
         }
 
         .item-wrapper {

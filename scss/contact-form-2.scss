@@ -104,12 +104,12 @@ body {
 
             &:hover {
                 background: #fff;
+                border-color: $main;
+                color: $main;
             }
 
             &.filled {
                 background: #fff;
-                border-color: $main;
-                color: $main;
             }
         }
 

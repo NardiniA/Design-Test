@@ -74,11 +74,11 @@ body {
         border-color: #754ef9;
         color: #754ef9; }
       .form-container .contact-card input:hover, .form-container .contact-card textarea:hover {
-        background: #fff; }
-      .form-container .contact-card input.filled, .form-container .contact-card textarea.filled {
         background: #fff;
         border-color: #754ef9;
         color: #754ef9; }
+      .form-container .contact-card input.filled, .form-container .contact-card textarea.filled {
+        background: #fff; }
     @media (min-width: 992px) {
       .form-container .contact-card .phone, .form-container .contact-card .msg {
         margin-bottom: 0 !important; } }
