@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+        *, *:before, *:after {
+            -webkit-box-sizing: inherit;
+            -moz-box-sizing: inherit;
+            box-sizing: inherit;
+        }
+
+        html {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            margin: 0;
+            background: #fff;
+            color: #222;
+        }
+
+        /* .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .wrapper {
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+        }
+
+        .wrapper > * {
+            -webkit-box-ordinal-group: 100;
+            order: 99;
+        } */
+
+        /* .gallery ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: -webkit-box;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .gallery li {
+            -webkit-box-flex: 1;
+            flex: 1 1 50%;
+            padding: 12px;
+            position: relative;
+            overflow: hidden;
+            margin: 10px 1%;
+            cursor: pointer;
+        }
+
+        @media all and (max-width:768px) {
+            .gallery li {
+                flex-basis: 100%;
+            }
+        } */
+
+        img {
+            width: 100%;
+            cursor: pointer;
+            -webkit-transition: opacity 0.3s ease-out;
+            -moz-transition: opacity 0.3s ease-out;
+            transition: opacity 0.3s ease-out;
+        }
+
+        .item {
+            position: fixed;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            visibility: hidden;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+            padding-top: 50px;
+            opacity: 0;
+            background: #fff !important;
+            display: none;
+        }
+
+        .item.open {
+            visibility: visible;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+            opacity: 1;
+            background: #fff;
+            display: block;
+        }
+
+        .item-wrapper {
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        .prevent-scroll {
+            overflow: hidden;
+        }
+
+        .item-nav {
+            width: 100%;
+            padding-top: 25px;
+            padding-right: 25px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background: #fff;
+        }
+
+        .close {
+            width: 21px;
+            height: 21px;
+            background: url(data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%0A%09%20id%3D%22svg2%22%20xmlns%3Adc%3D%22http%3A//purl.org/dc/elements/1.1/%22%20xmlns%3Acc%3D%22http%3A//creativecommons.org/ns%23%22%20xmlns%3Ardf%3D%22http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23%22%20xmlns%3Asvg%3D%22http%3A//www.w3.org/2000/svg%22%0A%09%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%2021%2021%22%0A%09%20enable-background%3D%22new%200%200%2021%2021%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cg%20id%3D%22layer1%22%20transform%3D%22translate%280%2C-1031.3622%29%22%3E%0A%09%3Cpath%20id%3D%22path2987%22%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20d%3D%22M0%2C1031.4l21%2C21%22/%3E%0A%09%3Cpath%20id%3D%22path2989%22%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20d%3D%22M21%2C1031.4l-21%2C21%22/%3E%0A%3C/g%3E%0A%3C/svg%3E%0A%0A) no-repeat;
+            padding-top: 50px;
+            opacity: 1;
+            z-index: 1004;
+            -webkit-transition: all 0.1s ease-in-out;
+            -moz-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
+        }
+
+        .open .close {
+            opacity: 1;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .content {
+            padding: 25px;
+            padding-top: 15px;
+            text-align: left !important;
+            background: #fff !important;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .content h1 {
+            margin-bottom: 25px;
+        }
+
+        .group {
+            margin-bottom: 30px;
+        }
+
+        .group:nth-child(4) {
+            margin-bottom: 40px;
+        }
+
+        .group h5 {
+            font-weight: 700;
+        }
+
+        .group p {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .btn-visit {
+            width: fit-content;
+            padding: 14px 40px;
+            background: #754ef9;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            letter-spacing: 2px;
+        }
+
+        .btn-visit:hover {
+            color: #fff;
+            box-shadow: 0 0 14px 0 rgba(0,0,0,0.28);
+        }
+
+        .text {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .text::before {
+                content: "";
+                position: absolute;
+                right: -15px;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                width: 2px;
+                height: 90%;
+                background: #e2e2e2;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .text::before {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                height: 2px;
+                width: 90%;
+                background: #e2e2e2;
+            }
+        }
+
+        .info {
+            margin-bottom: 30px;
+        }
+
+        .video-gallery {
+            position: relative;
+            margin: 0 auto;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .video-gallery .gallery-item {
+            position: relative;
+            float: left;
+            overflow: hidden;
+            margin: 10px 1%;
+            min-width: 320px;
+            max-width: 580px;
+            max-height: 360px;
+            width: 48%;
+            background: #000;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .video-gallery .gallery-item img {
+            position: relative;
+            display: block;
+            opacity: .45;
+            width: 105%;
+            height: 300px;
+            transition: opacity 0.35s, transform 0.35s;
+            transform: translate3d(-23px, 0, 0);
+            backface-visibility: hidden;
+        }
+
+        .video-gallery .gallery-item .gallery-item-caption {
+            padding: 2em;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 1.25em;
+        }
+
+        .video-gallery .gallery-item .gallery-item-caption,
+        .video-gallery .gallery-item .gallery-item-caption > a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-gallery .gallery-item h2 {
+            font-weight: 300;
+            overflow: hidden;
+            padding: 0.5em 0;
+        }
+
+        .video-gallery .gallery-item h2,
+        .video-gallery .gallery-item p {
+            position: relative;
+            margin: 0;
+            z-index: 10;
+        }
+
+        .video-gallery .gallery-item p {
+            letter-spacing: 1px;
+            font-size: 68%;
+
+            padding: 1em 0;
+            opacity: 0;
+            transition: opacity 0.35s, transform 0.35s;
+            transform: translate3d(10%, 0, 0);
+        }
+
+        .video-gallery .gallery-item:hover img {
+            opacity: .3;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .video-gallery .gallery-item .gallery-item-caption {
+            text-align: left;
+        }
+
+        .video-gallery .gallery-item h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 15%;
+            height: 1px;
+            background: #fff;
+            
+            transition: transform 0.3s;
+            transform: translate3d(-100%, 0, 0);
+        }
+
+        .video-gallery .gallery-item:hover h2::after {
+            transform: translate3d(0, 0, 0);
+        }
+
+        .video-gallery .gallery-item:hover p {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        @media screen and (max-width: 50em) {
+            .video-gallery .gallery-item {
+                display: inline-block;
+                float: none;
+                margin: 10px auto;
+                width: 100%;
+            }
+
+            .video-gallery {
+                padding: 10px;
+                box-sizing: border-box;
+            }
+        }
+
+        .static {
+            position: static;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 130px;
+            padding-bottom: 120px;
+        }
+
+        .hero {
+            width: 100%;
+            height: 80vh;
+            background: #b7b7b7;
+            position: static;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero"></div>
+
+    <div class="static">
+        <div class="video-gallery">
+            <a href="#item1" class="gallery-item">
+                <img src="https://i.pinimg.com/originals/75/f9/97/75f997ee6acf59dc51bbea05eae36677.jpg"
+                    alt="North Cascades National Park" />
+                <div class="gallery-item-caption">
+                    <div>
+                        <h2>North Cascades</h2>
+                        <p>The mountains are calling</p>
+                    </div>
+                </div>
+            </a>
+        
+            <a href="#item1" class="gallery-item ">
+                <img src="https://images.unsplash.com/photo-1556354235-586dcf1dccc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                    alt="Mt. Rainier" />
+                <div class="gallery-item-caption">
+                    <div>
+                        <h2>Mt. Rainier</h2>
+                        <p>14410 feet of adventure</p>
+                    </div>
+                </div>
+            </a>
+        
+            <a href="#item1" class="gallery-item">
+                <img src="https://wqtcq1f34a8kduuv3sc0e76o-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/12394537_web1_180620-pdn-goat-web.jpg"
+                    alt="Olympic National Park" />
+                <div class="gallery-item-caption">
+                    <div>
+                        <h2>Olympic National Park</h2>
+                        <p>Mountains, rain forests, wild coastlines</p>
+                    </div>
+                </div>
+            </a>
+        
+            <a href="#item1" class="gallery-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/MSH82_st_helens_plume_from_harrys_ridge_05-19-82.jpg"
+                    alt="Mount St. Helens" />
+                <div class="gallery-item-caption">
+                    <div>
+                        <h2>Mount St. Helens</h2>
+                        <p>The one and only</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="item" id="item1">
+            <div class="item-wrapper">
+                <div class="item-nav">
+                    <a class="close"></a>
+                </div>
+                
+                <div class="content" style="background: #fff;">
+                    <h1>Project Name</h1>
+                    <img src="img/bg.png" alt="" />
+                    <div class="row justify-content-center" style="margin-top: 30px;">
+                        <div class="col-12 text-left">
+                            <h2>About</h2>
+                        </div>
+                        <div class="col-md-6 text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <div class="col-md-5 offset-md-1 info">
+                            <div class="group">
+                                <h5>Sector</h5>
+                                <p>Gardening</p>
+                            </div>
+                            <div class="group">
+                                <h5>Services</h5>
+                                <p>Web Design, Web Development, Maintenance, SEO</p>
+                            </div>
+                            <div class="group">
+                                <h5>Technologies</h5>
+                                <p>HTML, CSS, JavaScript, PHP</p>
+                            </div>
+                            <div class="group">
+                                <h5>Location</h5>
+                                <p>Pershore</p>
+                            </div>
+
+                            <a href="#" class="btn-visit">Visit Site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    <script>
+        // portfolio
+        $('.gallery-item').click(function () {
+            console.log("Open");
+            var itemID = $(this).attr('href');
+            $('.gallery').addClass('open');
+            $(itemID).addClass('open');
+            $('body').addClass('prevent-scroll');
+            return false;
+        });
+        $('.close').click(function () {
+            console.log("Close");
+            $('.item, .video-gallery').removeClass('open');
+            $('body').removeClass('prevent-scroll');
+            return false;
+        });
+
+        $(".gallery-item").click(function () {
+            console.log("Animate");
+            $('html, body').animate({
+                scrollTop: parseInt($("#top").offset().top)
+            }, 400);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+body {
+  background: #eff;
+  background: linear-gradient(to left, #eee, #ddefef); }
+
+svg {
+  background: #fff;
+  width: 100%;
+  max-width: 728px;
+  height: auto; }
+
+.txt_1, .txt_2, .txt_intro, #ad_cta, #logo, #txtIntro, #txtAlt {
+  opacity: 0; }
+
+.txt {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 32px; }
+
+.txt_b {
+  font-weight: 500; }
+
+.txt_3 {
+  opacity: 1;
+  font-size: 20px; }
+
+/*# sourceMappingURL=banner-4.css.map */

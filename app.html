@@ -47,6 +47,41 @@
                 justify-content: center;
             }   
         }   
+
+        .client-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 32px;
+            grid-auto-rows: minmax(268px, auto);
+        }
+
+        .client {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 17px 0 rgb(0,0,0,0.09);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 1100px) {
+            .client-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width:860px) {
+            .client-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width:600px) {
+            .client-list {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -258,26 +293,18 @@
     <div class="container-fluid client">
         <div class="container">
             <p class="section-desc text-center" style="margin-bottom: 50px;">Trusted by businesses and individuals everywhere</p>
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-6 text-center" style="padding: 10px; box-sizing: border-box; display: flex; justify-content: center; align-items: center;">
-                    <a href="#">
-                        <img src="img/amazon.png" alt="" class="img-fluid" style="width: 250px;" />
-                    </a>
+            <div class="client-list">
+                <div class="client">
+                    <img src="img/amazon.png" alt="Client 1" style="max-width: 200px; filter: none;"/>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center" style="padding: 10px; box-sizing: border-box; display: flex; justify-content: center; align-items: center;">
-                    <a href="#">
-                        <img src="img/coke.png" alt="" class="img-fluid" style="width: 250px;" />
-                    </a>
+                <div class="client">
+                    <img src="img/coke.png" alt="Client 2" style="max-width: 200px; filter: none;" />
                 </div>
-                <div class="col-lg-3 col-md-6 text-center" style="padding: 10px; box-sizing: border-box; display: flex; justify-content: center; align-items: center;">
-                    <a href="#">
-                        <img src="img/ebay.png" alt="" class="img-fluid" style="width: 250px;" />
-                    </a>
+                <div class="client">
+                    <img src="img/ebay.png" alt="Client 3" style="max-width: 200px; filter: none;" />
                 </div>
-                <div class="col-lg-3 col-md-6 text-center" style="padding: 10px; box-sizing: border-box; display: flex; justify-content: center; align-items: center;">
-                    <a href="#">
-                        <img src="img/bugatti.png" alt="" class="img-fluid" style="width: 250px;" />
-                    </a>
+                <div class="client">
+                    <img src="img/bugatti.png" alt="Client 4" style="max-width: 200px; filter: none;" />
                 </div>
             </div>
         </div>

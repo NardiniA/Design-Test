@@ -1,0 +1,73 @@
+//reset & autoprefixed used
+//I didn't use any transitions during the sort.  I wanted to keep the concept extremely simple.  Maybe in the future I'll add some cool transitions during the sort.
+body, html {
+  height: 100%;
+  font-size: 100%
+}
+.button-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background: lighten(lightblue,13%);
+  padding-bottom: 10px;
+}
+button {
+  font: 1.3rem 'Open Sans Condensed', sans-serif;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+  background: rgb(55,55,55);
+  color: #fff;
+  font-family: 'Open Sans Condensed', sans-serif;
+  transition: background 0.3s ease-in-out
+}
+button:hover {
+  background: rgb(105,105,105);
+}
+ul {
+  list-style: none;
+  min-height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  background: lighten(lightblue,17%);
+  padding-top: 20px
+}
+.sortable {
+  display: flex;
+  flex-flow: column nowrap;
+  padding-bottom: 20px;
+  width: calc(25% - 40px);
+  transition: opacity 0.3s ease-in-out,
+}
+.hidden {
+  opacity: 0
+}
+.fake-image, .price {
+  width: 100%;
+  text-align: center;
+  background: #fff;
+}
+.fake-image {
+  font-size: 7rem;
+  color: darken(DarkGreen,5%);
+  padding-top: 10px
+}
+.price {
+  font: 1.7rem "Oswald", sans-serif;
+  color: rgb(75,75,75);
+  
+}
+//Some simple media queries
+@media only screen and (max-width: 768px) {
+  .sortable {
+    width: calc(50% - 20px)
+  }
+}
+@media only screen and (max-width: 480px) {
+  .sortable {
+    width: 100%
+  }
+}

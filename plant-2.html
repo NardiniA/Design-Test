@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        background: #fbe6d4;
+        }
+        .wrapper{
+        position: absolute;
+
+        height: 250px;
+        width: 700px;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        }
+
+
+        .container1{
+        position: absolute;
+        display: inline-block;
+        width: 180px;
+        height: 250px;;
+        background: #fbe6d4;
+        margin: 20px;
+
+        }
+
+        .container2{
+        position: absolute;
+        left: 200px;
+        display: inline-block;
+        width: 180px;
+        height: 250px;;
+        background: #fbe6d4;
+        z-index: -2;
+        margin: 20px;
+        }
+
+        .container3{
+        position: absolute;
+        left: 400px;
+        display: inline-block;
+        width: 180px;
+        height: 250px;;
+        background: #fbe6d4;
+        margin: 20px;
+        }
+
+        .line1{
+            width: 140px;
+            height: 100px;
+        background: #fbe6d4;
+        position: relative;
+        top: 40px;
+        left: 20px;
+        z-index:1;
+        overflow: hidden; 
+        }
+
+        .pot2{
+        position: relative;
+        height: 130px;
+        width: 130px;
+        background: linear-gradient(to right, #f6ad7b 50%, #ed9a73 50%);
+        left: 19px;
+        top: 20px;
+        
+        border-radius: 50% ;
+        overflow: hidden;
+
+        }
+
+        .line2{
+        top: 100px;
+        width: 130px;
+        height: 20px;
+        background: #fbe6d4;
+        position: relative; 
+        z-index:1;
+        }
+
+
+        .leaf1, .leaf2, .leaf3{
+        width: 80px;
+        height: 80px;
+        background: green;
+        position: relative;
+        border-radius: 150px 0;
+        background: linear-gradient(-45deg,  #5c7658 50%, #649d66 50%);
+
+        }
+
+        .leaf3{
+        transform: rotate(-15deg);
+        bottom: 130px;
+        left: 53px;
+        }
+
+        .leaf2{
+        transform: rotate(-45deg);
+        z-index:1;
+        bottom: 65px;
+        left: 25px;
+        }
+
+        .leaf1{ 
+        transform: rotate(-75deg);
+        top: 30px;
+        right: 4px;
+        
+        }
+        .line{
+        position: relative;
+        width: 120px;
+        height: 20px;
+            background: linear-gradient(to right, #f6ad7b 50%, #ed9a73 50%);
+        border-radius: 5px;
+        top: 40px;
+        left: 25px; 
+        z-index: 1;
+        }
+
+        .pot1, .pot3{
+        position: relative;
+            height: 90px;
+        width: 100px;
+        top: 20px;
+        left: 34px;
+        
+        background: linear-gradient(to right, #f6ad7b 50%, #ed9a73 50%);
+        clip-path: polygon(0 0 , 100% 0, 90% 100%, 10% 100%)
+        
+        }
+        .shadow{
+        width: 98px;
+        height: 5px;
+        position: relative;
+        background: #e08f62;
+        top: 20px;
+        z-index: 2;  
+        }
+
+        .root{
+        position: relative;
+        left: 62px;
+        width: 4px;
+        height: 60px;
+        background: #649d66;
+        }
+
+        .leaf4, .leaf5{
+        width: 30px;
+        height: 20px;
+        background: green;
+        position: relative;
+        border-radius: 150px 0;
+        background: linear-gradient(-32deg,  #5c7658 50%, #649d66 50%);
+
+        }
+
+        .leaf4{
+        left: 62px;
+        top: 22px;
+        z-index: 1;
+        }
+        .leaf5{
+        left: 32px;
+        top: 22px;
+        transform: rotate(65deg);
+        }
+
+        .line3{
+        height: 15px;
+        width: 130px;
+        position: relative;
+        top: 40px;
+        background: linear-gradient(to right, #fbe6d4 50%, #feceab 50%);
+        }
+    </style>
+</head>
+<body>
+    <body>
+    
+        <div class="wrapper">
+    
+            <div class="container1">
+    
+                <div class="line1">
+    
+                    <div class="leaf1"></div>
+                    <div class="leaf2"></div>
+                    <div class="leaf3"></div>
+                </div>
+                <div class="line">
+                </div>
+                <div class="pot1">
+                    <div class="shadow"></div>
+                </div>
+    
+    
+            </div>
+    
+            <div class="container2">
+    
+                <div class="line1">
+                    <div class="leaf1"></div>
+                    <div class="leaf2"></div>
+                    <div class="leaf3"></div>
+                </div>
+    
+                <div class="pot2">
+                    <div class="line3"></div>
+                    <div class="line2"></div>
+                </div>
+    
+    
+            </div>
+    
+            <div class="container3">
+                <div class="line1">
+    
+                    <div class="leaf4"></div>
+                    <div class="leaf5"></div>
+                    <div class="root"></div>
+                </div>
+    
+                <div class="line">
+                </div>
+                <div class="pot3">
+                    <div class="shadow"></div>
+    
+                </div>
+            </div>
+    
+    </body>
+</body>
+</html>
