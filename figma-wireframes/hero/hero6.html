@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" />
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            line-height: 1.6;
+        }
+
+        .hero {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow-y: hidden;
+        }
+
+        .hero video {
+            object-fit: cover;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            color: #f1f1f1;
+            width: 100%;
+            padding: 50px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .content-container {
+            margin-bottom: 150px;
+        }
+
+        @media (max-height: 767px) {
+            .content-container {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-height: 499px) {
+            button {
+                position:unset;
+            }
+        }
+
+        h1 {
+            color: #f1f1f1;
+            font-weight: 300 !important;
+            font-size: 48px;
+        }
+
+        button {
+            background: #89a5ff;
+            border-radius: 50%;
+            width: 75px;
+            height: 75px;
+            border: none;
+            outline: none;
+            font-size: 35px;
+            padding-left: 10px;
+            padding-right: 5px; 
+            padding-top: 5px;
+            padding-bottom: 5px;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #6e70ff;
+            color: #fff;
+            border-radius: .25rem;
+            text-decoration: none;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <video muted loop id="hero-video">
+            <source src="rain.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Optional: some overlay text to describe the video -->
+        <div class="content">
+            <!-- Use a button to pause/play the video with JavaScript -->
+            <button onclick="myFunction()">
+                <i class="fas fa-play"></i>
+            </button>
+            <div class="content-container">
+                <h1>Heading</h1>
+                <a href="#" class="btn">Join Now!</a>
+            </div>
+        </div>
+    </header>
+
+    <script></script>
+</body>
+</html>
