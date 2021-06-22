@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../temp/project start/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="../temp/project start/css/normalize.css" />
+    <link rel="stylesheet" href="css/shooting-star.css" />
+    <style>
+        body, html {
+            background: #212121;
+            color: #fafafa;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+
+        *, *::before, *::after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            padding-top: 175px;
+            padding-bottom: 180px;
+            height: 80vh;
+            position: static;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .title {
+            width: 100%;
+            align-self: center;
+            margin: 0 auto;
+            overflow: hidden;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title span {
+            display: inline-block;
+            font-size: 72px;
+            color: #efefef;
+            width: 100%;
+            text-transform: uppercase;
+            transform: translateX(-100%);
+            animation: byBottom 1s ease both;
+            font-weight: 600;
+            letter-spacing: 0.25vw;
+        }
+
+        @media (max-width: 1199px) {
+            .title span {
+                font-size: 58px;
+            }
+        }
+
+        .title span:last-child {
+            font-size: 1rem;
+            animation: byBottom 0.25s ease both;
+        }
+
+        .title span a {
+            position: relative;
+            display: inline-block;
+            margin-left: 0.5rem;
+            text-decoration: none;
+            color: #f35f5f;
+        }
+
+        .title span a::after {
+            content: "";
+            height: 2px;
+            background-color: #f35f5f;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 0;
+            animation: linkAfter 0.5s 1s ease both;
+        }
+
+        @-moz-keyframes byBottom {
+            0% {
+            transform: translateY(150%);
+            }
+            100% {
+            transform: translateY(0);
+            }
+        }
+        @-webkit-keyframes byBottom {
+            0% {
+            transform: translateY(150%);
+            }
+            100% {
+            transform: translateY(0);
+            }
+        }
+        @-o-keyframes byBottom {
+            0% {
+            transform: translateY(150%);
+            }
+            100% {
+            transform: translateY(0);
+            }
+        }
+        @keyframes byBottom {
+            0% {
+            transform: translateY(150%);
+            }
+            100% {
+            transform: translateY(0);
+            }
+        }
+        @-moz-keyframes linkAfter {
+            0% {
+            width: 0;
+            }
+            100% {
+            width: 30px;
+            }
+        }
+        @-webkit-keyframes linkAfter {
+            0% {
+            width: 0;
+            }
+            100% {
+            width: 30px;
+            }
+        }
+        @-o-keyframes linkAfter {
+            0% {
+            width: 0;
+            }
+            100% {
+            width: 30px;
+            }
+        }
+        @keyframes linkAfter {
+            0% {
+            width: 0;
+            }
+            100% {
+            width: 30px;
+            }
+        }
+        .dev-img {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+            max-width: 190px;
+            width: 100%;
+            color: #bbb;
+            font-size: 16px;
+            box-shadow: none !important;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        .dev-img *,
+        .dev-img:before,
+        .dev-img:after {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+        }
+
+        .dev-img:before,
+        .dev-img:after {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border-radius: 50%;
+            content: '';
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: -1;
+            border: 2px solid #bbb;
+            border-color: transparent #bbb;
+        }
+
+        .dev-img img {
+            max-width: 100%;
+            backface-visibility: hidden;
+            vertical-align: top;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .dev-img figcaption {
+            position: absolute;
+            top: 5px;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 50%;
+        }
+
+        .dev-img i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            font-size: 4em;
+            z-index: 1;
+        }
+
+        .dev-img a {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+
+        .dev-img:hover figcaption,
+        .dev-img.hover figcaption {
+            opacity: 1;
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+
+        .dev-img:hover:before,
+        .dev-img.hover:before,
+        .dev-img:hover:after,
+        .dev-img.hover:after {
+            border-width: 10px;
+        }
+
+        .dev-img:hover:before,
+        .dev-img.hover:before {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .dev-img:hover:after,
+        .dev-img.hover:after {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        @media (max-width: 991px) {
+            .title span {
+                font-size: 46px;
+            }
+            .title span:last-child {
+                font-size: 15px;
+                font-weight: lighter;
+            }
+        }
+
+        @media (max-width: 767px) {
+            header .col-md-8, header .col-md-4 {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .title {
+                margin-bottom: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    
+
+    <header>
+        <div class="night">
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8" style="display: flex;">
+                    <div class="title">
+                        <span>Antonio Nardini</span>
+                        <span>Graphic Designer and <a href="#">Web Developer</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <figure class="dev-img"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample19.jpg"
+                            alt="Image of Antonio Nardini" />
+                        <figcaption></figcaption>
+                        <a href="#"></a>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content" style="height: 100vh; width: 100vw; background: #fafafa; z-index: 1;"></div>
+</body>
+</html>

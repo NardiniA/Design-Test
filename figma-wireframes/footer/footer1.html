@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" />
+    <style>
+        *, *::before, *::after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            line-height: 1.6;
+        }
+
+        .footer {
+            width: 100%;
+            padding: 50px;
+            background: #333;
+            color: #fff;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer img {
+            max-width: 150px;
+        }
+
+        .footer .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links li {
+            margin-left: 25px;
+            padding: 15px;
+        }
+
+        .footer .img-cont, .footer p {
+            max-width: 300px;
+            min-width: 300px;
+        }
+
+        .footer-links li:first-child {
+            margin-left: 0;
+        }
+
+        .footer-links li a {
+            color: #aaa;
+            font-weight: 300;
+            text-decoration: none;
+        }
+
+        .footer-links li a:hover {
+            color: #fff;
+        }
+
+        .footer p {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="img-cont">
+            <img src="../../img/iphone.png" alt="" />
+        </div>
+        <ul class="footer-links">
+            <li>
+                <a href="#">Mobile app</a>
+            </li>
+            <li>
+                <a href="#">Community</a>
+            </li>
+            <li>
+                <a href="#">Company</a>
+            </li>
+        </ul>
+        <p>&copy; Footer, Inc. 2021. We love our users!</p>
+    </footer>
+</body>
+</html>
