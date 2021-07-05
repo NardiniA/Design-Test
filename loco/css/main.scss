@@ -1,0 +1,73 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+section {
+    height: 100vh;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+
+    h1 {
+        font-size: 8rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.5rem;
+        color: #fafafa;
+    }
+
+    a {
+        color: #fafafa;
+        font-weight: bold;
+    }
+
+    &:first-child {
+        background: rgb(0, 126, 243);
+        color: #fafafa;
+    }
+
+    &:nth-child(2) {
+        background: rgb(31, 37, 43);
+        color: #fafafa;
+
+        p {
+            color: #a9a9a9;
+        }
+    }
+
+    &:last-child {
+        background: rgb(243, 0, 122);
+        color: #fafafa;
+    }
+}
+
+.section2 h1, .section2 p {
+    text-align: center !important;
+}
+
+.op {
+    opacity: 1;
+}
+
+.op2 {
+    opacity: 0;
+    transition: opacity 6s;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/locomotive-scroll.css" />
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        *, *::after, *::before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            height: 100vh;
+            width: 100%;
+            background: #212121;
+            color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <section data-scroll-container>
+        <div data-scroll-section id="direction">
+            <h1 data-scroll data-scroll-direction="horizontal" data-scroll-target="#direction">Welcome</h1>
+            <p data-scroll data-scroll-direction="horizontal" data-scroll-target="#direction">lorem ipsum dolor sit amet, consectiteur adipiscing.</p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js"></script>
+    <script>
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true
+        });
+    </script>
+</body>
+</html>
