@@ -5,13 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!--==================== UNICONS ====================-->
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
         
         <!--==================== SWIPER CSS ====================-->
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <!-- <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" /> -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+        <!--==================== MODERNIZR CSS =====================-->
+        
         
         <!--==================== CSS ====================-->
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/styles.css" />
 
         <title>Responsive Portfolio Website</title>
     </head>
@@ -793,8 +797,10 @@
                 <div class="contact__container container grid">
                     <div>
                         <div class="contact__information">
-                            <i class="uil uil-phone contact__icon"></i>
-
+                            <a href="tel:+447899743854">
+                                <i class="uil uil-phone contact__icon"></i>
+                            </a>
+                            
                             <div>
                                 <h3 class="contact__title">Call Me</h3>
                                 <span class="contact__subtitle">+44 7899 743854</span>
@@ -802,8 +808,10 @@
                         </div>
 
                         <div class="contact__information">
-                            <i class="uil uil-envelope contact__icon"></i>
-                        
+                            <a href="mailto:techteacher.pershore@gmail.com">
+                                <i class="uil uil-envelope contact__icon"></i>
+                            </a>
+                            
                             <div>
                                 <h3 class="contact__title">Email</h3>
                                 <span class="contact__subtitle">techteacher.pershore@gmail.com</span>
@@ -820,31 +828,75 @@
                         </div>
                     </div>
 
-                    <form class="contact__form grid">
+                    <form class="contact__form grid" onsubmit="ValidateForm(event);" method="POST">
+                        <div class="alert">
+                            <span>Hello</span>
+                            <i class="uil uil-times alert__button"></i>
+                        </div>
                         <div class="contact__inputs grid">
                             <div class="contact__content">
-                                <label for="name" class="contact__label">Name</label>
-                                <input type="text" id="name" name="name" class="contact__input">
+                                <label for="name" class="contact__label">
+                                    Name
+                                    <i class="uil uil-question-circle help__button"></i>
+                                    <span class="contact__help">
+                                        Enter your name
+                                    </span>
+                                </label>
+                                <input type="text" id="name" name="name" class="contact__input" required="required" placeholder="John Smith" />
+                                <span class="contact__error">
+                                    <i class="uil uil-exclamation-triangle"></i>
+                                    <span class="error-msg">Error Message</span>
+                                </span>
                             </div>
                             <div class="contact__content">
-                                <label for="mail" class="contact__label">Email</label>
-                                <input type="email" id="mail" name="mail" class="contact__input">
+                                <label for="mail" class="contact__label">
+                                    Email
+                                    <i class="uil uil-question-circle help__button"></i>
+                                    <span class="contact__help">
+                                        Enter your email
+                                    </span>
+                                </label>
+                                <input type="email" id="mail" name="mail" class="contact__input" required="required" placeholder="name@example.com" />
+                                <span class="contact__error">
+                                    <i class="uil uil-exclamation-triangle"></i>
+                                    <span class="error-msg">Error Message</span>
+                                </span>
                             </div>
                         </div>
                         <div class="contact__content">
-                            <label for="project" class="contact__label">Project</label>
-                            <input type="text" id="project" name="project" class="contact__input">
+                            <label for="project" class="contact__label">
+                                Project/Subject
+                                <i class="uil uil-question-circle help__button"></i>
+                                <span class="contact__help">
+                                    Enter project/subject name
+                                </span>
+                            </label>
+                            <input type="text" id="project" name="project" class="contact__input" required="required" placeholder="Hello World" />
+                            <span class="contact__error">
+                                <i class="uil uil-exclamation-triangle"></i>
+                                <span class="error-msg">Error Message</span>
+                            </span>
                         </div>
                         <div class="contact__content">
-                            <label for="msg" class="contact__label">Message</label>
-                            <textarea name="msg" id="msg" cols="0" rows="7" class="contact__input"></textarea>
+                            <label for="msg" class="contact__label">
+                                Message
+                                <i class="uil uil-question-circle help__button"></i>
+                                <span class="contact__help">
+                                    Enter your message
+                                </span>
+                            </label>
+                            <textarea name="msg" id="msg" cols="0" rows="7" class="contact__input" required="required" placeholder="Message..."></textarea>
+                            <span class="contact__error">
+                                <i class="uil uil-exclamation-triangle"></i>
+                                <span class="error-msg">Error Message</span>
+                            </span>
                         </div>
 
                         <div>
-                            <a href="" class="button button--flex">
+                            <button type="submit" class="button button--flex">
                                 Send Message
                                 <i class="uil uil-message button__icon"></i>
-                            </a>
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -896,10 +948,16 @@
             <i class="uil uil-arrow-up scrollup__icon"></i>
         </a>
 
+        <!--==================== MODERNIZR JS =====================-->
+
         <!--==================== SWIPER JS ====================-->
-        <script src="assets/js/swiper-bundle.min.js"></script>
+        <!-- <script src="assets/js/swiper-bundle.min.js"></script> -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
         <!--==================== MAIN JS ====================-->
         <script src="assets/js/main.js"></script>
+
+        <!--==================== CONTACT JS ====================-->
+        <script src="assets/js/contact.js"></script>
     </body>
 </html>

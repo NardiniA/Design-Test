@@ -122,6 +122,28 @@ let swiperTestimonial = new Swiper('.testimonial__container', {
     }
 });
 
+/*==================== CONTACT FORM ====================*/
+
+/* Help Text */
+
+const helpBtns = document.querySelectorAll('.help__button'),
+    helpText = document.querySelectorAll('.contact__help');
+
+helpBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        helpText[index].classList.toggle('show-help');
+    });
+});
+
+/* Alert Button Close */
+
+const alertBtn = document.querySelector('.alert__button'),
+    alert = document.querySelector('.alert');
+    
+alertBtn.addEventListener('click', () => {
+    alert.classList.remove("show-alert");
+});
+
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]');
 
@@ -190,3 +212,5 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme());
     localStorage.setItem('selected-icon', getCurrentIcon());
 });
+
+

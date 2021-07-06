@@ -23,6 +23,11 @@
     --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 
+    --error-color: hsl(0, 69%, 61%);
+    --error-color-lighter: hsl(0, 92%, 85%);
+    --success-color: hsl(120, 69%, 61%);
+    --success-color-lighter: hsl(120, 92%, 85%);
+
     /*========== Font and typography ==========*/
     --body-font: 'Poppins', sans-serif;
 
@@ -355,6 +360,8 @@ img {
     padding: 1rem;
     border-radius: .5rem;
     font-weight: var(--font-medium);
+    border: none;
+    outline: none;
 }
 
 .button:hover {
@@ -897,6 +904,13 @@ img {
 .contact__label {
     font-size: var(--smaller-font-size);
     color: var(--title-color);
+    display: inline-block;
+}
+
+.content__label i {
+    font-size: .5rem;
+    margin-bottom: .25rem;
+    margin-left: 0.5rem;
 }
 
 .contact__input {
@@ -908,6 +922,102 @@ img {
     border: none;
     outline: none;
     padding: 0.25rem .5rem .5rem 0;
+    resize: none;
+}
+
+/* Error Messages and Help Text */
+
+.contact__error {
+    font-size: .75rem;
+    color: var(--error-color);
+    display: none;
+    opacity: 0;
+    transition: .3s;
+}
+
+.contact__error.show-error {
+    opacity: 1;
+    display: inline-block;
+}
+
+.contact__error i, .contact__help i {
+    font-size: .75rem;
+    margin-right: .25rem;
+}
+
+.contact__error-border {
+    border: 1px solid var(--error-color);
+}
+
+.contact__help {
+    font-size: .75rem;
+    color: var(--text-color-light);
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    transition: .3s;
+}
+
+.show-help {
+    opacity: 1;
+    display: inline-block;
+    visibility: visible;
+}
+
+.contact__success-border {
+    border: 1px solid var(--success-color);
+}
+
+.alert {
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+    display: none;
+    transition: .3s;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+
+.alert__button {
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.alert.show-alert {
+    display: flex !important;
+}
+
+.alert.success {
+    color: var(--success-color);
+    border: 2px solid var(--success-color);
+}
+
+.alert.error {
+    color: var(--error-color);
+    border: 2px solid var(--error-color);
+}
+
+/* Remove AutoFill Styling */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: none;
+    outline: none;
+    appearance: none;
+    background-color: var(--input-color);
+    color: var(--text-color);
+    -webkit-text-fill-color: var(--text-color);
+    -webkit-box-shadow: 0 0 0px 1000px var(--input-color) inset;
 }
 
 /*==================== FOOTER ====================*/
@@ -1013,7 +1123,7 @@ img {
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
 @media screen and (max-width: 350px) {
-    .cotnainer {
+    .container {
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
     }
@@ -1072,6 +1182,9 @@ img {
     .testimonial__data,
     .testimonial__description {
         text-align: center;
+    }
+    .contact__container {
+        justify-content: center;
     }
 }
 
